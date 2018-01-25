@@ -1,0 +1,854 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03CC4395EAFAE3B732CD61D8 /* libPods-SBTProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C304476DA5D6CCE3A9B70FA8 /* libPods-SBTProjectTests.a */; };
+		2BE2961FFE6BC8681C780465 /* libPods-SBTProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CE8C0E63830A3E559B5878 /* libPods-SBTProject.a */; };
+		A50801CA201342CD00552815 /* SBTNewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801C9201342CD00552815 /* SBTNewsWebViewController.m */; };
+		A50801D120137DBC00552815 /* SBTBuilderURLPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D020137DBC00552815 /* SBTBuilderURLPrice.m */; };
+		A50801D420137E6600552815 /* SBTParsingJSONPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D320137E6600552815 /* SBTParsingJSONPrice.m */; };
+		A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D62013830D00552815 /* SBTDataPriceModel.m */; };
+		A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D92013849B00552815 /* SBTDownloadDataService.m */; };
+		A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */; };
+		A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F282F200618DA00111A9E /* SBTGraphViewController.m */; };
+		A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F28322006196B00111A9E /* SBTBuildGraphView.m */; };
+		A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F283520061EB600111A9E /* SBTDataGraphModel.m */; };
+		A5484ACC200F7963008C6BB6 /* SBTNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5484ACB200F7963008C6BB6 /* SBTNewsTableViewCell.m */; };
+		A5484AD22010B01B008C6BB6 /* SBTParsingJSONGraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = A5484AD12010B01B008C6BB6 /* SBTParsingJSONGraphs.m */; };
+		A561F54620055DDC00F986C2 /* SBTGraphTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A561F54520055DDC00F986C2 /* SBTGraphTableViewController.m */; };
+		A561F54920055F4600F986C2 /* SBTGraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A561F54820055F4600F986C2 /* SBTGraphTableViewCell.m */; };
+		A56D48942009056F009A5685 /* SBTCryptocurrencyDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D48932009056F009A5685 /* SBTCryptocurrencyDescriptionView.m */; };
+		A5713DF42015EA67001B357E /* SBTAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = A5713DF32015EA67001B357E /* SBTAssembly.m */; };
+		A5713DF72015EB40001B357E /* SBTPersistentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5713DF62015EB40001B357E /* SBTPersistentContainer.m */; };
+		A57BA46020024A1600AA182D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA45F20024A1600AA182D /* AppDelegate.m */; };
+		A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57BA46720024A1600AA182D /* SBTProject.xcdatamodeld */; };
+		A57BA46B20024A1600AA182D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57BA46A20024A1600AA182D /* Assets.xcassets */; };
+		A57BA47120024A1600AA182D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA47020024A1600AA182D /* main.m */; };
+		A57BA47B20024A1600AA182D /* SBTProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA47A20024A1600AA182D /* SBTProjectTests.m */; };
+		A57BA48620024A1600AA182D /* SBTProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA48520024A1600AA182D /* SBTProjectUITests.m */; };
+		A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */; };
+		A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */; };
+		A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */; };
+		A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */; };
+		A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */; };
+		A5AAA8AA2017468D00AA3A84 /* SBTCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */; };
+		A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DCE719200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A57BA47720024A1600AA182D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57BA45320024A1600AA182D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A57BA45A20024A1600AA182D;
+			remoteInfo = SBTProject;
+		};
+		A57BA48220024A1600AA182D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57BA45320024A1600AA182D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A57BA45A20024A1600AA182D;
+			remoteInfo = SBTProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		34020A472B172327C2A62979 /* Pods-SBTProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProject/Pods-SBTProject.debug.xcconfig"; sourceTree = "<group>"; };
+		51CE8C0E63830A3E559B5878 /* libPods-SBTProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SBTProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA89FDA8C38EBCA0EA1528D /* Pods-SBTProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProject/Pods-SBTProject.release.xcconfig"; sourceTree = "<group>"; };
+		A50801C8201342CD00552815 /* SBTNewsWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTNewsWebViewController.h; sourceTree = "<group>"; };
+		A50801C9201342CD00552815 /* SBTNewsWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsWebViewController.m; sourceTree = "<group>"; };
+		A50801CE20137D0F00552815 /* SBTBuilderURLGraphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTBuilderURLGraphs.h; sourceTree = "<group>"; };
+		A50801CF20137DBC00552815 /* SBTBuilderURLPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuilderURLPrice.h; sourceTree = "<group>"; };
+		A50801D020137DBC00552815 /* SBTBuilderURLPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLPrice.m; sourceTree = "<group>"; };
+		A50801D220137E6600552815 /* SBTParsingJSONPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTParsingJSONPrice.h; sourceTree = "<group>"; };
+		A50801D320137E6600552815 /* SBTParsingJSONPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONPrice.m; sourceTree = "<group>"; };
+		A50801D52013830D00552815 /* SBTDataPriceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataPriceModel.h; sourceTree = "<group>"; };
+		A50801D62013830D00552815 /* SBTDataPriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataPriceModel.m; sourceTree = "<group>"; };
+		A50801D82013849B00552815 /* SBTDownloadDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDownloadDataService.h; sourceTree = "<group>"; };
+		A50801D92013849B00552815 /* SBTDownloadDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDownloadDataService.m; sourceTree = "<group>"; };
+		A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLGraphs.m; sourceTree = "<group>"; };
+		A53F282E200618DA00111A9E /* SBTGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphViewController.h; sourceTree = "<group>"; };
+		A53F282F200618DA00111A9E /* SBTGraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphViewController.m; sourceTree = "<group>"; };
+		A53F28312006196B00111A9E /* SBTBuildGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuildGraphView.h; sourceTree = "<group>"; };
+		A53F28322006196B00111A9E /* SBTBuildGraphView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuildGraphView.m; sourceTree = "<group>"; };
+		A53F283420061EB600111A9E /* SBTDataGraphModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataGraphModel.h; sourceTree = "<group>"; };
+		A53F283520061EB600111A9E /* SBTDataGraphModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataGraphModel.m; sourceTree = "<group>"; };
+		A5484ACA200F7963008C6BB6 /* SBTNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTNewsTableViewCell.h; sourceTree = "<group>"; };
+		A5484ACB200F7963008C6BB6 /* SBTNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsTableViewCell.m; sourceTree = "<group>"; };
+		A5484AD02010B01B008C6BB6 /* SBTParsingJSONGraphs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTParsingJSONGraphs.h; sourceTree = "<group>"; };
+		A5484AD12010B01B008C6BB6 /* SBTParsingJSONGraphs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONGraphs.m; sourceTree = "<group>"; };
+		A561F54420055DDC00F986C2 /* SBTGraphTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphTableViewController.h; sourceTree = "<group>"; };
+		A561F54520055DDC00F986C2 /* SBTGraphTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphTableViewController.m; sourceTree = "<group>"; };
+		A561F54720055F4600F986C2 /* SBTGraphTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphTableViewCell.h; sourceTree = "<group>"; };
+		A561F54820055F4600F986C2 /* SBTGraphTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphTableViewCell.m; sourceTree = "<group>"; };
+		A56D48922009056F009A5685 /* SBTCryptocurrencyDescriptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyDescriptionView.h; sourceTree = "<group>"; };
+		A56D48932009056F009A5685 /* SBTCryptocurrencyDescriptionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyDescriptionView.m; sourceTree = "<group>"; };
+		A5713DF22015EA67001B357E /* SBTAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAssembly.h; sourceTree = "<group>"; };
+		A5713DF32015EA67001B357E /* SBTAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAssembly.m; sourceTree = "<group>"; };
+		A5713DF52015EB40001B357E /* SBTPersistentContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTPersistentContainer.h; sourceTree = "<group>"; };
+		A5713DF62015EB40001B357E /* SBTPersistentContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTPersistentContainer.m; sourceTree = "<group>"; };
+		A57BA45B20024A1600AA182D /* SBTProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBTProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57BA45E20024A1600AA182D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A57BA45F20024A1600AA182D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A57BA46820024A1600AA182D /* SBTProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SBTProject.xcdatamodel; sourceTree = "<group>"; };
+		A57BA46A20024A1600AA182D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A57BA46F20024A1600AA182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57BA47020024A1600AA182D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A57BA47620024A1600AA182D /* SBTProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBTProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57BA47A20024A1600AA182D /* SBTProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTProjectTests.m; sourceTree = "<group>"; };
+		A57BA47C20024A1600AA182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57BA48120024A1600AA182D /* SBTProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBTProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57BA48520024A1600AA182D /* SBTProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTProjectUITests.m; sourceTree = "<group>"; };
+		A57BA48720024A1600AA182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57C5EAC2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyTableViewController.h; sourceTree = "<group>"; };
+		A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyTableViewController.m; sourceTree = "<group>"; };
+		A57C5EAF2007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyTableViewCell.h; sourceTree = "<group>"; };
+		A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyTableViewCell.m; sourceTree = "<group>"; };
+		A57C5EB22007FCEA00F2C230 /* SBTNewsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTNewsTableViewController.h; sourceTree = "<group>"; };
+		A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsTableViewController.m; sourceTree = "<group>"; };
+		A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataClass.h"; sourceTree = "<group>"; };
+		A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GraphModel+CoreDataClass.m"; sourceTree = "<group>"; };
+		A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GraphModel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A5AAA8A82017468D00AA3A84 /* SBTCoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCoreDataService.h; sourceTree = "<group>"; };
+		A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataService.m; sourceTree = "<group>"; };
+		A5DCE718200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		A5DCE719200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		AE1C000817EF7A51D3CCA588 /* Pods-SBTProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C304476DA5D6CCE3A9B70FA8 /* libPods-SBTProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SBTProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB255D5795EF1A865B09CE20 /* Pods-SBTProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A57BA45820024A1600AA182D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BE2961FFE6BC8681C780465 /* libPods-SBTProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57BA47320024A1600AA182D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CC4395EAFAE3B732CD61D8 /* libPods-SBTProjectTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57BA47E20024A1600AA182D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		120606E9B945E734FF94D18F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34020A472B172327C2A62979 /* Pods-SBTProject.debug.xcconfig */,
+				6BA89FDA8C38EBCA0EA1528D /* Pods-SBTProject.release.xcconfig */,
+				AE1C000817EF7A51D3CCA588 /* Pods-SBTProjectTests.debug.xcconfig */,
+				EB255D5795EF1A865B09CE20 /* Pods-SBTProjectTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A50812762017272300678BDD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */,
+				A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */,
+				A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */,
+				A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A561F53D2005540B00F986C2 /* GraphController */ = {
+			isa = PBXGroup;
+			children = (
+				A561F54420055DDC00F986C2 /* SBTGraphTableViewController.h */,
+				A561F54520055DDC00F986C2 /* SBTGraphTableViewController.m */,
+				A561F54720055F4600F986C2 /* SBTGraphTableViewCell.h */,
+				A561F54820055F4600F986C2 /* SBTGraphTableViewCell.m */,
+				A53F282E200618DA00111A9E /* SBTGraphViewController.h */,
+				A53F282F200618DA00111A9E /* SBTGraphViewController.m */,
+				A53F28312006196B00111A9E /* SBTBuildGraphView.h */,
+				A53F28322006196B00111A9E /* SBTBuildGraphView.m */,
+				A53F283420061EB600111A9E /* SBTDataGraphModel.h */,
+				A53F283520061EB600111A9E /* SBTDataGraphModel.m */,
+				A50801CE20137D0F00552815 /* SBTBuilderURLGraphs.h */,
+				A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */,
+				A5484AD02010B01B008C6BB6 /* SBTParsingJSONGraphs.h */,
+				A5484AD12010B01B008C6BB6 /* SBTParsingJSONGraphs.m */,
+			);
+			path = GraphController;
+			sourceTree = "<group>";
+		};
+		A561F53F2005545900F986C2 /* CryptocurrencyController */ = {
+			isa = PBXGroup;
+			children = (
+				A57C5EAC2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.h */,
+				A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */,
+				A57C5EAF2007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.h */,
+				A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */,
+				A56D48922009056F009A5685 /* SBTCryptocurrencyDescriptionView.h */,
+				A56D48932009056F009A5685 /* SBTCryptocurrencyDescriptionView.m */,
+				A5DCE718200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.h */,
+				A5DCE719200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m */,
+				A50801CF20137DBC00552815 /* SBTBuilderURLPrice.h */,
+				A50801D020137DBC00552815 /* SBTBuilderURLPrice.m */,
+				A50801D220137E6600552815 /* SBTParsingJSONPrice.h */,
+				A50801D320137E6600552815 /* SBTParsingJSONPrice.m */,
+				A50801D52013830D00552815 /* SBTDataPriceModel.h */,
+				A50801D62013830D00552815 /* SBTDataPriceModel.m */,
+			);
+			path = CryptocurrencyController;
+			sourceTree = "<group>";
+		};
+		A561F5402005548700F986C2 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				A57C5EB22007FCEA00F2C230 /* SBTNewsTableViewController.h */,
+				A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */,
+				A5484ACA200F7963008C6BB6 /* SBTNewsTableViewCell.h */,
+				A5484ACB200F7963008C6BB6 /* SBTNewsTableViewCell.m */,
+				A50801C8201342CD00552815 /* SBTNewsWebViewController.h */,
+				A50801C9201342CD00552815 /* SBTNewsWebViewController.m */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		A57BA45220024A1600AA182D = {
+			isa = PBXGroup;
+			children = (
+				A57BA45D20024A1600AA182D /* SBTProject */,
+				A57BA47920024A1600AA182D /* SBTProjectTests */,
+				A57BA48420024A1600AA182D /* SBTProjectUITests */,
+				A57BA45C20024A1600AA182D /* Products */,
+				120606E9B945E734FF94D18F /* Pods */,
+				AE293F01747C6103AB060356 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A57BA45C20024A1600AA182D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A57BA45B20024A1600AA182D /* SBTProject.app */,
+				A57BA47620024A1600AA182D /* SBTProjectTests.xctest */,
+				A57BA48120024A1600AA182D /* SBTProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A57BA45D20024A1600AA182D /* SBTProject */ = {
+			isa = PBXGroup;
+			children = (
+				A57BA45E20024A1600AA182D /* AppDelegate.h */,
+				A57BA45F20024A1600AA182D /* AppDelegate.m */,
+				A5713DF22015EA67001B357E /* SBTAssembly.h */,
+				A5713DF32015EA67001B357E /* SBTAssembly.m */,
+				A5713DF52015EB40001B357E /* SBTPersistentContainer.h */,
+				A5713DF62015EB40001B357E /* SBTPersistentContainer.m */,
+				A5AAA8A7201745D000AA3A84 /* Services */,
+				A50812762017272300678BDD /* CoreData */,
+				A561F5402005548700F986C2 /* NewsController */,
+				A561F53F2005545900F986C2 /* CryptocurrencyController */,
+				A561F53D2005540B00F986C2 /* GraphController */,
+				A57BA46A20024A1600AA182D /* Assets.xcassets */,
+				A57BA46F20024A1600AA182D /* Info.plist */,
+				A57BA47020024A1600AA182D /* main.m */,
+				A57BA46720024A1600AA182D /* SBTProject.xcdatamodeld */,
+			);
+			path = SBTProject;
+			sourceTree = "<group>";
+		};
+		A57BA47920024A1600AA182D /* SBTProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				A57BA47A20024A1600AA182D /* SBTProjectTests.m */,
+				A57BA47C20024A1600AA182D /* Info.plist */,
+			);
+			path = SBTProjectTests;
+			sourceTree = "<group>";
+		};
+		A57BA48420024A1600AA182D /* SBTProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A57BA48520024A1600AA182D /* SBTProjectUITests.m */,
+				A57BA48720024A1600AA182D /* Info.plist */,
+			);
+			path = SBTProjectUITests;
+			sourceTree = "<group>";
+		};
+		A5AAA8A7201745D000AA3A84 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A50801D82013849B00552815 /* SBTDownloadDataService.h */,
+				A50801D92013849B00552815 /* SBTDownloadDataService.m */,
+				A5AAA8A82017468D00AA3A84 /* SBTCoreDataService.h */,
+				A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AE293F01747C6103AB060356 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51CE8C0E63830A3E559B5878 /* libPods-SBTProject.a */,
+				C304476DA5D6CCE3A9B70FA8 /* libPods-SBTProjectTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A57BA45A20024A1600AA182D /* SBTProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57BA48A20024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProject" */;
+			buildPhases = (
+				89BDCD8C9260DEA626D0AA27 /* [CP] Check Pods Manifest.lock */,
+				A57BA45720024A1600AA182D /* Sources */,
+				A57BA45820024A1600AA182D /* Frameworks */,
+				A57BA45920024A1600AA182D /* Resources */,
+				4D3E9797C1AD9F6AD17C1B47 /* [CP] Embed Pods Frameworks */,
+				9FE3121D040C5AAEDB2EB7FF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SBTProject;
+			productName = SBTProject;
+			productReference = A57BA45B20024A1600AA182D /* SBTProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A57BA47520024A1600AA182D /* SBTProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57BA48D20024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProjectTests" */;
+			buildPhases = (
+				7835A9EE0FABF7647A80C3F8 /* [CP] Check Pods Manifest.lock */,
+				A57BA47220024A1600AA182D /* Sources */,
+				A57BA47320024A1600AA182D /* Frameworks */,
+				A57BA47420024A1600AA182D /* Resources */,
+				F81C4FD159E33C3C1191FD34 /* [CP] Embed Pods Frameworks */,
+				F7790E7BD16F3A4EA38CBF7B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A57BA47820024A1600AA182D /* PBXTargetDependency */,
+			);
+			name = SBTProjectTests;
+			productName = SBTProjectTests;
+			productReference = A57BA47620024A1600AA182D /* SBTProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A57BA48020024A1600AA182D /* SBTProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57BA49020024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProjectUITests" */;
+			buildPhases = (
+				A57BA47D20024A1600AA182D /* Sources */,
+				A57BA47E20024A1600AA182D /* Frameworks */,
+				A57BA47F20024A1600AA182D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A57BA48320024A1600AA182D /* PBXTargetDependency */,
+			);
+			name = SBTProjectUITests;
+			productName = SBTProjectUITests;
+			productReference = A57BA48120024A1600AA182D /* SBTProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A57BA45320024A1600AA182D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Сергей Алтухов";
+				TargetAttributes = {
+					A57BA45A20024A1600AA182D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					A57BA47520024A1600AA182D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A57BA45A20024A1600AA182D;
+					};
+					A57BA48020024A1600AA182D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A57BA45A20024A1600AA182D;
+					};
+				};
+			};
+			buildConfigurationList = A57BA45620024A1600AA182D /* Build configuration list for PBXProject "SBTProject" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A57BA45220024A1600AA182D;
+			productRefGroup = A57BA45C20024A1600AA182D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A57BA45A20024A1600AA182D /* SBTProject */,
+				A57BA47520024A1600AA182D /* SBTProjectTests */,
+				A57BA48020024A1600AA182D /* SBTProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A57BA45920024A1600AA182D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57BA46B20024A1600AA182D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57BA47420024A1600AA182D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57BA47F20024A1600AA182D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D3E9797C1AD9F6AD17C1B47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBTProject/Pods-SBTProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7835A9EE0FABF7647A80C3F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SBTProjectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89BDCD8C9260DEA626D0AA27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SBTProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FE3121D040C5AAEDB2EB7FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBTProject/Pods-SBTProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7790E7BD16F3A4EA38CBF7B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F81C4FD159E33C3C1191FD34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A57BA45720024A1600AA182D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */,
+				A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */,
+				A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */,
+				A50801CA201342CD00552815 /* SBTNewsWebViewController.m in Sources */,
+				A5AAA8AA2017468D00AA3A84 /* SBTCoreDataService.m in Sources */,
+				A5484AD22010B01B008C6BB6 /* SBTParsingJSONGraphs.m in Sources */,
+				A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */,
+				A5484ACC200F7963008C6BB6 /* SBTNewsTableViewCell.m in Sources */,
+				A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */,
+				A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */,
+				A5713DF72015EB40001B357E /* SBTPersistentContainer.m in Sources */,
+				A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */,
+				A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */,
+				A5713DF42015EA67001B357E /* SBTAssembly.m in Sources */,
+				A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */,
+				A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */,
+				A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */,
+				A57BA47120024A1600AA182D /* main.m in Sources */,
+				A56D48942009056F009A5685 /* SBTCryptocurrencyDescriptionView.m in Sources */,
+				A50801D420137E6600552815 /* SBTParsingJSONPrice.m in Sources */,
+				A561F54620055DDC00F986C2 /* SBTGraphTableViewController.m in Sources */,
+				A50801D120137DBC00552815 /* SBTBuilderURLPrice.m in Sources */,
+				A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */,
+				A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */,
+				A57BA46020024A1600AA182D /* AppDelegate.m in Sources */,
+				A561F54920055F4600F986C2 /* SBTGraphTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57BA47220024A1600AA182D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57BA47B20024A1600AA182D /* SBTProjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57BA47D20024A1600AA182D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57BA48620024A1600AA182D /* SBTProjectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A57BA47820024A1600AA182D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A57BA45A20024A1600AA182D /* SBTProject */;
+			targetProxy = A57BA47720024A1600AA182D /* PBXContainerItemProxy */;
+		};
+		A57BA48320024A1600AA182D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A57BA45A20024A1600AA182D /* SBTProject */;
+			targetProxy = A57BA48220024A1600AA182D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A57BA48820024A1600AA182D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A57BA48920024A1600AA182D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A57BA48B20024A1600AA182D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34020A472B172327C2A62979 /* Pods-SBTProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SBTProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A57BA48C20024A1600AA182D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BA89FDA8C38EBCA0EA1528D /* Pods-SBTProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SBTProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A57BA48E20024A1600AA182D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE1C000817EF7A51D3CCA588 /* Pods-SBTProjectTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SBTProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SBTProject.app/SBTProject";
+			};
+			name = Debug;
+		};
+		A57BA48F20024A1600AA182D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB255D5795EF1A865B09CE20 /* Pods-SBTProjectTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SBTProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SBTProject.app/SBTProject";
+			};
+			name = Release;
+		};
+		A57BA49120024A1600AA182D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SBTProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SBTProject;
+			};
+			name = Debug;
+		};
+		A57BA49220024A1600AA182D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SBTProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SBTProject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A57BA45620024A1600AA182D /* Build configuration list for PBXProject "SBTProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57BA48820024A1600AA182D /* Debug */,
+				A57BA48920024A1600AA182D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57BA48A20024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57BA48B20024A1600AA182D /* Debug */,
+				A57BA48C20024A1600AA182D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57BA48D20024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57BA48E20024A1600AA182D /* Debug */,
+				A57BA48F20024A1600AA182D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57BA49020024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57BA49120024A1600AA182D /* Debug */,
+				A57BA49220024A1600AA182D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A57BA46720024A1600AA182D /* SBTProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A57BA46820024A1600AA182D /* SBTProject.xcdatamodel */,
+			);
+			currentVersion = A57BA46820024A1600AA182D /* SBTProject.xcdatamodel */;
+			path = SBTProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A57BA45320024A1600AA182D /* Project object */;
+}
