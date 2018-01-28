@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DescriptionModel;
 
 @interface SBTCryptocurrencyDescriptionView : UIView
 
 
-- (instancetype)initWithSuperview:(UIView *)superview nameCrypto:(NSString *)nameString;
+- (instancetype)initWithSuperview:(UIView *)superview descriptionModel:(DescriptionModel *)descriptionModel;
 
 
 @end

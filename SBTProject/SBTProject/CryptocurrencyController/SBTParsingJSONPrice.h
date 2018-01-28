@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SBTDataPriceModel.h"
 
+
 @interface SBTParsingJSONPrice : NSObject
 
 

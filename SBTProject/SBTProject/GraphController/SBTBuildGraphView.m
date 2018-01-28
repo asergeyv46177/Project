@@ -7,8 +7,8 @@
 //
 
 #import "SBTBuildGraphView.h"
-#import "GraphModel+CoreDataProperties.h"
-#import "SBTCoreDataService.h"
+#import "SBTDataGraphModel.h"
+
 
 static CGFloat const SBTOffsetTop = 25.0;
 static CGFloat const SBTWidthXLabel = 60.0;
@@ -27,7 +27,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 @interface SBTBuildGraphView ()
 
 
-@property (nonatomic, strong) GraphModel *graphModelArray;
+@property (nonatomic, strong) SBTDataGraphModel *dataGraphModel;
 @property (nonatomic, strong) UIView *yAxisValuesView;
 
 
@@ -37,14 +37,13 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 @implementation SBTBuildGraphView
 
 
-- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService objectID:(NSManagedObjectID *)objectID
-        withView:(UIView *)yAxisValuesView;
+- (instancetype)initWithDataGraphModel:(SBTDataGraphModel *)dataGraphModel withView:(UIView *)yAxisValuesView
 {
     self = [super init];
     if (self)
     {
         self.backgroundColor = UIColor.clearColor;
-        _graphModelArray = [coreDataService.context objectWithID:objectID];
+        _dataGraphModel = dataGraphModel;
         _yAxisValuesView = yAxisValuesView;
     }
     return self;
@@ -55,8 +54,8 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 
 - (void)drawRect:(CGRect)rect
 {
-    NSArray *valuesXYArray = (NSArray *) self.graphModelArray.valuesXYArray;
-    NSInteger maxYInteger = self.graphModelArray.maxYInteger;
+    NSArray *valuesXYArray = self.dataGraphModel.valuesXYArray;
+    NSInteger maxYInteger = self.dataGraphModel.maxYInteger;
     
     if (0 == maxYInteger)
     {
@@ -141,7 +140,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SBTWidthYLabel, SBTHeightYLabel)];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = self.graphModelArray.unitString;
+    label.text = self.dataGraphModel.unitString;
     label.font = [UIFont systemFontOfSize:14];
     label.center = pointCenter;
     label.transform = CGAffineTransformMakeRotation( - M_PI_2);
@@ -150,7 +149,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 
 - (void)addLabelsXAxis:(CGRect)rect
 {
-    NSArray *valuesXYArray = (NSArray *)  self.graphModelArray.valuesXYArray;
+    NSArray *valuesXYArray = (NSArray *)  self.dataGraphModel.valuesXYArray;
     CGFloat heightRect = rect.size.height;
     CGFloat widthRect = rect.size.width;
     CGFloat stepX =  widthRect / valuesXYArray.count;
@@ -177,10 +176,10 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     }
 }
 
-- (NSArray <UILabel *> *)labelsYAxis:(CGFloat) stepOfGrid
+- (NSArray <UILabel *> *)labelsYAxis:(CGFloat)stepOfGrid
 {
     NSInteger numberOfLines = SBTNumberOfSegments + 1;
-    NSInteger stepYLabel = [self roundUpValueY:self.graphModelArray.maxYInteger] / SBTNumberOfSegments;
+    NSInteger stepYLabel = [self roundUpValueY:self.dataGraphModel.maxYInteger] / SBTNumberOfSegments;
     
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     [numberFormatter setNumberStyle:NSNumberFormatterScientificStyle];
@@ -201,7 +200,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     return [labelsYArray copy];
 }
 
-- (NSInteger)roundUpValueY:(NSInteger) number
+- (NSInteger)roundUpValueY:(NSInteger)number
 {
     NSInteger countOfCharsInNumber = [NSString stringWithFormat:@"%li", number].length;
     NSInteger roundedToSecondHighestSymbol = round(number / (pow(10, countOfCharsInNumber - SBTNumberOfSignificantSymbol)));

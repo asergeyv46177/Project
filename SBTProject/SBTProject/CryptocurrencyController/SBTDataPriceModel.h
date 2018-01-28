@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 @interface SBTDataPriceModel : NSObject
@@ -14,11 +15,9 @@
 
 @property (nonatomic, copy) NSString *nameString;
 @property (nonatomic, copy) NSString *symbolString;
-@property (nonatomic, copy) NSString *priceUSDString;
-@property (nonatomic, copy) NSString *percentChange24hString;
-@property (nonatomic, copy) NSString *percentChange7dString;
-
-- (void)updateModel:(SBTDataPriceModel *)dataPriceModel;
+@property (nonatomic, assign) CGFloat priceUSDFloat;
+@property (nonatomic, assign) CGFloat percentChange24hFloat;
+@property (nonatomic, assign) CGFloat percentChange7dFloat;
 
 
 @end

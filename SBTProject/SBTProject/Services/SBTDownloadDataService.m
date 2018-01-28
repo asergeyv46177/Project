@@ -7,42 +7,93 @@
 //
 
 #import "SBTDownloadDataService.h"
-//#import "SBTDataGraphModel.h"
-#import "SBTParsingJSONPrice.h"
 #import "SBTBuilderURLPrice.h"
+#import "SBTBuilderURLGraphs.h"
 
 #import "SBTParsingJSONGraphs.h"
-#import "SBTBuilderURLGraphs.h"
+#import "SBTParsingJSONPrice.h"
+
+
+@interface SBTDownloadDataService ()
+
+
+@property(nonatomic, strong) NSURLSession *session;
+
+
+@end
 
 
 @implementation SBTDownloadDataService
 
 
-+ (void)downloadDataWithURLSession:(NSURLSession *)session urlKeyString:(NSString *)urlKey
-            dataType:(SBTDownloadDataType)dataType completeHandler:(void(^)(id))completeHandler
+- (instancetype)init
 {
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[SBTDownloadDataService buildURLByType:dataType urlKeyString:urlKey]];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data,
-                                        NSURLResponse *response, NSError *error) {
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        if (!error)
-        {
-            id dataModel = [SBTDownloadDataService parsingByType:dataType json:json];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completeHandler(dataModel);
-            });
-        }
-        else
-        {
-            NSLog(@"Error");
-        }
-        
-    }];
+    self = [super init];
+    if (self)
+    {
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+        _session = session;
+    }
+    return self;
+}
+
+- (void)downloadDataWithURLKeyString:(NSString *)urlKey downloadDataType:(SBTDownloadDataType)dataType queue:(dispatch_queue_t)queue
+            completeHandler:(void(^)(id))completeHandler
+{
+    dispatch_queue_t queue_t = dispatch_get_main_queue();
+    if (queue)
+    {
+        queue_t = queue;
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:[self buildURLByType:dataType urlKeyString:urlKey]];
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request
+        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (data)
+            {
+                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                id dataModel = [self parsingByType:dataType json:json];
+                dispatch_async(queue_t, ^{
+                    completeHandler(dataModel);
+                });
+            }
+            else
+            {
+                dispatch_async(queue_t, ^{
+                    completeHandler(nil);
+                });
+            }
+        }];
     [dataTask resume];
 }
 
-+ (NSURL *)buildURLByType:(SBTDownloadDataType) dataType urlKeyString:(NSString *)urlKey
+- (void)downloadGroupWithURLKeyArray:(NSArray *)urlKeyArray downloadDataType:(SBTDownloadDataType)dataType
+            completeHandler:(void(^)(NSArray *))completeHandler
+{
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+    __block NSMutableArray *modelArray = [NSMutableArray new];
+    dispatch_async(queue, ^{
+        dispatch_group_t dispatchGroup = dispatch_group_create();
+        for (NSString *urlKey in urlKeyArray)
+        {
+            dispatch_group_enter(dispatchGroup);
+            [self downloadDataWithURLKeyString:urlKey downloadDataType:dataType queue:queue
+                completeHandler:^(id dataModel) {
+                    if (dataModel)
+                    {
+                        [modelArray addObject:dataModel];
+                    }
+                    dispatch_group_leave(dispatchGroup);
+                }];
+        }
+        dispatch_group_wait(dispatchGroup, DISPATCH_TIME_FOREVER);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completeHandler([modelArray copy]);
+        });
+    });
+}
+
+- (NSURL *)buildURLByType:(SBTDownloadDataType) dataType urlKeyString:(NSString *)urlKey
 {
     NSURL *url;
     switch (dataType)
@@ -59,14 +110,14 @@
         }
         case SBTDownloadDataTypeNews:
         {
-            //            dataModel = [SBTBuilderURLNews url];
+//            dataModel = [SBTBuilderURLNews url];
             break;
         }
     }
     return url;
 }
 
-+ (id)parsingByType:(SBTDownloadDataType)dataType json:(NSDictionary *)json
+- (id)parsingByType:(SBTDownloadDataType)dataType json:(NSDictionary *)json
 {
     id dataModel;
     switch (dataType)

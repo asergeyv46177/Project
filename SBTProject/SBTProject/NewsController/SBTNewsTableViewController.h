@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SBTDownloadDataService;
 
 @interface SBTNewsTableViewController : UITableViewController
 
 
-- (instancetype)initWithSession:(NSURLSession *)session;
+- (instancetype)initWithDownloadDataService:(SBTDownloadDataService *)downloadDataService;
 
 
 @end

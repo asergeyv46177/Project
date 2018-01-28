@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 @class SBTCoreDataService;
+@class SBTDownloadDataService;
 
 
 @interface SBTCryptocurrencyTableViewController : UITableViewController
 
 
-- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService;
+- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService
+                    downloadDataService:(SBTDownloadDataService *)downloadDataService;
 
 
 @end

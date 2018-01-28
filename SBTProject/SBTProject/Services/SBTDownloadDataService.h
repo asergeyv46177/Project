@@ -17,8 +17,9 @@ typedef NS_ENUM(NSUInteger, SBTDownloadDataType) {
     SBTDownloadDataTypeNews,
 };
 
-+ (void)downloadDataWithURLSession:(NSURLSession *)session urlKeyString:(NSString *)urlKey
-            dataType:(SBTDownloadDataType)dataType completeHandler:(void(^)(id))completeHandler;
-
+- (void)downloadDataWithURLKeyString:(NSString *)urlKey downloadDataType:(SBTDownloadDataType)dataType queue:(dispatch_queue_t)queue
+            completeHandler:(void(^)(id))completeHandler;
+- (void)downloadGroupWithURLKeyArray:(NSArray *)urlKeyArray downloadDataType:(SBTDownloadDataType)dataType
+            completeHandler:(void(^)(NSArray *))completeHandler;
 
 @end

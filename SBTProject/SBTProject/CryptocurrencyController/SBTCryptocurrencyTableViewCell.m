@@ -7,6 +7,7 @@
 //
 
 #import "SBTCryptocurrencyTableViewCell.h"
+#import "SBTDataPriceModel.h"
 #import <Masonry.h>
 
 
@@ -80,12 +81,12 @@ static CGFloat const SBTHeightSeparator = 2.0;
     
     [_percent24hLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_priceCryptoLabel.mas_bottom).with.offset(SBTOffset * 2);
-        make.left.mas_equalTo(self.contentView.mas_left).with.offset(SBTOffset * 7);
+        make.right.mas_equalTo(self.contentView.mas_centerX).with.offset( - SBTOffset);
     }];
     
     [_percent7dLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_priceCryptoLabel.mas_bottom).with.offset(SBTOffset * 2);
-        make.right.mas_equalTo(self.contentView.mas_right).with.offset(-SBTOffset * 7);
+        make.left.mas_equalTo(self.contentView.mas_centerX).with.offset(SBTOffset);
     }];
 
 }
@@ -124,12 +125,36 @@ static CGFloat const SBTHeightSeparator = 2.0;
     }];
 }
 
-#pragma mark -Achtung!
 
-- (void)setDataCell
+#pragma mark - Methods for using cell
+
+- (void)setDataCell:(SBTDataPriceModel *)priceModel
 {
-    
+    self.iconCryptoImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", priceModel.nameString]];
+    self.nameCryptoLabel.text = priceModel.nameString;
+    self.symbolCryptoLabel.text = priceModel.symbolString;
+    self.priceCryptoLabel.text = [NSString stringWithFormat:@"%.2f USD", priceModel.priceUSDFloat];
+    self.percent24hLabel.attributedText = [self attributedString:priceModel.percentChange24hFloat prefixString:@"24h: "];
+    self.percent7dLabel.attributedText = [self attributedString:priceModel.percentChange7dFloat prefixString:@"7d: "];
 }
+
+- (NSAttributedString *)attributedString:(CGFloat)valueFloat prefixString:(NSString *)prefix
+{
+    NSString *valueString = [NSString stringWithFormat:@"%.2f\%\%", valueFloat];
+    NSMutableAttributedString *attributedString  = [[NSMutableAttributedString alloc] initWithString:
+        [NSString stringWithFormat:@"%@%@",prefix, valueString]];
+    
+    UIColor *fontColor = valueFloat <= 0 ? UIColor.redColor : UIColor.greenColor;
+    NSRange range = NSMakeRange(prefix.length, valueString.length);
+    
+    NSDictionary *attributedDictionary = @{NSForegroundColorAttributeName : fontColor,
+        NSFontAttributeName : [UIFont fontWithName:@"Arial-BoldMT" size:15]};
+    [attributedString addAttributes:attributedDictionary range:range];
+    return attributedString;
+}
+
+
+#pragma mark - Methods for reusing cell
 
 - (void)prepareForReuse
 {

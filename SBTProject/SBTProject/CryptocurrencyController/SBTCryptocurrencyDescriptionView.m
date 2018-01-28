@@ -8,11 +8,15 @@
 
 #import "SBTCryptocurrencyDescriptionView.h"
 #import "SBTCryptocurrencyDescriptionTableViewCell.h"
+#import "SBTAnimationStateChange.h"
+#import "DescriptionModel+CoreDataProperties.h"
 #import <Masonry.h>
 
 
-static CGFloat const SBTOffset = 30.0;
-static NSInteger const SBTAffiliateURLIndexPath = 5;
+static CGFloat const SBTOffset = 10.0;
+static CGFloat const SBTHeightImage = 58.5;
+static CGFloat const SBTWidthImage = 45.0;
+static NSString *const SBTAffiliateURL = @"Affiliate URL";
 static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptocurrencyDescriptionCellIdentifier";
 
 
@@ -24,8 +28,7 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 @property (nonatomic, strong) UIImageView *iconCryptoImageView;
 @property (nonatomic, strong) UILabel *nameCryptoLabel;
 @property (nonatomic, strong) UITableView *descriptionCryptoTableView;
-@property (nonatomic, copy) NSArray *labelArray;
-@property (nonatomic, copy) NSArray *probArray;
+@property (nonatomic, copy) NSArray *contentArray;
 
 
 @end
@@ -34,17 +37,12 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 @implementation SBTCryptocurrencyDescriptionView
 
 
-- (instancetype)initWithSuperview:(UIView *)superView nameCrypto:(NSString *)nameString
+- (instancetype)initWithSuperview:(UIView *)superview descriptionModel:(DescriptionModel *)descriptionModel
 {
     self = [super init];
     if (self)
     {
-        _probArray = @[@"STRAT", @"09/08/2016", @"24294", @"X13:", @"60 sec", @"stratisplatform.com",
-            @"@stratisplatform", @"98691556.23"];
-        _labelArray = @[@"Symbol:", @"Start date:", @"Id:", @"Algorithm:", @"Block time:", @"Affiliate url:",
-            @"Twitter:", @"Total mined:"];
-        
-        _superView = superView;
+        _superView = superview;
         
         _descriptionCryptoView = [UIView new];
         _descriptionCryptoView.layer.cornerRadius = 10;
@@ -52,11 +50,11 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
         [self addSubview:_descriptionCryptoView];
         
         _iconCryptoImageView = [UIImageView new];
-        _iconCryptoImageView.image = [UIImage imageNamed:nameString];
+        _iconCryptoImageView.image = [UIImage imageNamed:descriptionModel.nameString];
         [_descriptionCryptoView addSubview:_iconCryptoImageView];
         
         _nameCryptoLabel = [UILabel new];
-        _nameCryptoLabel.text = nameString;
+        _nameCryptoLabel.text = descriptionModel.nameString;
         [_descriptionCryptoView addSubview:_nameCryptoLabel];
         
         _descriptionCryptoTableView = [UITableView new];
@@ -68,8 +66,10 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
         [_descriptionCryptoTableView registerClass:[SBTCryptocurrencyDescriptionTableViewCell class]
             forCellReuseIdentifier:SBTCryptocurrencyDescriptionCellIdentifier];
         
+        _contentArray = [self modelToArray:descriptionModel];
+        
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.3f];
-        [self viweWithAnimationAppear:YES];
+        [SBTAnimationStateChange animationWithView:self isAppear:YES completion:nil];
     }
     return self;
 }
@@ -87,60 +87,46 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
     }];
     
     [_descriptionCryptoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mas_top).with.offset(height/5);
-        make.left.mas_equalTo(self.mas_left).with.offset(SBTOffset*2/3.f);
-        make.bottom.mas_equalTo(self.mas_bottom).with.offset(-height/5);
-        make.right.mas_equalTo(self.mas_right).with.offset(-SBTOffset*2/3.f);
+        make.top.mas_equalTo(self.mas_top).with.offset(height / 5);
+        make.left.mas_equalTo(self.mas_left).with.offset(SBTOffset * 2);
+        make.bottom.mas_equalTo(self.mas_bottom).with.offset( - height / 5);
+        make.right.mas_equalTo(self.mas_right).with.offset( - SBTOffset * 2);
     }];
     
     [_iconCryptoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_descriptionCryptoView.mas_top).with.offset(SBTOffset/2);
-        make.left.mas_equalTo(_descriptionCryptoView.mas_left).with.offset(SBTOffset/2);
-        make.width.mas_equalTo(SBTOffset*1.5f);
-        make.height.mas_equalTo(SBTOffset*1.95f);
+        make.top.mas_equalTo(_descriptionCryptoView.mas_top).with.offset(SBTOffset * 2);
+        make.left.mas_equalTo(_descriptionCryptoView.mas_left).with.offset(SBTOffset * 2);
+        make.width.mas_equalTo(SBTWidthImage);
+        make.height.mas_equalTo(SBTHeightImage);
     }];
     
     [_nameCryptoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(_iconCryptoImageView.mas_centerY);
-        make.left.mas_equalTo(_iconCryptoImageView.mas_right).with.offset(SBTOffset/2);
+        make.left.mas_equalTo(_iconCryptoImageView.mas_right).with.offset(SBTOffset * 2);
     }];
     
     [_descriptionCryptoTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_iconCryptoImageView.mas_bottom).with.offset(SBTOffset*2/3.f);
+        make.top.mas_equalTo(_iconCryptoImageView.mas_bottom).with.offset(SBTOffset * 2);
         make.left.mas_equalTo(_descriptionCryptoView.mas_left).with.offset(0);
-        make.bottom.mas_equalTo(_descriptionCryptoView.mas_bottom).with.offset(-SBTOffset/3);
+        make.bottom.mas_equalTo(_descriptionCryptoView.mas_bottom).with.offset( - SBTOffset * 2);
         make.right.mas_equalTo(_descriptionCryptoView.mas_right).with.offset(0);
     }];
 }
 
 
-#pragma mark - Animation view
+#pragma mark - Responder
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touchInView = [touches anyObject];
+    UITouch *touchInView = touches.anyObject;
     CGPoint pointInView = [touchInView locationInView:self];
     id testInstance = [self hitTest:pointInView withEvent:event];
     if ([testInstance isMemberOfClass:[SBTCryptocurrencyDescriptionView class]])
     {
-        [self viweWithAnimationAppear:NO];
+        [SBTAnimationStateChange animationWithView:self isAppear:NO completion:^{
+            [self removeFromSuperview];
+        }];
     }
-}
-
-- (void)viweWithAnimationAppear:(BOOL)isViewAppear
-{
-    self.alpha = !isViewAppear;
-    [UIView animateWithDuration:0.3f
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         self.alpha = isViewAppear;
-                     } completion:^(BOOL finished) {
-                         if (!isViewAppear)
-                         {
-                             [self removeFromSuperview];
-                         }
-                     }];
 }
 
 
@@ -148,11 +134,12 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (SBTAffiliateURLIndexPath == indexPath.row)
+    SBTCryptocurrencyDescriptionTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.nameDescriptionLabel.text isEqualToString:SBTAffiliateURL])
     {
         UIApplication *application = [UIApplication sharedApplication];
-        [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@/",@"stratisplatform.com"]]
-                        options:@{} completionHandler:nil];
+        [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@/",cell.contentDescriptionLabel.text]]
+            options:@{} completionHandler:nil];
     }
 }
 
@@ -161,20 +148,31 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.labelArray.count;
+    return self.contentArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SBTCryptocurrencyDescriptionTableViewCell *descriptionCell = [tableView
+    SBTCryptocurrencyDescriptionTableViewCell *cell = [tableView
         dequeueReusableCellWithIdentifier:SBTCryptocurrencyDescriptionCellIdentifier forIndexPath:indexPath];
-    descriptionCell.nameDescriptionLabel.text = self.labelArray[indexPath.row];
-    descriptionCell.contentDescriptionLabel.text = self.probArray[indexPath.row];
-    if (SBTAffiliateURLIndexPath == indexPath.row)
-    {
-        descriptionCell.contentDescriptionLabel.textColor = UIColor.blueColor;
-    }
-    return descriptionCell;
+    [cell prepareForReuse];
+    [cell contentCellWithIndexRow:indexPath.row content:self.contentArray];
+    return cell;
+}
+
+- (NSArray *)modelToArray:(DescriptionModel *)descriptionModel
+{
+    NSMutableArray *propertyArray = [NSMutableArray new];
+    [propertyArray addObject:descriptionModel.symbolString];
+    [propertyArray addObject:descriptionModel.startDateString];
+    [propertyArray addObject:descriptionModel.idString];
+    [propertyArray addObject:descriptionModel.algorithmString];
+    [propertyArray addObject:descriptionModel.blockTimeString];
+    [propertyArray addObject:descriptionModel.blockRewardString];
+    [propertyArray addObject:descriptionModel.totalCoinSupplyString];
+    [propertyArray addObject:descriptionModel.affiliateUrlString];
+    [propertyArray addObject:descriptionModel.twitterString];
+    return [propertyArray copy];
 }
 
 

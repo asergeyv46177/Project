@@ -12,13 +12,4 @@
 @implementation SBTDataPriceModel
 
 
-- (void)updateModel:(SBTDataPriceModel *)dataPriceModel
-{
-    self.symbolString = dataPriceModel.symbolString;
-    self.percentChange24hString = dataPriceModel.percentChange24hString;
-    self.percentChange7dString = dataPriceModel.percentChange7dString;
-    self.priceUSDString = dataPriceModel.priceUSDString;
-}
-
-
 @end

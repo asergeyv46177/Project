@@ -15,5 +15,8 @@
 @property (nonatomic, strong) UILabel *nameDescriptionLabel;
 @property (nonatomic, strong) UILabel *contentDescriptionLabel;
 
+- (void)prepareForReuse;
+- (void)contentCellWithIndexRow:(NSInteger)row content:(NSArray *)content;
+
 
 @end

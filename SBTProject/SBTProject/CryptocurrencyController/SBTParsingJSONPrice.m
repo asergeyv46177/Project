@@ -9,6 +9,7 @@
 #import "SBTParsingJSONPrice.h"
 #import "SBTDataPriceModel.h"
 
+
 @implementation SBTParsingJSONPrice
 
 
@@ -26,9 +27,12 @@
     SBTDataPriceModel *dataPriceModel = [SBTDataPriceModel new];
     dataPriceModel.nameString = json[@"name"];
     dataPriceModel.symbolString = json[@"symbol"];
-    dataPriceModel.priceUSDString = json[@"price_usd"];
-    dataPriceModel.percentChange7dString = json[@"percent_change_7d"];
-    dataPriceModel.percentChange24hString = json[@"percent_change_24h"];
+    NSString *stringFloatValue = json[@"price_usd"];
+    dataPriceModel.priceUSDFloat = stringFloatValue.floatValue;
+    stringFloatValue = json[@"percent_change_7d"];
+    dataPriceModel.percentChange7dFloat = stringFloatValue.floatValue;
+    stringFloatValue = json[@"percent_change_24h"];
+    dataPriceModel.percentChange24hFloat = stringFloatValue.floatValue;
     return dataPriceModel;
 }
 
