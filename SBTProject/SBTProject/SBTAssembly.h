@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
+#import "SBTChangeRootViewControllerProtocol.h"
 
-
-@interface SBTAssembly : NSObject
+@interface SBTAssembly : NSObject <SBTChangeRootViewControllerProtocol>
 
 
 - (instancetype)initWithContext:(NSManagedObjectContext *) context;

@@ -7,18 +7,25 @@
 //
 
 #import "SBTDataGraphModel.h"
+#import "GraphModel+CoreDataProperties.h"
 
 
 @implementation SBTDataGraphModel
 
 
-- (void)updateModel:(SBTDataGraphModel *)dataGraphModel
+- (instancetype)initWithGraphModel:(GraphModel *)graphModel
 {
-    self.nameString = dataGraphModel.nameString;
-    self.descriptionString = dataGraphModel.descriptionString;
-    self.unitString = dataGraphModel.unitString;
-    self.valuesXYArray = dataGraphModel.valuesXYArray;
-    self.maxYInteger = dataGraphModel.maxYInteger;
+    self = [super init];
+    if (self)
+    {
+        _unitString = graphModel.unitString;
+        _descriptionString = graphModel.descriptionString;
+        _nameString = graphModel.nameString;
+        _valuesXYArray = (NSArray *) graphModel.valuesXYArray;
+        _dateLastUpdateString = graphModel.dateLastUpdateString;
+        _maxYInteger = graphModel.maxYInteger;
+    }
+    return self;
 }
 
 

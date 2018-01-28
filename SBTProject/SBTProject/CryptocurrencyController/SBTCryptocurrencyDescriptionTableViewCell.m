@@ -11,7 +11,17 @@
 
 
 static CGFloat const SBTOffset = 10.0;
-static CGFloat const SBTWidthNameDescriptionLabel = 95.0;
+static CGFloat const SBTWidthNameDescriptionLabel = 135.0;
+static NSString *const SBTAffiliateURL = @"Affiliate URL";
+
+
+@interface SBTCryptocurrencyDescriptionTableViewCell ()
+
+
+@property (nonatomic, copy) NSArray *nameArray;
+
+
+@end
 
 
 @implementation SBTCryptocurrencyDescriptionTableViewCell
@@ -28,6 +38,9 @@ static CGFloat const SBTWidthNameDescriptionLabel = 95.0;
         _contentDescriptionLabel = [UILabel new];
         [self.contentView addSubview:_contentDescriptionLabel];
         
+        _nameArray = @[@"Symbol",@"Start date",@"Id",@"Algorithm",@"Block time",@"Block reward",
+            @"Total coin supply",@"Affiliate URL",@"Twitter"];
+        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self createConstraints];
     }
@@ -43,10 +56,29 @@ static CGFloat const SBTWidthNameDescriptionLabel = 95.0;
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.width.mas_equalTo(SBTWidthNameDescriptionLabel);
     }];
+    
     [_contentDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_nameDescriptionLabel.mas_right);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
     }];
+}
+
+- (void)contentCellWithIndexRow:(NSInteger)row content:(NSArray *)content
+{
+    self.nameDescriptionLabel.text = self.nameArray[row];
+    self.contentDescriptionLabel.text = content[row];
+    if ([self.nameArray[row] isEqualToString:SBTAffiliateURL])
+    {
+        self.contentDescriptionLabel.textColor = UIColor.blueColor;
+    }
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    self.contentDescriptionLabel.textColor = UIColor.blackColor;
+    self.nameDescriptionLabel.text = @"";
+    self.contentDescriptionLabel.text = @"";
 }
 
 @end

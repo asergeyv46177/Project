@@ -9,6 +9,7 @@
 #import "SBTNewsTableViewController.h"
 #import "SBTNewsTableViewCell.h"
 #import "SBTNewsWebViewController.h"
+#import "SBTAnimationStateChange.h"
 
 
 static CGFloat const SBTOffsetToCenterTabBar = 9;
@@ -18,8 +19,7 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
 @interface SBTNewsTableViewController ()
 
 
-//@property (nonatomic, strong) NSManagedObjectContext *context;
-@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 
 
 @end
@@ -28,19 +28,17 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
 @implementation SBTNewsTableViewController
 
 
-- (instancetype)initWithSession:(NSURLSession *)session
+- (instancetype)initWithDownloadDataService:(SBTDownloadDataService *)downloadDataService
 {
     self = [super init];
     if (self)
     {
-//        _context = context;
-        _session = session;
+        _downloadDataService = downloadDataService;
         self.tabBarItem.image = [UIImage imageNamed:@"Icon"];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, -SBTOffsetToCenterTabBar, 0);
     }
     return self;
 }
-
 
 - (void)viewDidLoad
 {
@@ -49,6 +47,12 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
 //    self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.navigationItem.title = @"News";
     [self.tableView registerClass:[SBTNewsTableViewCell class] forCellReuseIdentifier:SBTNewsIdentifierCell];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
 }
 
 

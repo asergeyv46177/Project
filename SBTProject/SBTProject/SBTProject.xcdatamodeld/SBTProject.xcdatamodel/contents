@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17B1003" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="DescriptionModel" representedClassName="DescriptionModel" syncable="YES">
+        <attribute name="affiliateUrlString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="algorithmString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blockRewardString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blockTimeString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDateString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symbolString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalCoinSupplyString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitterString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="GraphModel" representedClassName="GraphModel" syncable="YES">
         <attribute name="dateLastUpdateString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descriptionString" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,7 +20,16 @@
         <attribute name="unitString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="valuesXYArray" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
+    <entity name="PriceModel" representedClassName="PriceModel" syncable="YES">
+        <attribute name="nameString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="percent7dFloat" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="percent24hFloat" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="priceFloat" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="symbolString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
+        <element name="DescriptionModel" positionX="-54" positionY="54" width="128" height="195"/>
         <element name="GraphModel" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="PriceModel" positionX="-63" positionY="27" width="128" height="120"/>
     </elements>
 </model>

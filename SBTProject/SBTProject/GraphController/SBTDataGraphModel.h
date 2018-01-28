@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class GraphModel;
 
 
 @interface SBTDataGraphModel : NSObject
@@ -15,10 +16,11 @@
 @property (nonatomic, copy) NSString *unitString;
 @property (nonatomic, copy) NSString *descriptionString;
 @property (nonatomic, copy) NSString *nameString;
-@property (nonatomic, copy) NSArray <NSDictionary <NSString *, NSString *> *> *valuesXYArray;
-@property (nonatomic, assign) NSInteger maxYInteger;
+@property (nonatomic, copy) NSArray *valuesXYArray;
 @property (nonatomic, copy) NSString *dateLastUpdateString;
+@property (nonatomic, assign) NSInteger maxYInteger;
 
-- (void)updateModel:(SBTDataGraphModel *)dataGraphModel;
+- (instancetype)initWithGraphModel:(GraphModel *)graphModel;
+
 
 @end

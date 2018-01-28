@@ -9,6 +9,7 @@
 #import "SBTNewsWebViewController.h"
 #import <Masonry.h>
 
+
 @interface SBTNewsWebViewController () <UIWebViewDelegate>
 
 
@@ -18,7 +19,9 @@
 
 @end
 
+
 @implementation SBTNewsWebViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,23 +54,19 @@
     }];
 }
 
+
 #pragma mark - Webv view delegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    NSLog(@"webViewDidStartLoad");
-    return YES;
-}
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"webViewDidStartLoad");
     [self.activityIndicatorView startAnimating];
 }
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"webViewDidFinishLoad");
     [self.activityIndicatorView stopAnimating];
 }
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [self.activityIndicatorView stopAnimating];

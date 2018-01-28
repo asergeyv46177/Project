@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SBTDataPriceModel;
 
 @interface SBTCryptocurrencyTableViewCell : UITableViewCell
 
@@ -18,6 +18,9 @@
 @property (nonatomic, strong) UILabel *priceCryptoLabel;
 @property (nonatomic, strong) UILabel *percent24hLabel;
 @property (nonatomic, strong) UILabel *percent7dLabel;
+
+- (void)setDataCell:(SBTDataPriceModel *)priceModel;
+- (void)prepareForReuse;
 
 
 @end

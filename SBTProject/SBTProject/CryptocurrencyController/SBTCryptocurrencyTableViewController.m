@@ -9,7 +9,11 @@
 #import "SBTCryptocurrencyTableViewController.h"
 #import "SBTCryptocurrencyTableViewCell.h"
 #import "SBTCryptocurrencyDescriptionView.h"
+#import "SBTAnimationStateChange.h"
 #import "SBTCoreDataService.h"
+#import "SBTDownloadDataService.h"
+#import "SBTDataPriceModel.h"
+#import "DescriptionModel+CoreDataProperties.h"
 #import <Masonry.h>
 
 
@@ -21,7 +25,8 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
-@property (nonatomic, copy) NSArray *nameCryptoArray;
+@property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
+@property (nonatomic, copy) NSArray <SBTDataPriceModel *> *modelArray;
 
 
 @end
@@ -31,50 +36,61 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 
 - (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService
+                    downloadDataService:(SBTDownloadDataService *)downloadDataService
 {
     self = [super init];
     if (self)
     {
+        _downloadDataService = downloadDataService;
         _coreDataService = coreDataService;
         self.tabBarItem.image = [UIImage imageNamed:@"ethereumBitcoin"];
-        self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, -SBTOffsetToCenterTabBar, 0);
+        self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, - SBTOffsetToCenterTabBar, 0);
     }
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    [self prepareViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self dowloadNewModels];
+    [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
+}
+
+
+#pragma mark - Prepare views
+
+- (void)prepareViews
+{
     self.view.backgroundColor = UIColor.whiteColor;
     self.navigationItem.title = @"Cryptocurrency price";
+    UIBarButtonItem *updateBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+        target:self action:@selector(dowloadNewModels)];
+    self.navigationItem.rightBarButtonItem = updateBarButton;
     
-    self.nameCryptoArray = @[@"Bitcoin", @"Ethereum", @"Litecoin", @"Ripple", @"Dash", @"IOTA", @"Monero", @"NEM",
-        @"EOS", @"Stratis"];
-//    NSMutableArray *nameGraphsDictionary = [NSMutableArray new];
-//    for (NSString *nameGraph in nameCryptoArray)
-//    {
-//        SBTDataPriceModel *dataPriceModel = [SBTDataPriceModel new];
-//        dataPriceModel.nameString = nameGraph;
-//        [nameGraphsDictionary addObject:dataPriceModel];
-//    }
-//    self.dataPriceModelArray = [nameGraphsDictionary copy];
-//
-//    if (!self.dataPriceModelArray[0].symbolString)
-//    {
-//        for (SBTDataPriceModel *dataPriceModel in self.dataPriceModelArray)
-//        {
-//            NSString *nameCrypto = dataPriceModel.nameString;
-//            NSURL *url = [SBTBuilderURLPrice urlWithNameCryptoString:nameCrypto];
-//            [SBTDownloadDataService downloadDataWithURLSession:self.session url:url dataType:SBTDownloadDataTypePrice
-//                completeHandler:^(id dataModel) {
-//                    [dataPriceModel updateModel:dataModel];
-//                    self.dataPriceModelArray = [self sortingArray:self.dataPriceModelArray];
-//                    [self.tableView reloadData];
-//            }];
-//        }
-//    }
     [self.tableView registerClass:[SBTCryptocurrencyTableViewCell class] forCellReuseIdentifier:SBTCryptoIdentifierCell];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)dowloadNewModels
+{
+    NSArray *nameCryptoArray = @[@"Bitcoin", @"Ethereum", @"Litecoin", @"Ripple", @"Dash", @"IOTA", @"Monero", @"NEM",
+        @"EOS", @"Stratis"];
+    [self.downloadDataService downloadGroupWithURLKeyArray:nameCryptoArray downloadDataType:SBTDownloadDataTypePrice
+        completeHandler:^(NSArray *modelArray) {
+            self.modelArray = [self sortingArray:modelArray];
+            [self.tableView reloadData];
+        }];
 }
 
 
@@ -82,9 +98,11 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    SBTCryptocurrencyDescriptionView *cryptocurrencyDescriptionView = [[SBTCryptocurrencyDescriptionView alloc]
-//        initWithSuperview:self.view nameCrypto:self.dataPriceModelArray[indexPath.row].nameString];
-//    [self.tabBarController.view.window addSubview:cryptocurrencyDescriptionView];
+    NSArray <DescriptionModel *> *descriptionModelArray = [self.coreDataService
+        obtainModelArrayWithEntityName:[DescriptionModel class] predicateString:self.modelArray[indexPath.row].nameString];
+    SBTCryptocurrencyDescriptionView *cryptocurrencyDescriptionView = [[SBTCryptocurrencyDescriptionView alloc]
+        initWithSuperview:self.view descriptionModel:descriptionModelArray.firstObject];
+    [self.tabBarController.view.window addSubview:cryptocurrencyDescriptionView];
 }
 
 
@@ -92,51 +110,39 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.nameCryptoArray.count;
+    return self.modelArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     SBTCryptocurrencyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTCryptoIdentifierCell
         forIndexPath:indexPath];
     [cell prepareForReuse];
-    
-//        cell.percent24hLabel.text = self.dataPriceModelArray[indexPath.row].percentChange24hString;
-//        cell.percent7dLabel.text = self.dataPriceModelArray[indexPath.row].percentChange7dString;
-    
-//    NSMutableAttributedString *attributedString  = [[NSMutableAttributedString alloc] initWithString:@"1231123123123"];
-//    [attributedString addAttribute:NSForegroundColorAttributeName
-//                  value: UIColor.redColor
-//                  range:NSMakeRange(1, 5)];
-
-    
-//        cell.symbolCryptoLabel.text = self.dataPriceModelArray[indexPath.row].symbolString;
-        cell.nameCryptoLabel.text = self.nameCryptoArray[indexPath.row];
-//        cell.priceCryptoLabel.text = self.dataPriceModelArray[indexPath.row].priceUSDString;
-//        cell.iconCryptoImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.dataPriceModelArray[indexPath.row].nameString]];
+    [cell setDataCell:self.modelArray[indexPath.row]];
     return cell;
 }
 
 
 #pragma mark - Data source sorting
 
-//- (NSArray *)sortingArray:(NSArray *)oldArray
-//{
-//    NSArray *newArray = [oldArray sortedArrayUsingComparator: ^NSComparisonResult(SBTDataPriceModel *obj1, SBTDataPriceModel *obj2) {
-//        if (obj1.priceUSDString.floatValue < obj2.priceUSDString.floatValue)
-//        {
-//            return NSOrderedDescending;
-//        }
-//        else if (obj1.priceUSDString.floatValue > obj2.priceUSDString.floatValue)
-//        {
-//            return NSOrderedAscending;
-//        }
-//        else
-//        {
-//            return NSOrderedSame;
-//        }
-//    }];
-//    return newArray;
-//}
+- (NSArray *)sortingArray:(NSArray *)oldArray
+{
+    NSArray *newArray = [oldArray sortedArrayUsingComparator: ^NSComparisonResult(SBTDataPriceModel *model1, SBTDataPriceModel *model2) {
+        if (model1.priceUSDFloat < model2.priceUSDFloat)
+        {
+            return NSOrderedDescending;
+        }
+        else if (model1.priceUSDFloat > model2.priceUSDFloat)
+        {
+            return NSOrderedAscending;
+        }
+        else
+        {
+            return NSOrderedSame;
+        }
+    }];
+    return newArray;
+}
 
 
 @end

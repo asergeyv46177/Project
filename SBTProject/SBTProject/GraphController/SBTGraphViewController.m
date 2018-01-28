@@ -8,11 +8,8 @@
 
 #import "SBTGraphViewController.h"
 #import "SBTBuildGraphView.h"
-//#import "SBTDataGraphModel.h"
-//#import "SBTDownloadDataService.h"
-//#import "SBTBuilderURLGraphs.h"
-#import "GraphModel+CoreDataProperties.h"
-#import "SBTCoreDataService.h"
+#import "SBTCoreDataDownloadFacade.h"
+#import "SBTDataGraphModel.h"
 #import <Masonry.h>
 
 
@@ -26,8 +23,8 @@ static CGFloat const SBTOffset = 15.0;
 
 
 @property (nonatomic, copy) NSString *nameGraphString;
-@property (nonatomic, strong) SBTCoreDataService *coreDataService;
-@property (nonatomic, strong) NSManagedObjectID *objectID;
+@property (nonatomic, strong) SBTCoreDataDownloadFacade *coreDataDownloadFacade;
+@property (nonatomic, strong) SBTDataGraphModel *dataGraphModel;
 @property (nonatomic, strong) SBTBuildGraphView *buildGraphView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *yAxisValuesView;
@@ -41,13 +38,12 @@ static CGFloat const SBTOffset = 15.0;
 @implementation SBTGraphViewController
 
 
-
-- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService nameGraph:(NSString *)nameGraphString
+- (instancetype)initWithCoreDateService:(SBTCoreDataDownloadFacade *)coreDataDownloadFacade nameGraph:(NSString *)nameGraphString;
 {
     self = [super init];
     if (self)
     {
-        _coreDataService = coreDataService;
+        _coreDataDownloadFacade = coreDataDownloadFacade;
         _nameGraphString = nameGraphString;
     }
     return self;
@@ -56,18 +52,20 @@ static CGFloat const SBTOffset = 15.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self prepareViews];
+}
+
+
+#pragma mark - Prepare views
+
+- (void)prepareViews
+{
     self.view.backgroundColor = UIColor.whiteColor;
-    [self.coreDataService modelGraphWithEntityName:[GraphModel class] predicateString:self.nameGraphString
-        coreDataType:SBTCoreDataTypeGraph completeHandler:^(NSManagedObjectID *objectID) {
-            self.objectID = objectID;
+    [self.coreDataDownloadFacade obtainModelGraphWithPredicateString:self.nameGraphString
+        completeHandler:^(SBTDataGraphModel *dataGraphModel) {
+            self.dataGraphModel = dataGraphModel;
             [self createViews];
             [self setConstraints];
-            NSArray <GraphModel *> *arr = [self.coreDataService.context executeFetchRequest:[GraphModel fetchRequest] error:nil];
-            for (GraphModel *gM in arr)
-            {
-                NSLog(@"GraphModel nameString: %@",gM.nameString);
-            }
-            
         }];
     self.navigationItem.title = @"Detailed graphic";
     UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
@@ -86,23 +84,21 @@ static CGFloat const SBTOffset = 15.0;
 }
 
 
-#pragma mark - Prepare views
+#pragma mark - Create views
 
 - (void)createViews
 {
-    GraphModel *graphModel = [self.coreDataService.context objectWithID:self.objectID];
-    
     self.nameGraphLabel = [UILabel new];
     self.nameGraphLabel.textAlignment = NSTextAlignmentCenter;
     self.nameGraphLabel.font = [UIFont systemFontOfSize:20];
-    self.nameGraphLabel.text = graphModel.nameString;
+    self.nameGraphLabel.text = self.dataGraphModel.nameString;
     [self.view addSubview:self.nameGraphLabel];
     
     self.descriptionGraphLabel =  [UILabel new];
     self.descriptionGraphLabel.textAlignment = NSTextAlignmentCenter;
     self.descriptionGraphLabel.font = [UIFont systemFontOfSize:15];
     self.descriptionGraphLabel.numberOfLines = 0;
-    self.descriptionGraphLabel.text = graphModel.descriptionString;
+    self.descriptionGraphLabel.text = self.dataGraphModel.descriptionString;
     [self.view addSubview:self.descriptionGraphLabel];
     
     self.yAxisValuesView = [UIView new];
@@ -115,8 +111,7 @@ static CGFloat const SBTOffset = 15.0;
     self.scrollView.contentSize = CGSizeMake(SBTWidthGraphView, height);
     [self.view addSubview:self.scrollView];
     
-    self.buildGraphView = [[SBTBuildGraphView alloc] initWithCoreDateService:self.coreDataService
-        objectID:self.objectID withView:self.yAxisValuesView];
+    self.buildGraphView = [[SBTBuildGraphView alloc] initWithDataGraphModel:self.dataGraphModel withView:self.yAxisValuesView];
     [self.scrollView addSubview:self.buildGraphView];
 }
 

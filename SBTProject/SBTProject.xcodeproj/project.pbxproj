@@ -15,6 +15,10 @@
 		A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D62013830D00552815 /* SBTDataPriceModel.m */; };
 		A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D92013849B00552815 /* SBTDownloadDataService.m */; };
 		A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */; };
+		A5188EE0201DB43E004C6A8B /* SBTAnimationStateChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */; };
+		A5188EE7201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EE6201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m */; };
+		A5188EED201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EEB201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m */; };
+		A5188EF0201DEDB2004C6A8B /* cryptoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */; };
 		A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F282F200618DA00111A9E /* SBTGraphViewController.m */; };
 		A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F28322006196B00111A9E /* SBTBuildGraphView.m */; };
 		A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F283520061EB600111A9E /* SBTDataGraphModel.m */; };
@@ -36,6 +40,12 @@
 		A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */; };
 		A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */; };
 		A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */; };
+		A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B1C201C655E0010FD86 /* SBTCoreDataDownloadFacade.m */; };
+		A5971B23201CBAD80010FD86 /* SBTDataPreparerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B22201CBAD80010FD86 /* SBTDataPreparerViewController.m */; };
+		A5971B27201CC6020010FD86 /* SBTCoreDataFileFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B26201CC6020010FD86 /* SBTCoreDataFileFacade.m */; };
+		A5971B2A201CC7AC0010FD86 /* SBTFileDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B29201CC7AC0010FD86 /* SBTFileDataService.m */; };
+		A5971B37201CCF2D0010FD86 /* SBTParsingJSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B36201CCF2D0010FD86 /* SBTParsingJSONDescription.m */; };
+		A5971B3A201CD7E40010FD86 /* SBTDataDescriptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B39201CD7E40010FD86 /* SBTDataDescriptionModel.m */; };
 		A5AAA8AA2017468D00AA3A84 /* SBTCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */; };
 		A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DCE719200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +83,13 @@
 		A50801D82013849B00552815 /* SBTDownloadDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDownloadDataService.h; sourceTree = "<group>"; };
 		A50801D92013849B00552815 /* SBTDownloadDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDownloadDataService.m; sourceTree = "<group>"; };
 		A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLGraphs.m; sourceTree = "<group>"; };
+		A5188EDE201DB43E004C6A8B /* SBTAnimationStateChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAnimationStateChange.h; sourceTree = "<group>"; };
+		A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAnimationStateChange.m; sourceTree = "<group>"; };
+		A5188EE6201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DescriptionModel+CoreDataProperties.m"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataProperties.m"; sourceTree = "<absolute>"; };
+		A5188EE8201DCD40004C6A8B /* DescriptionModel+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DescriptionModel+CoreDataProperties.h"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataProperties.h"; sourceTree = "<absolute>"; };
+		A5188EE9201DCD5B004C6A8B /* DescriptionModel+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DescriptionModel+CoreDataClass.h"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataClass.h"; sourceTree = "<absolute>"; };
+		A5188EEB201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DescriptionModel+CoreDataClass.m"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataClass.m"; sourceTree = "<absolute>"; };
+		A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cryptoJSON.json; path = SBTProject/cryptoJSON.json; sourceTree = SOURCE_ROOT; };
 		A53F282E200618DA00111A9E /* SBTGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphViewController.h; sourceTree = "<group>"; };
 		A53F282F200618DA00111A9E /* SBTGraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphViewController.m; sourceTree = "<group>"; };
 		A53F28312006196B00111A9E /* SBTBuildGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuildGraphView.h; sourceTree = "<group>"; };
@@ -116,6 +133,19 @@
 		A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GraphModel+CoreDataClass.m"; sourceTree = "<group>"; };
 		A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GraphModel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A5971B1B201C655E0010FD86 /* SBTCoreDataDownloadFacade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCoreDataDownloadFacade.h; sourceTree = "<group>"; };
+		A5971B1C201C655E0010FD86 /* SBTCoreDataDownloadFacade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataDownloadFacade.m; sourceTree = "<group>"; };
+		A5971B20201CB97E0010FD86 /* SBTChangeRootViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTChangeRootViewControllerProtocol.h; sourceTree = "<group>"; };
+		A5971B21201CBAD80010FD86 /* SBTDataPreparerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataPreparerViewController.h; sourceTree = "<group>"; };
+		A5971B22201CBAD80010FD86 /* SBTDataPreparerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataPreparerViewController.m; sourceTree = "<group>"; };
+		A5971B25201CC6020010FD86 /* SBTCoreDataFileFacade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCoreDataFileFacade.h; sourceTree = "<group>"; };
+		A5971B26201CC6020010FD86 /* SBTCoreDataFileFacade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataFileFacade.m; sourceTree = "<group>"; };
+		A5971B28201CC7AC0010FD86 /* SBTFileDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTFileDataService.h; sourceTree = "<group>"; };
+		A5971B29201CC7AC0010FD86 /* SBTFileDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTFileDataService.m; sourceTree = "<group>"; };
+		A5971B35201CCF2D0010FD86 /* SBTParsingJSONDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTParsingJSONDescription.h; sourceTree = "<group>"; };
+		A5971B36201CCF2D0010FD86 /* SBTParsingJSONDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONDescription.m; sourceTree = "<group>"; };
+		A5971B38201CD7E40010FD86 /* SBTDataDescriptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataDescriptionModel.h; sourceTree = "<group>"; };
+		A5971B39201CD7E40010FD86 /* SBTDataDescriptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataDescriptionModel.m; sourceTree = "<group>"; };
 		A5AAA8A82017468D00AA3A84 /* SBTCoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCoreDataService.h; sourceTree = "<group>"; };
 		A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataService.m; sourceTree = "<group>"; };
 		A5DCE718200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyDescriptionTableViewCell.h; sourceTree = "<group>"; };
@@ -166,12 +196,25 @@
 		A50812762017272300678BDD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A5188EE8201DCD40004C6A8B /* DescriptionModel+CoreDataProperties.h */,
+				A5188EE6201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m */,
+				A5188EE9201DCD5B004C6A8B /* DescriptionModel+CoreDataClass.h */,
+				A5188EEB201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m */,
 				A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */,
 				A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */,
 				A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */,
 				A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A5188EDD201DB324004C6A8B /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				A5188EDE201DB43E004C6A8B /* SBTAnimationStateChange.h */,
+				A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		A561F53D2005540B00F986C2 /* GraphController */ = {
@@ -260,12 +303,16 @@
 				A5713DF32015EA67001B357E /* SBTAssembly.m */,
 				A5713DF52015EB40001B357E /* SBTPersistentContainer.h */,
 				A5713DF62015EB40001B357E /* SBTPersistentContainer.m */,
-				A5AAA8A7201745D000AA3A84 /* Services */,
+				A5971B20201CB97E0010FD86 /* SBTChangeRootViewControllerProtocol.h */,
 				A50812762017272300678BDD /* CoreData */,
+				A5AAA8A7201745D000AA3A84 /* Services */,
+				A5971B24201CC3A20010FD86 /* DataPreparerController */,
 				A561F5402005548700F986C2 /* NewsController */,
 				A561F53F2005545900F986C2 /* CryptocurrencyController */,
 				A561F53D2005540B00F986C2 /* GraphController */,
+				A5188EDD201DB324004C6A8B /* Animations */,
 				A57BA46A20024A1600AA182D /* Assets.xcassets */,
+				A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */,
 				A57BA46F20024A1600AA182D /* Info.plist */,
 				A57BA47020024A1600AA182D /* main.m */,
 				A57BA46720024A1600AA182D /* SBTProject.xcdatamodeld */,
@@ -291,13 +338,32 @@
 			path = SBTProjectUITests;
 			sourceTree = "<group>";
 		};
+		A5971B24201CC3A20010FD86 /* DataPreparerController */ = {
+			isa = PBXGroup;
+			children = (
+				A5971B21201CBAD80010FD86 /* SBTDataPreparerViewController.h */,
+				A5971B22201CBAD80010FD86 /* SBTDataPreparerViewController.m */,
+				A5971B35201CCF2D0010FD86 /* SBTParsingJSONDescription.h */,
+				A5971B36201CCF2D0010FD86 /* SBTParsingJSONDescription.m */,
+				A5971B38201CD7E40010FD86 /* SBTDataDescriptionModel.h */,
+				A5971B39201CD7E40010FD86 /* SBTDataDescriptionModel.m */,
+			);
+			path = DataPreparerController;
+			sourceTree = "<group>";
+		};
 		A5AAA8A7201745D000AA3A84 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A5971B25201CC6020010FD86 /* SBTCoreDataFileFacade.h */,
+				A5971B26201CC6020010FD86 /* SBTCoreDataFileFacade.m */,
+				A5971B1B201C655E0010FD86 /* SBTCoreDataDownloadFacade.h */,
+				A5971B1C201C655E0010FD86 /* SBTCoreDataDownloadFacade.m */,
 				A50801D82013849B00552815 /* SBTDownloadDataService.h */,
 				A50801D92013849B00552815 /* SBTDownloadDataService.m */,
 				A5AAA8A82017468D00AA3A84 /* SBTCoreDataService.h */,
 				A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */,
+				A5971B28201CC7AC0010FD86 /* SBTFileDataService.h */,
+				A5971B29201CC7AC0010FD86 /* SBTFileDataService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -423,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5188EF0201DEDB2004C6A8B /* cryptoJSON.json in Resources */,
 				A57BA46B20024A1600AA182D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,7 +614,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5188EED201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */,
 				A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */,
+				A5971B23201CBAD80010FD86 /* SBTDataPreparerViewController.m in Sources */,
 				A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */,
 				A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */,
 				A50801CA201342CD00552815 /* SBTNewsWebViewController.m in Sources */,
@@ -556,8 +625,12 @@
 				A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */,
 				A5484ACC200F7963008C6BB6 /* SBTNewsTableViewCell.m in Sources */,
 				A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */,
+				A5188EE0201DB43E004C6A8B /* SBTAnimationStateChange.m in Sources */,
 				A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */,
 				A5713DF72015EB40001B357E /* SBTPersistentContainer.m in Sources */,
+				A5971B3A201CD7E40010FD86 /* SBTDataDescriptionModel.m in Sources */,
+				A5971B27201CC6020010FD86 /* SBTCoreDataFileFacade.m in Sources */,
+				A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */,
 				A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */,
 				A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */,
 				A5713DF42015EA67001B357E /* SBTAssembly.m in Sources */,
@@ -569,8 +642,11 @@
 				A50801D420137E6600552815 /* SBTParsingJSONPrice.m in Sources */,
 				A561F54620055DDC00F986C2 /* SBTGraphTableViewController.m in Sources */,
 				A50801D120137DBC00552815 /* SBTBuilderURLPrice.m in Sources */,
+				A5971B2A201CC7AC0010FD86 /* SBTFileDataService.m in Sources */,
+				A5971B37201CCF2D0010FD86 /* SBTParsingJSONDescription.m in Sources */,
 				A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */,
 				A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */,
+				A5188EE7201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */,
 				A57BA46020024A1600AA182D /* AppDelegate.m in Sources */,
 				A561F54920055F4600F986C2 /* SBTGraphTableViewCell.m in Sources */,
 			);

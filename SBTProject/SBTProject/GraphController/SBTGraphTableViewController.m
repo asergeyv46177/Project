@@ -9,7 +9,8 @@
 #import "SBTGraphTableViewController.h"
 #import "SBTGraphTableViewCell.h"
 #import "SBTGraphViewController.h"
-#import "SBTCoreDataService.h"
+#import "SBTCoreDataDownloadFacade.h"
+#import "SBTAnimationStateChange.h"
 
 
 static NSString *const SBTIdentifierCell = @"SBTIdentifierCell";
@@ -19,8 +20,8 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 @interface SBTGraphTableViewController ()
 
 
-@property (nonatomic, copy) NSArray <NSString *> *nameGraphArray;
-@property (nonatomic, strong) SBTCoreDataService *coreDataService;
+@property (nonatomic, copy) NSArray *nameGraphArray;
+@property (nonatomic, strong) SBTCoreDataDownloadFacade *coreDataDownloadFacade;
 
 
 @end
@@ -29,12 +30,12 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 @implementation SBTGraphTableViewController
 
 
-- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService
+- (instancetype)initWithCoreDataDowloadFacade:(SBTCoreDataDownloadFacade *)coreDataDownloadFacade
 {
     self = [super init];
     if (self)
     {
-        _coreDataService = coreDataService;
+        _coreDataDownloadFacade = coreDataDownloadFacade;
         self.tabBarItem.image = [UIImage imageNamed:@"graphs"];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, -SBTOffsetToCenterTabBar, 0);
     }
@@ -44,8 +45,13 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"Bitcoin graphics";
     [self prepareViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
 }
 
 
@@ -53,6 +59,8 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 - (void)prepareViews
 {
+    self.navigationItem.title = @"Bitcoin graphics";
+    
     self.nameGraphArray = @[@"Market Price (USD)", @"USD Exchange Trade Volume", @"Market Capitalization",
         @"Miners Revenue", @"Total Transaction Fees"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -65,7 +73,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SBTGraphViewController *graphViewController = [[SBTGraphViewController alloc]
-        initWithCoreDateService:self.coreDataService nameGraph:self.nameGraphArray[indexPath.row]];
+        initWithCoreDateService:self.coreDataDownloadFacade nameGraph:self.nameGraphArray[indexPath.row]];
     [self.navigationController pushViewController:graphViewController animated:YES];
 }
 

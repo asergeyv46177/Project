@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GraphModel+CoreDataProperties.h"
-@class SBTCoreDataService;
+@class SBTDataGraphModel;
+
 
 @interface SBTBuildGraphView : UIView
 
 
-- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService objectID:(NSManagedObjectID *)objectID
-        withView:(UIView *)yAxisValuesView;
+- (instancetype)initWithDataGraphModel:(SBTDataGraphModel *)dataGraphModel withView:(UIView *)yAxisValuesView;
 
 
 @end

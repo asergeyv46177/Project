@@ -1,0 +1,136 @@
+{
+  "status":"ok",
+  "coinsArray": 
+  [
+    {
+    "Name": "Stratis",
+    "Symbol": "STRAT",
+    "StartDate": "09/08/2016",
+    "Id": "24294",
+    "Algorithm": "X13",
+    "BlockTime": "60 sec",
+    "BlockReward": "1",
+    "BlockRewardReduction": "-",
+    "TotalCoinSupply": "-",
+    "AffiliateUrl": "stratisplatform.com/",
+    "Twitter": "@stratisplatform"
+    },
+    {
+    "Name": "EOS",
+    "Symbol": "EOS",
+    "StartDate": "26/06/2017",
+    "Id": "166503",
+    "Algorithm": "DPoS",
+    "BlockTime": "3 sec",
+    "BlockReward": "-",
+    "BlockRewardReduction": "-",
+    "TotalCoinSupply": "1000000000",
+    "AffiliateUrl": "eos.io/",
+    "Twitter": "@eos_io"
+    },
+    {
+    "Name": "NEM",
+    "Symbol": "XEM",
+    "StartDate": "31/03/2015",
+    "Id": "5285",
+    "Algorithm": "-",
+    "BlockTime": "-",
+    "BlockReward": "-",
+    "BlockRewardReduction": "-",
+    "TotalCoinSupply": "8999999999",
+    "AffiliateUrl": "nem.io/",
+    "Twitter": "@NEMofficial"
+    },
+    {
+    "Name": "Monero",
+    "Symbol": "XMR",
+    "StartDate": "02/06/2014",
+    "Id": "5038",
+    "Algorithm": "CryptoNight",
+    "BlockTime": "120 sec",
+    "BlockReward": "6",
+    "BlockRewardReduction": "-",
+    "TotalCoinSupply": "-",
+    "AffiliateUrl": "getmonero.org/",
+    "Twitter": "@monerocurrency"
+    },
+    {
+    "Name": "IOTA",
+    "Symbol": "IOT",
+    "StartDate": "17/07/2016",
+    "Id": "127356",
+    "Algorithm": "-",
+    "BlockTime": "-",
+    "BlockReward": "-",
+    "BlockRewardReduction": "-",
+    "TotalCoinSupply": "2779530283",
+    "AffiliateUrl": "iota.org/",
+    "Twitter": "@iotatoken"
+    },
+    {
+    "Name": "Dash",
+    "Symbol": "DASH",
+    "StartDate": "18/01/2014",
+    "Id": "3807",
+    "Algorithm": "X11",
+    "BlockTime": "122 sec",
+    "BlockReward": "3.6",
+    "BlockRewardReduction": "50%",
+    "TotalCoinSupply": "22000000",
+    "AffiliateUrl": "dash.org",
+    "Twitter": "@Dashpay"
+    },
+    {
+    "Name": "Ethereum",
+    "Symbol": "ETH",
+    "StartDate": "30/07/2015",
+    "Id": "7605",
+    "Algorithm": "Ethash",
+    "BlockTime": "15 sec",
+    "BlockReward": "3.0",
+    "BlockRewardReduction": "-",
+    "TotalCoinSupply": "-",
+    "AffiliateUrl": "ethereum.org/",
+    "Twitter": "@ethereumproject"
+    },
+    {
+    "Name": "Litecoin",
+    "Symbol": "LTC",
+    "StartDate": "13/10/2011",
+    "Id": "3808",
+    "Algorithm": "Scrypt",
+    "BlockTime": "150 sec",
+    "BlockReward": "25.0",
+    "BlockRewardReduction": "50%",
+    "TotalCoinSupply": "84000000",
+    "AffiliateUrl": "litecoin.com",
+    "Twitter": "@litecoin"
+    },
+    {
+    "Name": "Bitcoin",
+    "Symbol": "BTC",
+    "StartDate": "03/01/2009",
+    "Id": "1182",
+    "Algorithm": "SHA256",
+    "BlockTime": "600 sec",
+    "BlockReward": "12.5",
+    "BlockRewardReduction": "50%",
+    "TotalCoinSupply": "21000000",
+    "AffiliateUrl": "bitcoin.org/en/",
+    "Twitter": "@bitcoin"
+    },
+    {
+    "Name": "Ripple",
+    "Symbol": "XRP",
+    "StartDate": "02/02/2013",
+    "Id": "5031",
+    "Algorithm": "-",
+    "BlockTime": "-",
+    "BlockReward": "-",
+    "BlockRewardReduction":  "-",
+    "TotalCoinSupply": "38305873865",
+    "AffiliateUrl": "ripple.com/",
+    "Twitter": "@Ripple"
+    }
+  ]
+}

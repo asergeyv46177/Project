@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-//@class SBTDataGraphModel;
-@class SBTCoreDataService;
+@class SBTCoreDataDownloadFacade;
 
 
 @interface SBTGraphViewController : UIViewController
 
 
-- (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService nameGraph:(NSString *)nameGraphString;
+- (instancetype)initWithCoreDateService:(SBTCoreDataDownloadFacade *)coreDataDownloadFacade nameGraph:(NSString *)nameGraphString;
 
 
 @end
