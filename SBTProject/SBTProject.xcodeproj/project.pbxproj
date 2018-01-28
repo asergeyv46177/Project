@@ -16,9 +16,9 @@
 		A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D92013849B00552815 /* SBTDownloadDataService.m */; };
 		A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */; };
 		A5188EE0201DB43E004C6A8B /* SBTAnimationStateChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */; };
-		A5188EE7201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EE6201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m */; };
-		A5188EED201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EEB201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m */; };
 		A5188EF0201DEDB2004C6A8B /* cryptoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */; };
+		A5188EF5201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF1201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m */; };
+		A5188EF6201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */; };
 		A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F282F200618DA00111A9E /* SBTGraphViewController.m */; };
 		A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F28322006196B00111A9E /* SBTBuildGraphView.m */; };
 		A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F283520061EB600111A9E /* SBTDataGraphModel.m */; };
@@ -85,11 +85,11 @@
 		A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLGraphs.m; sourceTree = "<group>"; };
 		A5188EDE201DB43E004C6A8B /* SBTAnimationStateChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAnimationStateChange.h; sourceTree = "<group>"; };
 		A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAnimationStateChange.m; sourceTree = "<group>"; };
-		A5188EE6201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DescriptionModel+CoreDataProperties.m"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataProperties.m"; sourceTree = "<absolute>"; };
-		A5188EE8201DCD40004C6A8B /* DescriptionModel+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DescriptionModel+CoreDataProperties.h"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataProperties.h"; sourceTree = "<absolute>"; };
-		A5188EE9201DCD5B004C6A8B /* DescriptionModel+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DescriptionModel+CoreDataClass.h"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataClass.h"; sourceTree = "<absolute>"; };
-		A5188EEB201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DescriptionModel+CoreDataClass.m"; path = "/Users/sergey/Documents/Project/SBTProject/SBTProject/CoreData/DescriptionModel+CoreDataClass.m"; sourceTree = "<absolute>"; };
 		A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cryptoJSON.json; path = SBTProject/cryptoJSON.json; sourceTree = SOURCE_ROOT; };
+		A5188EF1201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DescriptionModel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A5188EF2201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DescriptionModel+CoreDataClass.h"; sourceTree = "<group>"; };
+		A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DescriptionModel+CoreDataClass.m"; sourceTree = "<group>"; };
+		A5188EF4201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DescriptionModel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A53F282E200618DA00111A9E /* SBTGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphViewController.h; sourceTree = "<group>"; };
 		A53F282F200618DA00111A9E /* SBTGraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphViewController.m; sourceTree = "<group>"; };
 		A53F28312006196B00111A9E /* SBTBuildGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuildGraphView.h; sourceTree = "<group>"; };
@@ -196,14 +196,14 @@
 		A50812762017272300678BDD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				A5188EE8201DCD40004C6A8B /* DescriptionModel+CoreDataProperties.h */,
-				A5188EE6201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m */,
-				A5188EE9201DCD5B004C6A8B /* DescriptionModel+CoreDataClass.h */,
-				A5188EEB201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m */,
-				A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */,
-				A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */,
+				A5188EF2201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.h */,
+				A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */,
+				A5188EF4201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.h */,
+				A5188EF1201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m */,
 				A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */,
 				A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */,
+				A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */,
+				A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -614,7 +614,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5188EED201DCD5C004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */,
 				A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */,
 				A5971B23201CBAD80010FD86 /* SBTDataPreparerViewController.m in Sources */,
 				A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */,
@@ -624,11 +623,13 @@
 				A5484AD22010B01B008C6BB6 /* SBTParsingJSONGraphs.m in Sources */,
 				A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */,
 				A5484ACC200F7963008C6BB6 /* SBTNewsTableViewCell.m in Sources */,
+				A5188EF6201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */,
 				A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */,
 				A5188EE0201DB43E004C6A8B /* SBTAnimationStateChange.m in Sources */,
 				A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */,
 				A5713DF72015EB40001B357E /* SBTPersistentContainer.m in Sources */,
 				A5971B3A201CD7E40010FD86 /* SBTDataDescriptionModel.m in Sources */,
+				A5188EF5201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */,
 				A5971B27201CC6020010FD86 /* SBTCoreDataFileFacade.m in Sources */,
 				A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */,
 				A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */,
@@ -646,7 +647,6 @@
 				A5971B37201CCF2D0010FD86 /* SBTParsingJSONDescription.m in Sources */,
 				A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */,
 				A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */,
-				A5188EE7201DCD3E004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */,
 				A57BA46020024A1600AA182D /* AppDelegate.m in Sources */,
 				A561F54920055F4600F986C2 /* SBTGraphTableViewCell.m in Sources */,
 			);
