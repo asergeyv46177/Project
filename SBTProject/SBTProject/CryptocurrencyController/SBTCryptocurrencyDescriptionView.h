@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class DescriptionModel;
 
+
 @interface SBTCryptocurrencyDescriptionView : UIView
 
 
