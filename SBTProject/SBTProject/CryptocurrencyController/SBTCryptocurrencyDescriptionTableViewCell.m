@@ -63,7 +63,7 @@ static NSString *const SBTAffiliateURL = @"Affiliate URL";
     }];
 }
 
-- (void)contentCellWithIndexRow:(NSInteger)row content:(NSArray *)content
+- (void)setupContentCellWithIndexRow:(NSInteger)row content:(NSArray *)content
 {
     self.nameDescriptionLabel.text = self.nameArray[row];
     self.contentDescriptionLabel.text = content[row];

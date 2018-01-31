@@ -18,7 +18,8 @@
 - (instancetype)initWithCoreDataService:(SBTCoreDataService *)coreDataService
                      dowloadDataService:(SBTDownloadDataService *)downloadDataService;
 
-- (void)obtainModelGraphWithPredicateString:(NSString *)predicate completeHandler:(void(^)(SBTDataGraphModel *))completeHandler;
+- (void)obtainModelGraphWithPredicateString:(NSString *)predicate
+            completeHandler:(void(^)(SBTDataGraphModel *))completeHandler;
 
 
 @end

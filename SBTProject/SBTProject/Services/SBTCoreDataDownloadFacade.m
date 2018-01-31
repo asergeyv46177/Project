@@ -13,7 +13,6 @@
 #import "SBTDataGraphModel.h"
 
 
-
 @interface SBTCoreDataDownloadFacade ()
 
 
@@ -40,9 +39,12 @@
     return self;
 }
 
-- (void)obtainModelGraphWithPredicateString:(NSString *)predicate completeHandler:(void(^)(SBTDataGraphModel *))completeHandler
+- (void)obtainModelGraphWithPredicateString:(NSString *)predicate
+            completeHandler:(void(^)(SBTDataGraphModel *))completeHandler
 {
-    NSArray <GraphModel *> *modelArray = [self.coreDataService obtainModelArrayWithEntityName:[GraphModel class] predicateString:predicate];
+    NSArray <GraphModel *> *modelArray = [self.coreDataService obtainModelArrayWithEntityName:[GraphModel class]
+                                            predicateString:predicate];
+    
     BOOL isRelevant = [self.coreDataService relevantGraphModel:[modelArray firstObject].dateLastUpdateString];
     
     if (isRelevant)
@@ -52,17 +54,10 @@
     }
     else
     {
-        NSLog(@"CoreDataStateNotRelevant Download");
         [self.downloadDataService downloadDataWithURLKeyString:predicate downloadDataType:SBTDownloadDataTypeGraph queue:nil
             completeHandler:^(id dataModel){
                 [self.coreDataService removeFromCoreData:modelArray.firstObject];
                 [self.coreDataService saveGraphModel:dataModel];
-                
-                NSArray <GraphModel *> *arr = [self.coreDataService.context executeFetchRequest:[GraphModel fetchRequest] error:nil];
-                for (GraphModel *gM in arr)
-                {
-                    NSLog(@"GraphModel nameString: %@",gM.nameString);
-                }
                 completeHandler(dataModel);
             }];
     }

@@ -6,12 +6,12 @@
 //  Copyright © 2018 Сергей Алтухов. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "SBTChangeRootViewControllerProtocol.h"
 
-@interface SBTAssembly : NSObject <SBTChangeRootViewControllerProtocol>
+
+@interface SBTAssembly : UIView <SBTChangeRootViewControllerProtocol>
 
 
 - (instancetype)initWithContext:(NSManagedObjectContext *) context;

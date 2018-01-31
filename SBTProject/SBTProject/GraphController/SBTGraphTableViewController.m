@@ -30,13 +30,15 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 @implementation SBTGraphTableViewController
 
 
+#pragma mark - Lifecycle
+
 - (instancetype)initWithCoreDataDowloadFacade:(SBTCoreDataDownloadFacade *)coreDataDownloadFacade
 {
     self = [super init];
     if (self)
     {
         _coreDataDownloadFacade = coreDataDownloadFacade;
-        self.tabBarItem.image = [UIImage imageNamed:@"graphs"];
+        self.tabBarItem.image = [UIImage imageNamed:@"graph"];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, -SBTOffsetToCenterTabBar, 0);
     }
     return self;
@@ -60,7 +62,6 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 - (void)prepareViews
 {
     self.navigationItem.title = @"Bitcoin graphics";
-    
     self.nameGraphArray = @[@"Market Price (USD)", @"USD Exchange Trade Volume", @"Market Capitalization",
         @"Miners Revenue", @"Total Transaction Fees"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -88,7 +89,6 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SBTGraphTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTIdentifierCell forIndexPath:indexPath];
-    [cell prepareForReuse];
     cell.nameGraphLabel.text = self.nameGraphArray[indexPath.row];
     cell.viewGraphImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.nameGraphArray[indexPath.row]]];
     return cell;

@@ -155,13 +155,16 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 {
     SBTCryptocurrencyDescriptionTableViewCell *cell = [tableView
         dequeueReusableCellWithIdentifier:SBTCryptocurrencyDescriptionCellIdentifier forIndexPath:indexPath];
-    [cell prepareForReuse];
-    [cell contentCellWithIndexRow:indexPath.row content:self.contentArray];
+    [cell setupContentCellWithIndexRow:indexPath.row content:self.contentArray];
     return cell;
 }
 
 - (NSArray *)modelToArray:(DescriptionModel *)descriptionModel
 {
+    if (!descriptionModel)
+    {
+        return nil;
+    }
     NSMutableArray *propertyArray = [NSMutableArray new];
     [propertyArray addObject:descriptionModel.symbolString];
     [propertyArray addObject:descriptionModel.startDateString];

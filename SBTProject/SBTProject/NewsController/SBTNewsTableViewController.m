@@ -34,7 +34,7 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
     if (self)
     {
         _downloadDataService = downloadDataService;
-        self.tabBarItem.image = [UIImage imageNamed:@"Icon"];
+        self.tabBarItem.image = [UIImage imageNamed:@"news"];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, -SBTOffsetToCenterTabBar, 0);
     }
     return self;

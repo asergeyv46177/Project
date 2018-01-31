@@ -7,6 +7,7 @@
 //
 
 #import "SBTCoreDataService.h"
+#import "SBTFormatterDate.h"
 
 #import "GraphModel+CoreDataProperties.h"
 #import "DescriptionModel+CoreDataProperties.h"
@@ -18,7 +19,7 @@
 @interface SBTCoreDataService ()
 
 
-//@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 
 @end
@@ -41,8 +42,7 @@
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(class)];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"nameString == %@", predicate];
-    NSArray *arr = [self.context executeFetchRequest:fetchRequest error:nil];
-    return arr;
+    return [self.context executeFetchRequest:fetchRequest error:nil];
 }
 
 - (void)modelPriceWithPredicateString:(NSString *)predicate completeHandler:(void(^)(NSManagedObjectID *))completeHandler;
@@ -58,10 +58,7 @@
     }
 
     NSTimeInterval nowTime = [NSDate new].timeIntervalSince1970;
-    NSDate *date =[NSDate dateWithTimeIntervalSince1970:nowTime];
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"MMM,d"];
-    NSString *nowTimeString = [dateFormatter stringFromDate:date];
+    NSString *nowTimeString = [SBTFormatterDate formatterDateStringWithTimeInterval:nowTime];
     if (![nowTimeString isEqualToString:dateLastUpdate])
     {
         return NO;

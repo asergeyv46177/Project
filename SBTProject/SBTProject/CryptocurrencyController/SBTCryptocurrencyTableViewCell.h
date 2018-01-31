@@ -19,8 +19,7 @@
 @property (nonatomic, strong) UILabel *percent24hLabel;
 @property (nonatomic, strong) UILabel *percent7dLabel;
 
-- (void)setDataCell:(SBTDataPriceModel *)priceModel;
-- (void)prepareForReuse;
+- (void)setupContentCell:(SBTDataPriceModel *)priceModel;
 
 
 @end

@@ -11,6 +11,7 @@
 
 @interface SBTDownloadDataService : NSObject
 
+
 typedef NS_ENUM(NSUInteger, SBTDownloadDataType) {
     SBTDownloadDataTypeGraph,
     SBTDownloadDataTypePrice,
@@ -21,5 +22,6 @@ typedef NS_ENUM(NSUInteger, SBTDownloadDataType) {
             completeHandler:(void(^)(id))completeHandler;
 - (void)downloadGroupWithURLKeyArray:(NSArray *)urlKeyArray downloadDataType:(SBTDownloadDataType)dataType
             completeHandler:(void(^)(NSArray *))completeHandler;
+
 
 @end

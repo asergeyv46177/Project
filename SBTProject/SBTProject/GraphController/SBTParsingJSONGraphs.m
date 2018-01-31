@@ -8,7 +8,7 @@
 
 #import "SBTParsingJSONGraphs.h"
 #import "SBTDataGraphModel.h"
-
+#import "SBTFormatterDate.h"
 
 @implementation SBTParsingJSONGraphs
 
@@ -37,11 +37,7 @@
         NSDictionary *updatedValueDictionary = [NSDictionary new];
         NSInteger xValue = valueDictionary[@"x"].integerValue;
         NSInteger yValue = valueDictionary[@"y"].integerValue;
-        
-        NSDate *date =[NSDate dateWithTimeIntervalSince1970:xValue];
-        NSDateFormatter *dateFormatter = [NSDateFormatter new];
-        [dateFormatter setDateFormat:@"MMM,d"];
-        NSString *xValueString = [dateFormatter stringFromDate:date];
+        NSString *xValueString = [SBTFormatterDate formatterDateStringWithTimeInterval:xValue];
         
         if (maxYValue < yValue)
         {
@@ -55,10 +51,7 @@
     graphModel.maxYInteger = maxYValue;
     
     NSTimeInterval nowTime = [NSDate new].timeIntervalSince1970;
-    NSDate *date =[NSDate dateWithTimeIntervalSince1970:nowTime];
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"MMM,d"];
-    graphModel.dateLastUpdateString = [dateFormatter stringFromDate:date];
+    graphModel.dateLastUpdateString = [SBTFormatterDate formatterDateStringWithTimeInterval:nowTime];
     
     return graphModel;
 }

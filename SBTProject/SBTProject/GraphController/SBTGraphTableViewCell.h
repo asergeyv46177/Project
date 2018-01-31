@@ -15,7 +15,5 @@
 @property (nonatomic, strong) UILabel *nameGraphLabel;
 @property (nonatomic, strong) UIImageView *viewGraphImageView;
 
-- (void)prepareForReuse;
-
 
 @end

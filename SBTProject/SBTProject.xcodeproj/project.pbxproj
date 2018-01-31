@@ -19,6 +19,7 @@
 		A5188EF0201DEDB2004C6A8B /* cryptoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */; };
 		A5188EF5201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF1201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m */; };
 		A5188EF6201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */; };
+		A5188EF9201E1A2A004C6A8B /* SBTFormatterDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF8201E1A2A004C6A8B /* SBTFormatterDate.m */; };
 		A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F282F200618DA00111A9E /* SBTGraphViewController.m */; };
 		A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F28322006196B00111A9E /* SBTBuildGraphView.m */; };
 		A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F283520061EB600111A9E /* SBTDataGraphModel.m */; };
@@ -38,6 +39,8 @@
 		A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */; };
 		A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */; };
 		A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */; };
+		A595C863202064F800E65F68 /* SBTAnimationWaiting.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C862202064F800E65F68 /* SBTAnimationWaiting.m */; };
+		A595C88B2020D65400E65F68 /* SBTDataPreparerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C88A2020D65400E65F68 /* SBTDataPreparerTableViewCell.m */; };
 		A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */; };
 		A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */; };
 		A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B1C201C655E0010FD86 /* SBTCoreDataDownloadFacade.m */; };
@@ -90,6 +93,8 @@
 		A5188EF2201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DescriptionModel+CoreDataClass.h"; sourceTree = "<group>"; };
 		A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DescriptionModel+CoreDataClass.m"; sourceTree = "<group>"; };
 		A5188EF4201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DescriptionModel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A5188EF7201E1A2A004C6A8B /* SBTFormatterDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTFormatterDate.h; sourceTree = "<group>"; };
+		A5188EF8201E1A2A004C6A8B /* SBTFormatterDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTFormatterDate.m; sourceTree = "<group>"; };
 		A53F282E200618DA00111A9E /* SBTGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphViewController.h; sourceTree = "<group>"; };
 		A53F282F200618DA00111A9E /* SBTGraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphViewController.m; sourceTree = "<group>"; };
 		A53F28312006196B00111A9E /* SBTBuildGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuildGraphView.h; sourceTree = "<group>"; };
@@ -129,6 +134,10 @@
 		A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyTableViewCell.m; sourceTree = "<group>"; };
 		A57C5EB22007FCEA00F2C230 /* SBTNewsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTNewsTableViewController.h; sourceTree = "<group>"; };
 		A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsTableViewController.m; sourceTree = "<group>"; };
+		A595C861202064F800E65F68 /* SBTAnimationWaiting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAnimationWaiting.h; sourceTree = "<group>"; };
+		A595C862202064F800E65F68 /* SBTAnimationWaiting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAnimationWaiting.m; sourceTree = "<group>"; };
+		A595C8892020D65400E65F68 /* SBTDataPreparerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataPreparerTableViewCell.h; sourceTree = "<group>"; };
+		A595C88A2020D65400E65F68 /* SBTDataPreparerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataPreparerTableViewCell.m; sourceTree = "<group>"; };
 		A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataClass.h"; sourceTree = "<group>"; };
 		A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GraphModel+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -213,6 +222,8 @@
 			children = (
 				A5188EDE201DB43E004C6A8B /* SBTAnimationStateChange.h */,
 				A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */,
+				A595C861202064F800E65F68 /* SBTAnimationWaiting.h */,
+				A595C862202064F800E65F68 /* SBTAnimationWaiting.m */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -304,6 +315,8 @@
 				A5713DF52015EB40001B357E /* SBTPersistentContainer.h */,
 				A5713DF62015EB40001B357E /* SBTPersistentContainer.m */,
 				A5971B20201CB97E0010FD86 /* SBTChangeRootViewControllerProtocol.h */,
+				A5188EF7201E1A2A004C6A8B /* SBTFormatterDate.h */,
+				A5188EF8201E1A2A004C6A8B /* SBTFormatterDate.m */,
 				A50812762017272300678BDD /* CoreData */,
 				A5AAA8A7201745D000AA3A84 /* Services */,
 				A5971B24201CC3A20010FD86 /* DataPreparerController */,
@@ -343,6 +356,8 @@
 			children = (
 				A5971B21201CBAD80010FD86 /* SBTDataPreparerViewController.h */,
 				A5971B22201CBAD80010FD86 /* SBTDataPreparerViewController.m */,
+				A595C8892020D65400E65F68 /* SBTDataPreparerTableViewCell.h */,
+				A595C88A2020D65400E65F68 /* SBTDataPreparerTableViewCell.m */,
 				A5971B35201CCF2D0010FD86 /* SBTParsingJSONDescription.h */,
 				A5971B36201CCF2D0010FD86 /* SBTParsingJSONDescription.m */,
 				A5971B38201CD7E40010FD86 /* SBTDataDescriptionModel.h */,
@@ -634,6 +649,7 @@
 				A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */,
 				A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */,
 				A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */,
+				A5188EF9201E1A2A004C6A8B /* SBTFormatterDate.m in Sources */,
 				A5713DF42015EA67001B357E /* SBTAssembly.m in Sources */,
 				A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */,
 				A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */,
@@ -647,7 +663,9 @@
 				A5971B37201CCF2D0010FD86 /* SBTParsingJSONDescription.m in Sources */,
 				A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */,
 				A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */,
+				A595C863202064F800E65F68 /* SBTAnimationWaiting.m in Sources */,
 				A57BA46020024A1600AA182D /* AppDelegate.m in Sources */,
+				A595C88B2020D65400E65F68 /* SBTDataPreparerTableViewCell.m in Sources */,
 				A561F54920055F4600F986C2 /* SBTGraphTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

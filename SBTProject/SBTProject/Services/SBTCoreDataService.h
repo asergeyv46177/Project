@@ -22,8 +22,4 @@
 - (void)saveDescriptionModel:(NSArray *)dataDescriptionModelArray;
 - (void)removeFromCoreData:(NSManagedObject *)entity;
 
-
-#pragma mark - Remove!
-@property (nonatomic, strong) NSManagedObjectContext *context;
-
 @end

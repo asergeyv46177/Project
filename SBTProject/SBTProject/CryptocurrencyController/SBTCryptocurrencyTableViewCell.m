@@ -128,7 +128,7 @@ static CGFloat const SBTHeightSeparator = 2.0;
 
 #pragma mark - Methods for using cell
 
-- (void)setDataCell:(SBTDataPriceModel *)priceModel
+- (void)setupContentCell:(SBTDataPriceModel *)priceModel
 {
     self.iconCryptoImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", priceModel.nameString]];
     self.nameCryptoLabel.text = priceModel.nameString;

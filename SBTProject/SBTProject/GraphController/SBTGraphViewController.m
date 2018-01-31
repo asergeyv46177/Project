@@ -30,7 +30,7 @@ static CGFloat const SBTOffset = 15.0;
 @property (nonatomic, strong) UIView *yAxisValuesView;
 @property (nonatomic, strong) UILabel *nameGraphLabel;
 @property (nonatomic, strong) UILabel *descriptionGraphLabel;
-
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end
 
@@ -53,6 +53,7 @@ static CGFloat const SBTOffset = 15.0;
 {
     [super viewDidLoad];
     [self prepareViews];
+    [self downloadDataForGraph];
 }
 
 
@@ -61,18 +62,29 @@ static CGFloat const SBTOffset = 15.0;
 - (void)prepareViews
 {
     self.view.backgroundColor = UIColor.whiteColor;
-    [self.coreDataDownloadFacade obtainModelGraphWithPredicateString:self.nameGraphString
-        completeHandler:^(SBTDataGraphModel *dataGraphModel) {
-            self.dataGraphModel = dataGraphModel;
-            [self createViews];
-            [self setConstraints];
-        }];
     self.navigationItem.title = @"Detailed graphic";
     UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(actionBackBarButton)];
     self.navigationItem.leftBarButtonItem = backBarButton;
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicatorView.color = UIColor.blackColor;
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
+}
+
+- (void)downloadDataForGraph
+{
+    [self.activityIndicatorView startAnimating];
+    [self.coreDataDownloadFacade obtainModelGraphWithPredicateString:self.nameGraphString
+        completeHandler:^(SBTDataGraphModel *dataGraphModel) {
+            self.dataGraphModel = dataGraphModel;
+            [self createViews];
+            [self setConstraints];
+            [self.activityIndicatorView stopAnimating];
+        }];
 }
 
 

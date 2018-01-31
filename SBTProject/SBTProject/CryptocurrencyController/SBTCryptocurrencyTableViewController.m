@@ -24,6 +24,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 @interface SBTCryptocurrencyTableViewController ()
 
 
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
 @property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 @property (nonatomic, copy) NSArray <SBTDataPriceModel *> *modelArray;
@@ -35,6 +36,8 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 @implementation SBTCryptocurrencyTableViewController
 
 
+#pragma mark - Lifecycle
+
 - (instancetype)initWithCoreDateService:(SBTCoreDataService *)coreDataService
                     downloadDataService:(SBTDownloadDataService *)downloadDataService
 {
@@ -43,15 +46,10 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
     {
         _downloadDataService = downloadDataService;
         _coreDataService = coreDataService;
-        self.tabBarItem.image = [UIImage imageNamed:@"ethereumBitcoin"];
+        self.tabBarItem.image = [UIImage imageNamed:@"dollarBitcoin"];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, - SBTOffsetToCenterTabBar, 0);
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad
@@ -63,7 +61,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self dowloadNewModels];
+    [self downloadNewModels];
     [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
 }
 
@@ -75,22 +73,42 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
     self.view.backgroundColor = UIColor.whiteColor;
     self.navigationItem.title = @"Cryptocurrency price";
     UIBarButtonItem *updateBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-        target:self action:@selector(dowloadNewModels)];
+        target:self action:@selector(downloadNewModels)];
     self.navigationItem.rightBarButtonItem = updateBarButton;
+    
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicatorView.color = UIColor.blackColor;
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
     
     [self.tableView registerClass:[SBTCryptocurrencyTableViewCell class] forCellReuseIdentifier:SBTCryptoIdentifierCell];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
-- (void)dowloadNewModels
+- (void)downloadNewModels
 {
+    [self beginDownload];
     NSArray *nameCryptoArray = @[@"Bitcoin", @"Ethereum", @"Litecoin", @"Ripple", @"Dash", @"IOTA", @"Monero", @"NEM",
         @"EOS", @"Stratis"];
     [self.downloadDataService downloadGroupWithURLKeyArray:nameCryptoArray downloadDataType:SBTDownloadDataTypePrice
         completeHandler:^(NSArray *modelArray) {
             self.modelArray = [self sortingArray:modelArray];
             [self.tableView reloadData];
+            [self endDownload];
         }];
+}
+
+- (void)beginDownload
+{
+    [self.activityIndicatorView startAnimating];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
+- (void)endDownload
+{
+    [self.activityIndicatorView stopAnimating];
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 
@@ -117,8 +135,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 {
     SBTCryptocurrencyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTCryptoIdentifierCell
         forIndexPath:indexPath];
-    [cell prepareForReuse];
-    [cell setDataCell:self.modelArray[indexPath.row]];
+    [cell setupContentCell:self.modelArray[indexPath.row]];
     return cell;
 }
 
