@@ -13,15 +13,12 @@
 
 @interface SBTCoreDataFileFacade ()
 
-
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
-
 
 @end
 
 
 @implementation SBTCoreDataFileFacade
-
 
 - (instancetype)initWithCoreDataService:(SBTCoreDataService *)coreDataService
 {
@@ -38,6 +35,5 @@
     NSArray *arrayModel = [SBTFileDataService obtainJSONWithPathForResource:@"cryptoJSON" ofType:@"json"];
     [self.coreDataService saveDescriptionModel:arrayModel];
 }
-
 
 @end

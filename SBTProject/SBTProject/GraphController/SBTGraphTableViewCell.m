@@ -16,7 +16,6 @@ static CGFloat const SBTOffset = 20.0;
 
 @implementation SBTGraphTableViewCell
 
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

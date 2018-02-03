@@ -7,13 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SBTDataPriceModel.h"
+@class SBTDataPriceModel;
 
 
+/**
+ Класс для получения модели SBTDataPriceModel из JSON
+ */
 @interface SBTParsingJSONPrice : NSObject
 
-
+/**
+ Обеспечивает парсинг JSON в модель
+ @param json - JSON, который парсится в модель
+ @return необходимая модель
+ */
 + (SBTDataPriceModel *)jsonToModel:(NSDictionary *)json;
-
 
 @end

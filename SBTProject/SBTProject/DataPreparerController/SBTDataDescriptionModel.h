@@ -9,19 +9,20 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+ Модель для работы с подробной информации о криптовалюте
+ */
 @interface SBTDataDescriptionModel : NSObject
 
-
-@property (nonatomic, copy) NSString *nameString;
-@property (nonatomic, copy) NSString *symbolString;
-@property (nonatomic, copy) NSString *startDateString;
-@property (nonatomic, copy) NSString *idString;
-@property (nonatomic, copy) NSString *algorithmString;
-@property (nonatomic, copy) NSString *blockRewardString;
-@property (nonatomic, copy) NSString *blockTimeString;
-@property (nonatomic, copy) NSString *affiliateUrlString;
-@property (nonatomic, copy) NSString *twitterString;
-@property (nonatomic, copy) NSString *totalCoinSupplyString;
-
+@property (nonatomic, copy) NSString *nameString;               /**< Имя криптовалюты */
+@property (nonatomic, copy) NSString *symbolString;             /**< Символ криптовалюты */
+@property (nonatomic, copy) NSString *startDateString;          /**< Дата появления криптовалюты */
+@property (nonatomic, copy) NSString *idString;                 /**< id криптовалюты */
+@property (nonatomic, copy) NSString *algorithmString;          /**< Алгоритм майнинга */
+@property (nonatomic, copy) NSString *blockRewardString;        /**< Награда за блок */
+@property (nonatomic, copy) NSString *blockTimeString;          /**< Время блокировки */
+@property (nonatomic, copy) NSString *affiliateUrlString;       /**< Официальный сайт криптовалюты */
+@property (nonatomic, copy) NSString *twitterString;            /**< Twitter криптовалюты */
+@property (nonatomic, copy) NSString *totalCoinSupplyString;    /**< Общая сумма монет */
 
 @end

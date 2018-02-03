@@ -11,7 +11,6 @@
 
 @implementation SBTPersistentContainer
 
-
 @synthesize persistentContainer = _persistentContainer;
 
 - (NSPersistentContainer *)persistentContainer {
@@ -29,6 +28,5 @@
     
     return _persistentContainer;
 }
-
 
 @end

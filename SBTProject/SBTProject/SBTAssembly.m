@@ -7,7 +7,7 @@
 //
 
 #import "SBTAssembly.h"
-#import "SBTAnimationStateChange.h"
+#import "UIView+SBTView.h"
 
 #import "SBTCoreDataService.h"
 #import "SBTDownloadDataService.h"
@@ -22,18 +22,15 @@
 
 @interface SBTAssembly ()
 
-
 @property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
 @property (nonatomic, strong) SBTCoreDataDownloadFacade *coreDataDowloadFacade;
 @property (nonatomic, strong) SBTCoreDataFileFacade *coreDataFileFacade;
 
-
 @end
 
 
 @implementation SBTAssembly
-
 
 - (instancetype)initWithContext:(NSManagedObjectContext *)context
 {
@@ -69,7 +66,7 @@
     return rootViewController;
 }
 
-- (UITabBarController *)createTabBarController
+- (UIViewController *)createTabBarController
 {
     SBTNewsTableViewController *newsTableViewController = [[SBTNewsTableViewController alloc]
         initWithDownloadDataService:self.downloadDataService];
@@ -87,7 +84,8 @@
         initWithRootViewController:graphTableViewController];
     
     UITabBarController *tabBarController = [UITabBarController new];
-    tabBarController.viewControllers = @[newsNavigationController, graphNavigationController, cryptocurrencyNavigationController];
+    tabBarController.viewControllers = @[cryptocurrencyNavigationController, graphNavigationController,
+        newsNavigationController];
     return tabBarController;
 }
 
@@ -101,6 +99,5 @@
     UIWindow *window = application.windows.firstObject;
     window.rootViewController = rootViewController;
 }
-
 
 @end

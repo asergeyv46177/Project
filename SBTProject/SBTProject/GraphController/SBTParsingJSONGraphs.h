@@ -10,10 +10,16 @@
 @class SBTDataGraphModel;
 
 
+/**
+ Класс для получения модели SBTDataGraphModel из JSON
+ */
 @interface SBTParsingJSONGraphs : NSObject
 
-
+/**
+ Обеспечивает парсинг JSON в модель
+ @param json - JSON, который парсится в модель
+ @return необходимая модель
+ */
 + (SBTDataGraphModel *)jsonToModel:(NSDictionary *)json;
-
 
 @end

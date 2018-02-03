@@ -7,8 +7,8 @@
 //
 
 #import "SBTCryptocurrencyDescriptionView.h"
+#import "UIView+SBTView.h"
 #import "SBTCryptocurrencyDescriptionTableViewCell.h"
-#import "SBTAnimationStateChange.h"
 #import "DescriptionModel+CoreDataProperties.h"
 #import <Masonry.h>
 
@@ -22,7 +22,6 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 
 @interface SBTCryptocurrencyDescriptionView () <UITableViewDataSource, UITableViewDelegate>
 
-
 @property (nonatomic, strong) UIView *superView;
 @property (nonatomic, strong) UIView *descriptionCryptoView;
 @property (nonatomic, strong) UIImageView *iconCryptoImageView;
@@ -30,12 +29,10 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
 @property (nonatomic, strong) UITableView *descriptionCryptoTableView;
 @property (nonatomic, copy) NSArray *contentArray;
 
-
 @end
 
 
 @implementation SBTCryptocurrencyDescriptionView
-
 
 - (instancetype)initWithSuperview:(UIView *)superview descriptionModel:(DescriptionModel *)descriptionModel
 {
@@ -69,7 +66,7 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
         _contentArray = [self modelToArray:descriptionModel];
         
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.3f];
-        [SBTAnimationStateChange animationWithView:self isAppear:YES completion:nil];
+        [UIView sbt_animationWithView:self isAppear:YES completion:nil];
     }
     return self;
 }
@@ -123,7 +120,7 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
     id testInstance = [self hitTest:pointInView withEvent:event];
     if ([testInstance isMemberOfClass:[SBTCryptocurrencyDescriptionView class]])
     {
-        [SBTAnimationStateChange animationWithView:self isAppear:NO completion:^{
+        [UIView sbt_animationWithView:self isAppear:NO completion:^{
             [self removeFromSuperview];
         }];
     }
@@ -177,6 +174,5 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
     [propertyArray addObject:descriptionModel.twitterString];
     return [propertyArray copy];
 }
-
 
 @end

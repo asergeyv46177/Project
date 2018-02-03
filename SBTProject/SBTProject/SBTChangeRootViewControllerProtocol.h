@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+ Протокол для замены корневого контроллера
+ */
 @protocol SBTChangeRootViewControllerProtocol <NSObject>
 
-
+/**
+ Осуществляет замену корневого контроллера
+ @param oldViewController - контроллер, который подвергается замене
+ */
 - (void)changeRootViewController:(UIViewController *)oldViewController;
-
 
 @end

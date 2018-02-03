@@ -7,9 +7,9 @@
 //
 
 #import "SBTCryptocurrencyTableViewController.h"
+#import "UIView+SBTView.h"
 #import "SBTCryptocurrencyTableViewCell.h"
 #import "SBTCryptocurrencyDescriptionView.h"
-#import "SBTAnimationStateChange.h"
 #import "SBTCoreDataService.h"
 #import "SBTDownloadDataService.h"
 #import "SBTDataPriceModel.h"
@@ -23,12 +23,10 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 @interface SBTCryptocurrencyTableViewController ()
 
-
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
 @property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 @property (nonatomic, copy) NSArray <SBTDataPriceModel *> *modelArray;
-
 
 @end
 
@@ -62,7 +60,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 {
     [super viewWillAppear:animated];
     [self downloadNewModels];
-    [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
+    [UIView sbt_animationWithView:self.view isAppear:YES completion:nil];
 }
 
 
@@ -72,9 +70,6 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 {
     self.view.backgroundColor = UIColor.whiteColor;
     self.navigationItem.title = @"Cryptocurrency price";
-    UIBarButtonItem *updateBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-        target:self action:@selector(downloadNewModels)];
-    self.navigationItem.rightBarButtonItem = updateBarButton;
     
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicatorView.color = UIColor.blackColor;
@@ -84,6 +79,10 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
     
     [self.tableView registerClass:[SBTCryptocurrencyTableViewCell class] forCellReuseIdentifier:SBTCryptoIdentifierCell];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.refreshControl = [UIRefreshControl new];
+    self.refreshControl.tintColor = UIColor.blackColor;
+    [self.refreshControl addTarget:self action:@selector(downloadNewModels) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)downloadNewModels
@@ -101,14 +100,22 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 - (void)beginDownload
 {
-    [self.activityIndicatorView startAnimating];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
+    if (!self.refreshControl.isRefreshing)
+    {
+        [self.activityIndicatorView startAnimating];
+    }
 }
 
 - (void)endDownload
 {
-    [self.activityIndicatorView stopAnimating];
-    self.navigationItem.rightBarButtonItem.enabled = YES;
+    if (self.activityIndicatorView.isAnimating)
+    {
+        [self.activityIndicatorView stopAnimating];
+    }
+    else
+    {
+        [self.refreshControl endRefreshing];
+    }
 }
 
 
@@ -160,6 +167,5 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
     }];
     return newArray;
 }
-
 
 @end

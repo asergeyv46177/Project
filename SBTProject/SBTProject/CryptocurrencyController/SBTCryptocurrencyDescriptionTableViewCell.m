@@ -17,15 +17,12 @@ static NSString *const SBTAffiliateURL = @"Affiliate URL";
 
 @interface SBTCryptocurrencyDescriptionTableViewCell ()
 
-
 @property (nonatomic, copy) NSArray *nameArray;
-
 
 @end
 
 
 @implementation SBTCryptocurrencyDescriptionTableViewCell
-
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -47,6 +44,9 @@ static NSString *const SBTAffiliateURL = @"Affiliate URL";
     return self;
 }
 
+
+#pragma mark - Table view cell view customization
+
 - (void)createConstraints
 {
     [_nameDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -63,6 +63,8 @@ static NSString *const SBTAffiliateURL = @"Affiliate URL";
     }];
 }
 
+#pragma mark - Table view cell for usable
+
 - (void)setupContentCellWithIndexRow:(NSInteger)row content:(NSArray *)content
 {
     self.nameDescriptionLabel.text = self.nameArray[row];
@@ -72,6 +74,9 @@ static NSString *const SBTAffiliateURL = @"Affiliate URL";
         self.contentDescriptionLabel.textColor = UIColor.blueColor;
     }
 }
+
+
+#pragma mark - Table view cell for reusable
 
 - (void)prepareForReuse
 {

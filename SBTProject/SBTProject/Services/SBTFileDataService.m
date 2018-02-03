@@ -12,7 +12,6 @@
 
 @implementation SBTFileDataService
 
-
 + (NSArray *)obtainJSONWithPathForResource:(NSString *)pathForResource ofType:(NSString *)type
 {
     NSBundle *bundle = [NSBundle mainBundle];
@@ -26,6 +25,5 @@
     json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     return [SBTParsingJSONDescription jsonToModel:json];
 }
-
 
 @end

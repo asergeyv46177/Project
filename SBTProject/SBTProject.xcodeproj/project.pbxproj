@@ -9,17 +9,14 @@
 /* Begin PBXBuildFile section */
 		03CC4395EAFAE3B732CD61D8 /* libPods-SBTProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C304476DA5D6CCE3A9B70FA8 /* libPods-SBTProjectTests.a */; };
 		2BE2961FFE6BC8681C780465 /* libPods-SBTProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CE8C0E63830A3E559B5878 /* libPods-SBTProject.a */; };
-		A50801CA201342CD00552815 /* SBTNewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801C9201342CD00552815 /* SBTNewsWebViewController.m */; };
 		A50801D120137DBC00552815 /* SBTBuilderURLPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D020137DBC00552815 /* SBTBuilderURLPrice.m */; };
 		A50801D420137E6600552815 /* SBTParsingJSONPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D320137E6600552815 /* SBTParsingJSONPrice.m */; };
 		A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D62013830D00552815 /* SBTDataPriceModel.m */; };
 		A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A50801D92013849B00552815 /* SBTDownloadDataService.m */; };
 		A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */; };
-		A5188EE0201DB43E004C6A8B /* SBTAnimationStateChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */; };
 		A5188EF0201DEDB2004C6A8B /* cryptoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */; };
 		A5188EF5201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF1201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m */; };
 		A5188EF6201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */; };
-		A5188EF9201E1A2A004C6A8B /* SBTFormatterDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5188EF8201E1A2A004C6A8B /* SBTFormatterDate.m */; };
 		A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F282F200618DA00111A9E /* SBTGraphViewController.m */; };
 		A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F28322006196B00111A9E /* SBTBuildGraphView.m */; };
 		A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F283520061EB600111A9E /* SBTDataGraphModel.m */; };
@@ -39,8 +36,13 @@
 		A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */; };
 		A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */; };
 		A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */; };
-		A595C863202064F800E65F68 /* SBTAnimationWaiting.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C862202064F800E65F68 /* SBTAnimationWaiting.m */; };
 		A595C88B2020D65400E65F68 /* SBTDataPreparerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C88A2020D65400E65F68 /* SBTDataPreparerTableViewCell.m */; };
+		A595C88E2021E04400E65F68 /* SBTDataNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C88D2021E04400E65F68 /* SBTDataNewsModel.m */; };
+		A595C8912022113500E65F68 /* SBTParsingJSONNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C8902022113500E65F68 /* SBTParsingJSONNews.m */; };
+		A595C8942023090D00E65F68 /* SBTBuilderURLNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C8932023090D00E65F68 /* SBTBuilderURLNews.m */; };
+		A595C89B20247A4800E65F68 /* NSDate+SBTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C89A20247A4800E65F68 /* NSDate+SBTDate.m */; };
+		A595C89E202482CE00E65F68 /* UIView+SBTView.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C89D202482CE00E65F68 /* UIView+SBTView.m */; };
+		A595C8A120248D1800E65F68 /* UIImageView+SBTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A595C8A020248D1800E65F68 /* UIImageView+SBTImageView.m */; };
 		A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */; };
 		A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971A242019D39B0010FD86 /* GraphModel+CoreDataProperties.m */; };
 		A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B1C201C655E0010FD86 /* SBTCoreDataDownloadFacade.m */; };
@@ -74,8 +76,6 @@
 		34020A472B172327C2A62979 /* Pods-SBTProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProject/Pods-SBTProject.debug.xcconfig"; sourceTree = "<group>"; };
 		51CE8C0E63830A3E559B5878 /* libPods-SBTProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SBTProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA89FDA8C38EBCA0EA1528D /* Pods-SBTProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProject/Pods-SBTProject.release.xcconfig"; sourceTree = "<group>"; };
-		A50801C8201342CD00552815 /* SBTNewsWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTNewsWebViewController.h; sourceTree = "<group>"; };
-		A50801C9201342CD00552815 /* SBTNewsWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsWebViewController.m; sourceTree = "<group>"; };
 		A50801CE20137D0F00552815 /* SBTBuilderURLGraphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTBuilderURLGraphs.h; sourceTree = "<group>"; };
 		A50801CF20137DBC00552815 /* SBTBuilderURLPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuilderURLPrice.h; sourceTree = "<group>"; };
 		A50801D020137DBC00552815 /* SBTBuilderURLPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLPrice.m; sourceTree = "<group>"; };
@@ -86,15 +86,11 @@
 		A50801D82013849B00552815 /* SBTDownloadDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDownloadDataService.h; sourceTree = "<group>"; };
 		A50801D92013849B00552815 /* SBTDownloadDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDownloadDataService.m; sourceTree = "<group>"; };
 		A50AACED2011F245005F9519 /* SBTBuilderURLGraphs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLGraphs.m; sourceTree = "<group>"; };
-		A5188EDE201DB43E004C6A8B /* SBTAnimationStateChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAnimationStateChange.h; sourceTree = "<group>"; };
-		A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAnimationStateChange.m; sourceTree = "<group>"; };
 		A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cryptoJSON.json; path = SBTProject/cryptoJSON.json; sourceTree = SOURCE_ROOT; };
 		A5188EF1201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DescriptionModel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A5188EF2201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DescriptionModel+CoreDataClass.h"; sourceTree = "<group>"; };
 		A5188EF3201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DescriptionModel+CoreDataClass.m"; sourceTree = "<group>"; };
 		A5188EF4201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DescriptionModel+CoreDataProperties.h"; sourceTree = "<group>"; };
-		A5188EF7201E1A2A004C6A8B /* SBTFormatterDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTFormatterDate.h; sourceTree = "<group>"; };
-		A5188EF8201E1A2A004C6A8B /* SBTFormatterDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTFormatterDate.m; sourceTree = "<group>"; };
 		A53F282E200618DA00111A9E /* SBTGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTGraphViewController.h; sourceTree = "<group>"; };
 		A53F282F200618DA00111A9E /* SBTGraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTGraphViewController.m; sourceTree = "<group>"; };
 		A53F28312006196B00111A9E /* SBTBuildGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuildGraphView.h; sourceTree = "<group>"; };
@@ -134,10 +130,20 @@
 		A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyTableViewCell.m; sourceTree = "<group>"; };
 		A57C5EB22007FCEA00F2C230 /* SBTNewsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTNewsTableViewController.h; sourceTree = "<group>"; };
 		A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsTableViewController.m; sourceTree = "<group>"; };
-		A595C861202064F800E65F68 /* SBTAnimationWaiting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAnimationWaiting.h; sourceTree = "<group>"; };
-		A595C862202064F800E65F68 /* SBTAnimationWaiting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAnimationWaiting.m; sourceTree = "<group>"; };
 		A595C8892020D65400E65F68 /* SBTDataPreparerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataPreparerTableViewCell.h; sourceTree = "<group>"; };
 		A595C88A2020D65400E65F68 /* SBTDataPreparerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataPreparerTableViewCell.m; sourceTree = "<group>"; };
+		A595C88C2021E04400E65F68 /* SBTDataNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTDataNewsModel.h; sourceTree = "<group>"; };
+		A595C88D2021E04400E65F68 /* SBTDataNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDataNewsModel.m; sourceTree = "<group>"; };
+		A595C88F2022113500E65F68 /* SBTParsingJSONNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTParsingJSONNews.h; sourceTree = "<group>"; };
+		A595C8902022113500E65F68 /* SBTParsingJSONNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONNews.m; sourceTree = "<group>"; };
+		A595C8922023090D00E65F68 /* SBTBuilderURLNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTBuilderURLNews.h; sourceTree = "<group>"; };
+		A595C8932023090D00E65F68 /* SBTBuilderURLNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLNews.m; sourceTree = "<group>"; };
+		A595C89920247A4800E65F68 /* NSDate+SBTDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+SBTDate.h"; sourceTree = "<group>"; };
+		A595C89A20247A4800E65F68 /* NSDate+SBTDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SBTDate.m"; sourceTree = "<group>"; };
+		A595C89C202482CE00E65F68 /* UIView+SBTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SBTView.h"; sourceTree = "<group>"; };
+		A595C89D202482CE00E65F68 /* UIView+SBTView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SBTView.m"; sourceTree = "<group>"; };
+		A595C89F20248D1800E65F68 /* UIImageView+SBTImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SBTImageView.h"; sourceTree = "<group>"; };
+		A595C8A020248D1800E65F68 /* UIImageView+SBTImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SBTImageView.m"; sourceTree = "<group>"; };
 		A5971A212019D39B0010FD86 /* GraphModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataClass.h"; sourceTree = "<group>"; };
 		A5971A222019D39B0010FD86 /* GraphModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GraphModel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A5971A232019D39B0010FD86 /* GraphModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GraphModel+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -217,17 +223,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		A5188EDD201DB324004C6A8B /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				A5188EDE201DB43E004C6A8B /* SBTAnimationStateChange.h */,
-				A5188EDF201DB43E004C6A8B /* SBTAnimationStateChange.m */,
-				A595C861202064F800E65F68 /* SBTAnimationWaiting.h */,
-				A595C862202064F800E65F68 /* SBTAnimationWaiting.m */,
-			);
-			path = Animations;
-			sourceTree = "<group>";
-		};
 		A561F53D2005540B00F986C2 /* GraphController */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +272,12 @@
 				A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */,
 				A5484ACA200F7963008C6BB6 /* SBTNewsTableViewCell.h */,
 				A5484ACB200F7963008C6BB6 /* SBTNewsTableViewCell.m */,
-				A50801C8201342CD00552815 /* SBTNewsWebViewController.h */,
-				A50801C9201342CD00552815 /* SBTNewsWebViewController.m */,
+				A595C88C2021E04400E65F68 /* SBTDataNewsModel.h */,
+				A595C88D2021E04400E65F68 /* SBTDataNewsModel.m */,
+				A595C88F2022113500E65F68 /* SBTParsingJSONNews.h */,
+				A595C8902022113500E65F68 /* SBTParsingJSONNews.m */,
+				A595C8922023090D00E65F68 /* SBTBuilderURLNews.h */,
+				A595C8932023090D00E65F68 /* SBTBuilderURLNews.m */,
 			);
 			path = NewsController;
 			sourceTree = "<group>";
@@ -315,15 +314,13 @@
 				A5713DF52015EB40001B357E /* SBTPersistentContainer.h */,
 				A5713DF62015EB40001B357E /* SBTPersistentContainer.m */,
 				A5971B20201CB97E0010FD86 /* SBTChangeRootViewControllerProtocol.h */,
-				A5188EF7201E1A2A004C6A8B /* SBTFormatterDate.h */,
-				A5188EF8201E1A2A004C6A8B /* SBTFormatterDate.m */,
+				A595C898202479E600E65F68 /* Category */,
 				A50812762017272300678BDD /* CoreData */,
 				A5AAA8A7201745D000AA3A84 /* Services */,
 				A5971B24201CC3A20010FD86 /* DataPreparerController */,
 				A561F5402005548700F986C2 /* NewsController */,
 				A561F53F2005545900F986C2 /* CryptocurrencyController */,
 				A561F53D2005540B00F986C2 /* GraphController */,
-				A5188EDD201DB324004C6A8B /* Animations */,
 				A57BA46A20024A1600AA182D /* Assets.xcassets */,
 				A5188EEF201DEDB2004C6A8B /* cryptoJSON.json */,
 				A57BA46F20024A1600AA182D /* Info.plist */,
@@ -349,6 +346,19 @@
 				A57BA48720024A1600AA182D /* Info.plist */,
 			);
 			path = SBTProjectUITests;
+			sourceTree = "<group>";
+		};
+		A595C898202479E600E65F68 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A595C89920247A4800E65F68 /* NSDate+SBTDate.h */,
+				A595C89A20247A4800E65F68 /* NSDate+SBTDate.m */,
+				A595C89C202482CE00E65F68 /* UIView+SBTView.h */,
+				A595C89D202482CE00E65F68 /* UIView+SBTView.m */,
+				A595C89F20248D1800E65F68 /* UIImageView+SBTImageView.h */,
+				A595C8A020248D1800E65F68 /* UIImageView+SBTImageView.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		A5971B24201CC3A20010FD86 /* DataPreparerController */ = {
@@ -632,30 +642,33 @@
 				A5971A262019D39B0010FD86 /* GraphModel+CoreDataProperties.m in Sources */,
 				A5971B23201CBAD80010FD86 /* SBTDataPreparerViewController.m in Sources */,
 				A50801D72013830D00552815 /* SBTDataPriceModel.m in Sources */,
+				A595C8912022113500E65F68 /* SBTParsingJSONNews.m in Sources */,
 				A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */,
-				A50801CA201342CD00552815 /* SBTNewsWebViewController.m in Sources */,
 				A5AAA8AA2017468D00AA3A84 /* SBTCoreDataService.m in Sources */,
+				A595C8A120248D1800E65F68 /* UIImageView+SBTImageView.m in Sources */,
 				A5484AD22010B01B008C6BB6 /* SBTParsingJSONGraphs.m in Sources */,
 				A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */,
 				A5484ACC200F7963008C6BB6 /* SBTNewsTableViewCell.m in Sources */,
 				A5188EF6201E0DEF004C6A8B /* DescriptionModel+CoreDataClass.m in Sources */,
 				A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */,
-				A5188EE0201DB43E004C6A8B /* SBTAnimationStateChange.m in Sources */,
 				A50801DA2013849B00552815 /* SBTDownloadDataService.m in Sources */,
 				A5713DF72015EB40001B357E /* SBTPersistentContainer.m in Sources */,
 				A5971B3A201CD7E40010FD86 /* SBTDataDescriptionModel.m in Sources */,
 				A5188EF5201E0DEF004C6A8B /* DescriptionModel+CoreDataProperties.m in Sources */,
 				A5971B27201CC6020010FD86 /* SBTCoreDataFileFacade.m in Sources */,
+				A595C88E2021E04400E65F68 /* SBTDataNewsModel.m in Sources */,
 				A5971B1D201C655E0010FD86 /* SBTCoreDataDownloadFacade.m in Sources */,
 				A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */,
+				A595C8942023090D00E65F68 /* SBTBuilderURLNews.m in Sources */,
 				A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */,
-				A5188EF9201E1A2A004C6A8B /* SBTFormatterDate.m in Sources */,
+				A595C89B20247A4800E65F68 /* NSDate+SBTDate.m in Sources */,
 				A5713DF42015EA67001B357E /* SBTAssembly.m in Sources */,
 				A5971A252019D39B0010FD86 /* GraphModel+CoreDataClass.m in Sources */,
 				A50AACEE2011F245005F9519 /* SBTBuilderURLGraphs.m in Sources */,
 				A53F28332006196B00111A9E /* SBTBuildGraphView.m in Sources */,
 				A57BA47120024A1600AA182D /* main.m in Sources */,
 				A56D48942009056F009A5685 /* SBTCryptocurrencyDescriptionView.m in Sources */,
+				A595C89E202482CE00E65F68 /* UIView+SBTView.m in Sources */,
 				A50801D420137E6600552815 /* SBTParsingJSONPrice.m in Sources */,
 				A561F54620055DDC00F986C2 /* SBTGraphTableViewController.m in Sources */,
 				A50801D120137DBC00552815 /* SBTBuilderURLPrice.m in Sources */,
@@ -663,7 +676,6 @@
 				A5971B37201CCF2D0010FD86 /* SBTParsingJSONDescription.m in Sources */,
 				A53F283620061EB600111A9E /* SBTDataGraphModel.m in Sources */,
 				A53F2830200618DA00111A9E /* SBTGraphViewController.m in Sources */,
-				A595C863202064F800E65F68 /* SBTAnimationWaiting.m in Sources */,
 				A57BA46020024A1600AA182D /* AppDelegate.m in Sources */,
 				A595C88B2020D65400E65F68 /* SBTDataPreparerTableViewCell.m in Sources */,
 				A561F54920055F4600F986C2 /* SBTGraphTableViewCell.m in Sources */,

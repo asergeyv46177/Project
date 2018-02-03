@@ -15,7 +15,6 @@ static NSString *const SBTSecondPartURL = @"?timespan=180days&format=json";
 
 @implementation SBTBuilderURLGraphs
 
-
 + (NSURL *)urlWithNameGraph:(NSString *)nameString
 {
     NSDictionary *nameGraphDictionary = @{@"Market Price (USD)" : @"market-price", @"USD Exchange Trade Volume" : @"trade-volume",
@@ -24,6 +23,5 @@ static NSString *const SBTSecondPartURL = @"?timespan=180days&format=json";
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@",SBTFirstPartURL,nameGraphDictionary[nameString], SBTSecondPartURL];
     return [NSURL URLWithString:urlString];
 }
-
 
 @end

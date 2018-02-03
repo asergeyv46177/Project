@@ -12,7 +12,6 @@
 
 @implementation SBTDataGraphModel
 
-
 - (instancetype)initWithGraphModel:(GraphModel *)graphModel
 {
     self = [super init];
@@ -27,6 +26,5 @@
     }
     return self;
 }
-
 
 @end

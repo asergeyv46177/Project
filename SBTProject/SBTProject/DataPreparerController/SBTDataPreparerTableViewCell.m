@@ -17,7 +17,6 @@ static CGFloat const SBTWidthImage = 50.0;
 
 @implementation SBTDataPreparerTableViewCell
 
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -36,6 +35,9 @@ static CGFloat const SBTWidthImage = 50.0;
     return self;
 }
 
+
+#pragma mark - Table view cell view customization
+
 - (void)createConstraint
 {
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,12 +55,14 @@ static CGFloat const SBTWidthImage = 50.0;
     }];
 }
 
+
+#pragma mark - Table view cell for reusable
+
 - (void)prepareForReuse
 {
     [super prepareForReuse];
     self.iconImageView.image = nil;
     self.contentLabel.text = @"";
 }
-
 
 @end

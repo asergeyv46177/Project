@@ -7,10 +7,10 @@
 //
 
 #import "SBTGraphTableViewController.h"
+#import "UIView+SBTView.h"
 #import "SBTGraphTableViewCell.h"
 #import "SBTGraphViewController.h"
 #import "SBTCoreDataDownloadFacade.h"
-#import "SBTAnimationStateChange.h"
 
 
 static NSString *const SBTIdentifierCell = @"SBTIdentifierCell";
@@ -19,10 +19,8 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 
 @interface SBTGraphTableViewController ()
 
-
 @property (nonatomic, copy) NSArray *nameGraphArray;
 @property (nonatomic, strong) SBTCoreDataDownloadFacade *coreDataDownloadFacade;
-
 
 @end
 
@@ -53,7 +51,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
+    [UIView sbt_animationWithView:self.view isAppear:YES completion:nil];
 }
 
 

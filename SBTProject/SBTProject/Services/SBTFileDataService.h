@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+ Сервис для работы с файлами
+ */
 @interface SBTFileDataService : NSObject
 
-
+/**
+ Обеспечивает получение массива данных из файлов
+ @param pathForResource - имя файла
+ @param type - расширение файла
+ @return массив данных
+ */
 + (NSArray *)obtainJSONWithPathForResource:(NSString *)pathForResource ofType:(NSString *)type;
-
 
 @end

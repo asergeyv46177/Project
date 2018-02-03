@@ -13,14 +13,11 @@
 #import <Masonry.h>
 
 
-static CGFloat const SBTWidthYAxisValuesView = 100.0;
-static CGFloat const SBTHeightGraphView = 300.0;
 static CGFloat const SBTWidthGraphView = 920.0;
 static CGFloat const SBTOffset = 15.0;
 
 
 @interface SBTGraphViewController ()
-
 
 @property (nonatomic, copy) NSString *nameGraphString;
 @property (nonatomic, strong) SBTCoreDataDownloadFacade *coreDataDownloadFacade;
@@ -37,6 +34,8 @@ static CGFloat const SBTOffset = 15.0;
 
 @implementation SBTGraphViewController
 
+
+#pragma mark - Lifecycle
 
 - (instancetype)initWithCoreDateService:(SBTCoreDataDownloadFacade *)coreDataDownloadFacade nameGraph:(NSString *)nameGraphString;
 {
@@ -68,7 +67,8 @@ static CGFloat const SBTOffset = 15.0;
                                                                      target:self
                                                                      action:@selector(actionBackBarButton)];
     self.navigationItem.leftBarButtonItem = backBarButton;
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc]
+        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicatorView.color = UIColor.blackColor;
     self.activityIndicatorView.hidesWhenStopped = YES;
     self.activityIndicatorView.center = self.view.center;
@@ -79,8 +79,8 @@ static CGFloat const SBTOffset = 15.0;
 {
     [self.activityIndicatorView startAnimating];
     [self.coreDataDownloadFacade obtainModelGraphWithPredicateString:self.nameGraphString
-        completeHandler:^(SBTDataGraphModel *dataGraphModel) {
-            self.dataGraphModel = dataGraphModel;
+        completeHandler:^(SBTDataGraphModel *dataModel) {
+            self.dataGraphModel = dataModel;
             [self createViews];
             [self setConstraints];
             [self.activityIndicatorView stopAnimating];
@@ -123,7 +123,8 @@ static CGFloat const SBTOffset = 15.0;
     self.scrollView.contentSize = CGSizeMake(SBTWidthGraphView, height);
     [self.view addSubview:self.scrollView];
     
-    self.buildGraphView = [[SBTBuildGraphView alloc] initWithDataGraphModel:self.dataGraphModel withView:self.yAxisValuesView];
+    self.buildGraphView = [[SBTBuildGraphView alloc] initWithDataGraphModel:self.dataGraphModel
+        withView:self.yAxisValuesView];
     [self.scrollView addSubview:self.buildGraphView];
 }
 
@@ -150,27 +151,23 @@ static CGFloat const SBTOffset = 15.0;
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.descriptionGraphLabel.mas_bottom).with.offset(SBTOffset);
         make.left.mas_equalTo(self.view.mas_left).with.offset(SBTOffset * 2);
-        make.bottom.mas_greaterThanOrEqualTo(self.view.mas_bottom).with.offset( - tabBarHeight);
+        make.bottom.mas_equalTo(self.view.mas_bottom).with.offset( - tabBarHeight);
         make.right.mas_equalTo(self.view.mas_right).with.offset( - SBTOffset);
-        make.height.mas_greaterThanOrEqualTo(SBTHeightGraphView);
     }];
     
     [self.buildGraphView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.scrollView.mas_top);
         make.left.mas_equalTo(self.scrollView.mas_left);
-        make.bottom.mas_greaterThanOrEqualTo(self.view.mas_bottom).with.offset( - tabBarHeight);
-        make.height.mas_greaterThanOrEqualTo(SBTHeightGraphView);
+        make.bottom.mas_equalTo(self.view.mas_bottom).with.offset( - tabBarHeight);
         make.width.mas_equalTo(SBTWidthGraphView);
     }];
     
     [self.yAxisValuesView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.scrollView.mas_top);
         make.left.mas_equalTo(self.view.mas_left).with.offset(SBTOffset / 2);
-        make.bottom.mas_greaterThanOrEqualTo(self.view.mas_bottom).with.offset( - tabBarHeight);
-        make.height.mas_greaterThanOrEqualTo(SBTHeightGraphView);
-        make.width.mas_equalTo(SBTWidthYAxisValuesView);
+        make.bottom.mas_equalTo(self.view.mas_bottom).with.offset( - tabBarHeight);
+        make.right.mas_equalTo(self.view.mas_right).with.offset( - SBTOffset / 2);
     }];
 }
-
 
 @end
