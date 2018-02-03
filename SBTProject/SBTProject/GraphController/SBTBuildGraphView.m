@@ -8,6 +8,7 @@
 
 #import "SBTBuildGraphView.h"
 #import "SBTDataGraphModel.h"
+#import "UIView+SBTView.h"
 
 
 static CGFloat const SBTOffsetTop = 25.0;
@@ -26,16 +27,15 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 
 @interface SBTBuildGraphView ()
 
-
 @property (nonatomic, strong) SBTDataGraphModel *dataGraphModel;
 @property (nonatomic, strong) UIView *yAxisValuesView;
-
+@property (nonatomic, strong) UILabel *detailedLabel;
+@property (nonatomic, assign) CGFloat stepX;
 
 @end
 
 
 @implementation SBTBuildGraphView
-
 
 - (instancetype)initWithDataGraphModel:(SBTDataGraphModel *)dataGraphModel withView:(UIView *)yAxisValuesView
 {
@@ -64,12 +64,12 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     
     [self addLabelsYAxisWithGrid:rect];
     [self addLabelsXAxis:rect];
+    [self createDetaileLabel:rect];
     
     CGFloat heightRect = rect.size.height;
     CGFloat widthRect = rect.size.width;
     CGFloat stepY = (heightRect - SBTOffsetBottom - SBTOffsetTop) / maxYInteger;
     CGFloat stepX =  widthRect / valuesXYArray.count;
-    
     UIBezierPath *bezier = [UIBezierPath bezierPath];
     NSInteger counter = 0;
     for (NSDictionary <NSString *, NSString *> *xyValue in valuesXYArray)
@@ -149,6 +149,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 
 - (void)addLabelsXAxis:(CGRect)rect
 {
+    
     NSArray *valuesXYArray = (NSArray *)  self.dataGraphModel.valuesXYArray;
     CGFloat heightRect = rect.size.height;
     CGFloat widthRect = rect.size.width;
@@ -174,6 +175,22 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
         }
         counter++;
     }
+}
+
+- (void)createDetaileLabel:(CGRect)rect
+{
+    NSArray *valuesXYArray = self.dataGraphModel.valuesXYArray;
+    CGFloat widthRect = rect.size.width;
+    CGFloat stepX =  widthRect / valuesXYArray.count;
+    self.stepX = stepX;
+    
+    CGRect bounds = self.yAxisValuesView.bounds;
+    CGFloat width = CGRectGetWidth(bounds);
+    CGRect frame = CGRectMake(SBTOffsetYLabel * 2 + SBTHeightYLabel, 0, width, SBTHeightXLabel / 2);
+    
+    self.detailedLabel = [[UILabel alloc] initWithFrame:frame];
+    self.detailedLabel.textAlignment = NSTextAlignmentCenter;
+    [self.yAxisValuesView addSubview:self.detailedLabel];
 }
 
 - (NSArray <UILabel *> *)labelsYAxis:(CGFloat)stepOfGrid
@@ -211,5 +228,32 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     return number;
 }
 
+
+#pragma mark - Responder
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    CGPoint touchPoint = [touches.anyObject locationInView:self];
+    NSInteger index = touchPoint.x / self.stepX;
+    NSDictionary *valueXY = self.dataGraphModel.valuesXYArray[index];
+    
+    NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString *valueY = valueXY[@"y"];
+    NSString *formatValueY = [numberFormatter stringFromNumber:@(valueY.integerValue)];
+    self.detailedLabel.text = [NSString stringWithFormat:@"%@ %@, %@", formatValueY,
+        self.dataGraphModel.unitString, valueXY[@"x"]];
+    [UIView sbt_animationWithView:self.detailedLabel isAppear:YES completion:nil];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+   [UIView sbt_animationWithView:self.detailedLabel isAppear:NO completion:nil];
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+   [UIView sbt_animationWithView:self.detailedLabel isAppear:NO completion:nil];
+}
 
 @end

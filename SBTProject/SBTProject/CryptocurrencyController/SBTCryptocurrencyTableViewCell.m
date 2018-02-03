@@ -17,8 +17,19 @@ static CGFloat const SBTWidthImage = 38.5;
 static CGFloat const SBTHeightSeparator = 2.0;
 
 
-@implementation SBTCryptocurrencyTableViewCell
+@interface SBTCryptocurrencyTableViewCell ()
 
+@property (nonatomic, strong) UIImageView *iconCryptoImageView;
+@property (nonatomic, strong) UILabel *nameCryptoLabel;
+@property (nonatomic, strong) UILabel *symbolCryptoLabel;
+@property (nonatomic, strong) UILabel *priceCryptoLabel;
+@property (nonatomic, strong) UILabel *percent24hLabel;
+@property (nonatomic, strong) UILabel *percent7dLabel;
+
+@end
+
+
+@implementation SBTCryptocurrencyTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -54,6 +65,9 @@ static CGFloat const SBTHeightSeparator = 2.0;
     }
     return self;
 }
+
+
+#pragma mark - Table view cell view customization
 
 - (void)createConstraints
 {
@@ -126,7 +140,7 @@ static CGFloat const SBTHeightSeparator = 2.0;
 }
 
 
-#pragma mark - Methods for using cell
+#pragma mark - Table view cell for usable
 
 - (void)setupContentCell:(SBTDataPriceModel *)priceModel
 {
@@ -154,7 +168,7 @@ static CGFloat const SBTHeightSeparator = 2.0;
 }
 
 
-#pragma mark - Methods for reusing cell
+#pragma mark - Table view cell for reusable
 
 - (void)prepareForReuse
 {

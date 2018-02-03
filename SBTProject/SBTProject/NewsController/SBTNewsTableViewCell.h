@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SBTDataNewsModel;
 
 
+/**
+ Ячейка таблицы с новостями 
+ */
 @interface SBTNewsTableViewCell : UITableViewCell
 
-
-@property (nonatomic, strong) UILabel *publishedNewsLabel;
-@property (nonatomic, strong) UILabel *titleNewsLabel;
-@property (nonatomic, strong) UILabel *descriptionNewsLabel;
-@property (nonatomic, strong) UILabel *sourceNameNewsLabel;
-@property (nonatomic, strong) UILabel *authorNewsLabel;
-
+/**
+ Обеспечивает заполнение ячейки данными
+ @param newsModel - модель, из которой берутся данные для заполнения
+ */
+- (void)setupContentCell:(SBTDataNewsModel *)newsModel;
 
 @end

@@ -8,10 +8,9 @@
 
 #import "SBTParsingJSONGraphs.h"
 #import "SBTDataGraphModel.h"
-#import "SBTFormatterDate.h"
+#import "NSDate+SBTDate.h"
 
 @implementation SBTParsingJSONGraphs
-
 
 + (SBTDataGraphModel *)jsonToModel:(NSDictionary *)json
 {
@@ -27,7 +26,8 @@
     
     NSInteger maxYValue = 0;
     SBTDataGraphModel *graphModel = [SBTDataGraphModel new];
-    graphModel.unitString = json[@"unit"];
+    NSString *unitString = [json[@"unit"] stringByReplacingOccurrencesOfString:@"Trade Volume (USD)" withString:@"USD"];
+    graphModel.unitString = unitString;
     graphModel.descriptionString = json[@"description"];
     graphModel.nameString = json[@"name"];
     NSArray *valuesArray = json[@"values"];
@@ -37,7 +37,7 @@
         NSDictionary *updatedValueDictionary = [NSDictionary new];
         NSInteger xValue = valueDictionary[@"x"].integerValue;
         NSInteger yValue = valueDictionary[@"y"].integerValue;
-        NSString *xValueString = [SBTFormatterDate formatterDateStringWithTimeInterval:xValue];
+        NSString *xValueString = [NSDate sbt_formatterDateStringWithTimeInterval:xValue];
         
         if (maxYValue < yValue)
         {
@@ -51,10 +51,9 @@
     graphModel.maxYInteger = maxYValue;
     
     NSTimeInterval nowTime = [NSDate new].timeIntervalSince1970;
-    graphModel.dateLastUpdateString = [SBTFormatterDate formatterDateStringWithTimeInterval:nowTime];
+    graphModel.dateLastUpdateString = [NSDate sbt_formatterDateStringWithTimeInterval:nowTime];
     
     return graphModel;
 }
-
 
 @end

@@ -9,10 +9,17 @@
 #import <UIKit/UIKit.h>
 @class SBTDownloadDataService;
 
+
+/**
+ Контроллер для отображения таблицы с новостями
+ */
 @interface SBTNewsTableViewController : UITableViewController
 
-
+/**
+ Инициализирует контроллер с сервисом download data
+ @param downloadDataService - экземпляр класса SBTDownloadDataService
+ @return экземпляр класса SBTNewsTableViewController
+ */
 - (instancetype)initWithDownloadDataService:(SBTDownloadDataService *)downloadDataService;
-
 
 @end

@@ -12,7 +12,6 @@
 
 @implementation SBTParsingJSONPrice
 
-
 + (SBTDataPriceModel *)jsonToModel:(NSArray *)jsonArray
 {
     if (!jsonArray)
@@ -35,6 +34,5 @@
     dataPriceModel.percentChange24hFloat = stringFloatValue.floatValue;
     return dataPriceModel;
 }
-
 
 @end

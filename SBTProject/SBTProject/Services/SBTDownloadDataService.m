@@ -9,22 +9,21 @@
 #import "SBTDownloadDataService.h"
 #import "SBTBuilderURLPrice.h"
 #import "SBTBuilderURLGraphs.h"
+#import "SBTBuilderURLNews.h"
 
 #import "SBTParsingJSONGraphs.h"
 #import "SBTParsingJSONPrice.h"
+#import "SBTParsingJSONNews.h"
 
 
 @interface SBTDownloadDataService ()
 
-
 @property(nonatomic, strong) NSURLSession *session;
-
 
 @end
 
 
 @implementation SBTDownloadDataService
-
 
 - (instancetype)init
 {
@@ -38,8 +37,8 @@
     return self;
 }
 
-- (void)downloadDataWithURLKeyString:(NSString *)urlKey downloadDataType:(SBTDownloadDataType)dataType queue:(dispatch_queue_t)queue
-            completeHandler:(void(^)(id))completeHandler
+- (void)downloadDataWithURLKeyString:(NSString *)urlKey downloadDataType:(SBTDownloadDataType)dataType
+            queue:(dispatch_queue_t)queue completeHandler:(void(^)(id))completeHandler
 {
     dispatch_queue_t queue_t = dispatch_get_main_queue();
     if (queue)
@@ -93,7 +92,7 @@
     });
 }
 
-- (NSURL *)buildURLByType:(SBTDownloadDataType) dataType urlKeyString:(NSString *)urlKey
+- (NSURL *)buildURLByType:(SBTDownloadDataType)dataType urlKeyString:(NSString *)urlKey
 {
     NSURL *url;
     switch (dataType)
@@ -110,7 +109,7 @@
         }
         case SBTDownloadDataTypeNews:
         {
-//            dataModel = [SBTBuilderURLNews url];
+            url = [SBTBuilderURLNews urlWithPageSize:urlKey];
             break;
         }
     }
@@ -134,12 +133,11 @@
         }
         case SBTDownloadDataTypeNews:
         {
-//            dataModel = [SBTParsingJSONNews jsonToModel:json];
+            dataModel = [SBTParsingJSONNews jsonToModel:json];
             break;
         }
     }
     return dataModel;
 }
-
 
 @end

@@ -10,10 +10,18 @@
 @class SBTDataGraphModel;
 
 
+/**
+ Вью, на которой непосредственно строится график
+ */
 @interface SBTBuildGraphView : UIView
 
-
+/**
+ Инициализирует вью с моделью и вью
+ @param dataGraphModel - модель, из которой берутся данные для построения графика
+ @param yAxisValuesView - вью, на которой располагаются лейблы с названием оси ординат, значениями оси и подробным
+    значнеием при нажатии на график
+ @return экземпляр класса SBTBuildGraphView
+ */
 - (instancetype)initWithDataGraphModel:(SBTDataGraphModel *)dataGraphModel withView:(UIView *)yAxisValuesView;
-
 
 @end

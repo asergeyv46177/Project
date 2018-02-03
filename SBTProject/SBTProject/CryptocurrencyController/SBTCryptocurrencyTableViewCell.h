@@ -9,17 +9,16 @@
 #import <UIKit/UIKit.h>
 @class SBTDataPriceModel;
 
+
+/**
+ Ячейка таблицы с текущими ценами на криптовалюту 
+ */
 @interface SBTCryptocurrencyTableViewCell : UITableViewCell
 
-
-@property (nonatomic, strong) UIImageView *iconCryptoImageView;
-@property (nonatomic, strong) UILabel *nameCryptoLabel;
-@property (nonatomic, strong) UILabel *symbolCryptoLabel;
-@property (nonatomic, strong) UILabel *priceCryptoLabel;
-@property (nonatomic, strong) UILabel *percent24hLabel;
-@property (nonatomic, strong) UILabel *percent7dLabel;
-
+/**
+ Обеспечивает заполнение ячейки данными
+ @param priceModel - модель, из которой берутся данные для заполнения
+ */
 - (void)setupContentCell:(SBTDataPriceModel *)priceModel;
-
 
 @end

@@ -10,10 +10,16 @@
 @class SBTCoreDataDownloadFacade;
 
 
+/**
+ Контроллер для отображения подробного графика с названием и описанием
+ */
 @interface SBTGraphViewController : UIViewController
 
-
+/**
+ Инициализирует контроллер с фасадом для работы с сервисами core data и download data
+ @param coreDataDownloadFacade - экземпляр класса SBTCoreDataDownloadFacade
+ @return экземпляр класса SBTGraphViewController
+ */
 - (instancetype)initWithCoreDateService:(SBTCoreDataDownloadFacade *)coreDataDownloadFacade nameGraph:(NSString *)nameGraphString;
-
 
 @end

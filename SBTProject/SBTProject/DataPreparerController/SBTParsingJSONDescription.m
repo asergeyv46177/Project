@@ -12,7 +12,6 @@
 
 @implementation SBTParsingJSONDescription
 
-
 + (NSArray *)jsonToModel:(NSDictionary *)json
 {
     if (!json)
@@ -43,6 +42,5 @@
     }
     return [modelArray copy];
 }
-
 
 @end

@@ -15,17 +15,13 @@
 
 @interface SBTCoreDataDownloadFacade ()
 
-
 @property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
-
 
 @end
 
 
-
 @implementation SBTCoreDataDownloadFacade
-
 
 - (instancetype)initWithCoreDataService:(SBTCoreDataService *)coreDataService
                      dowloadDataService:(SBTDownloadDataService *)downloadDataService;
@@ -40,7 +36,7 @@
 }
 
 - (void)obtainModelGraphWithPredicateString:(NSString *)predicate
-            completeHandler:(void(^)(SBTDataGraphModel *))completeHandler
+            completeHandler:(void(^)(SBTDataGraphModel *dataModel))completeHandler
 {
     NSArray <GraphModel *> *modelArray = [self.coreDataService obtainModelArrayWithEntityName:[GraphModel class]
                                             predicateString:predicate];
@@ -49,8 +45,8 @@
     
     if (isRelevant)
     {
-        SBTDataGraphModel *dataGraphModel = [[SBTDataGraphModel alloc] initWithGraphModel:modelArray.firstObject];
-        completeHandler(dataGraphModel);
+        SBTDataGraphModel *dataModel = [[SBTDataGraphModel alloc] initWithGraphModel:modelArray.firstObject];
+        completeHandler(dataModel);
     }
     else
     {
@@ -62,6 +58,5 @@
             }];
     }
 }
-
 
 @end

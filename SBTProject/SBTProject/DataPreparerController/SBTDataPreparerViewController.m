@@ -7,11 +7,11 @@
 //
 
 #import "SBTDataPreparerViewController.h"
+#import "UIView+SBTView.h"
+#import "UIImageView+SBTImageView.h"
 #import "SBTChangeRootViewControllerProtocol.h"
 #import "SBTCoreDataFileFacade.h"
-#import "SBTAnimationWaiting.h"
 #import "SBTDataPreparerTableViewCell.h"
-#import "SBTAnimationStateChange.h"
 #import <Masonry.h>
 
 
@@ -23,7 +23,6 @@ static NSString *const SBTPreparerCellIdentifier = @"SBTPreparerCellIdentifier";
 
 @interface SBTDataPreparerViewController () <UITableViewDataSource>
 
-
 @property (nonatomic, strong) SBTCoreDataFileFacade *coreDataFileFacade;
 @property (nonatomic, strong) UIButton *okeyButton;
 @property (nonatomic, strong) UILabel *mainLabel;
@@ -33,7 +32,6 @@ static NSString *const SBTPreparerCellIdentifier = @"SBTPreparerCellIdentifier";
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, copy) NSArray *contentArray;
 @property (nonatomic, copy) NSArray *nameArray;
-
 
 @end
 
@@ -61,7 +59,7 @@ static NSString *const SBTPreparerCellIdentifier = @"SBTPreparerCellIdentifier";
     self.view.backgroundColor = UIColor.whiteColor;
     [self prepareViews];
     [self createConstraints];
-    [self.animationView addSubview:[SBTAnimationWaiting animationOnView:self.view]];
+    [self.animationView addSubview:[UIImageView sbt_animationOnView:self.view]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,6 +71,40 @@ static NSString *const SBTPreparerCellIdentifier = @"SBTPreparerCellIdentifier";
                                                 selector:@selector(actionTimerRemoveAnimation)
                                                 userInfo:nil
                                                  repeats:NO];
+}
+
+
+#pragma mark - Action timer
+
+- (void)actionTimerRemoveAnimation
+{
+    [UIView sbt_animationWithView:self.animationView isAppear:NO completion:^{
+        [self.animationView removeFromSuperview];
+    }];
+}
+
+
+#pragma mark - Action okey button
+
+- (void)actionOkeyButton
+{
+    [self.delegate changeRootViewController:self];
+}
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.nameArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SBTDataPreparerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTPreparerCellIdentifier forIndexPath:indexPath];
+    cell.iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.nameArray[indexPath.row]]];
+    cell.contentLabel.text = self.contentArray[indexPath.row];
+    return cell;
 }
 
 
@@ -108,40 +140,6 @@ static NSString *const SBTPreparerCellIdentifier = @"SBTPreparerCellIdentifier";
     self.animationView = [UIView new];
     self.animationView.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.animationView];
-}
-
-
-#pragma mark - Action timer
-
-- (void)actionTimerRemoveAnimation
-{
-    [SBTAnimationStateChange animationWithView:self.animationView isAppear:NO completion:^{
-        [self.animationView removeFromSuperview];
-    }];
-}
-
-
-#pragma mark - Action okey button
-
-- (void)actionOkeyButton
-{
-    [self.delegate changeRootViewController:self];
-}
-
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.nameArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SBTDataPreparerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTPreparerCellIdentifier forIndexPath:indexPath];
-    cell.iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.nameArray[indexPath.row]]];
-    cell.contentLabel.text = self.contentArray[indexPath.row];
-    return cell;
 }
 
 - (void)createConstraints
@@ -180,6 +178,5 @@ static NSString *const SBTPreparerCellIdentifier = @"SBTPreparerCellIdentifier";
         make.height.mas_equalTo(SBTHeightButton);
     }];
 }
-
 
 @end

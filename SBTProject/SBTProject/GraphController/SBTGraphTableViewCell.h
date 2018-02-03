@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
+/**
+ Ячейка таблицы с названием и упрощенным видом графика 
+ */
 @interface SBTGraphTableViewCell : UITableViewCell
 
-
-@property (nonatomic, strong) UILabel *nameGraphLabel;
-@property (nonatomic, strong) UIImageView *viewGraphImageView;
-
+@property (nonatomic, strong) UILabel *nameGraphLabel;              /**< Название графика */
+@property (nonatomic, strong) UIImageView *viewGraphImageView;      /**< Картинка с упрощенным видом графика */
 
 @end

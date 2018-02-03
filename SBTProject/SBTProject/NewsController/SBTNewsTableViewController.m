@@ -7,9 +7,11 @@
 //
 
 #import "SBTNewsTableViewController.h"
+#import "UIView+SBTView.h"
 #import "SBTNewsTableViewCell.h"
-#import "SBTNewsWebViewController.h"
-#import "SBTAnimationStateChange.h"
+#import "SBTDownloadDataService.h"
+#import "SBTDataNewsModel.h"
+#import <SafariServices/SafariServices.h>
 
 
 static CGFloat const SBTOffsetToCenterTabBar = 9;
@@ -18,15 +20,17 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
 
 @interface SBTNewsTableViewController ()
 
-
 @property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
-
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, copy) NSArray *modelArray;
 
 @end
 
 
 @implementation SBTNewsTableViewController
 
+
+#pragma mark - Lifecycle
 
 - (instancetype)initWithDownloadDataService:(SBTDownloadDataService *)downloadDataService
 {
@@ -43,26 +47,49 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
-//    self.navigationController.navigationBar.prefersLargeTitles = YES;
-    self.navigationItem.title = @"News";
-    [self.tableView registerClass:[SBTNewsTableViewCell class] forCellReuseIdentifier:SBTNewsIdentifierCell];
+    [self prepareViews];
+    [self.activityIndicatorView startAnimating];
+    [self.downloadDataService downloadDataWithURLKeyString:@"40" downloadDataType:SBTDownloadDataTypeNews queue:nil
+        completeHandler:^(id modelArray) {
+            self.modelArray = modelArray;
+            [self.tableView reloadData];
+            [self.activityIndicatorView stopAnimating];
+        }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [SBTAnimationStateChange animationWithView:self.view isAppear:YES completion:nil];
+    [UIView sbt_animationWithView:self.view isAppear:YES completion:nil];
 }
 
 
-#pragma mark - Table view data source
+#pragma mark - Prepare views
+
+- (void)prepareViews
+{
+    self.view.backgroundColor = UIColor.whiteColor;
+    self.navigationItem.title = @"News";
+    
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicatorView.color = UIColor.blackColor;
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
+    
+    [self.tableView registerClass:[SBTNewsTableViewCell class] forCellReuseIdentifier:SBTNewsIdentifierCell];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SBTNewsWebViewController *webViewController = [SBTNewsWebViewController new];
-    webViewController.urlNewsString = @"https://www.ccn.com/visa-ceo-we-wont-accept-bitcoin-directly/";
-    [self.navigationController pushViewController:webViewController animated:YES];
+    SBTDataNewsModel *dataNewsModel = self.modelArray[indexPath.row];
+    NSURL *url = [NSURL URLWithString:dataNewsModel.urlString];
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
+    [self.navigationController pushViewController:safariViewController animated:YES];
 }
 
 
@@ -70,21 +97,14 @@ static NSString *const SBTNewsIdentifierCell = @"SBTNewsIdentifierCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.modelArray.count;
 }
-
-//https://www.ccn.com/visa-ceo-we-wont-accept-bitcoin-directly/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SBTNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTNewsIdentifierCell forIndexPath:indexPath];
-    cell.publishedNewsLabel.text = @"2018-01-19 13:01:57";
-    cell.titleNewsLabel.text = @"Visa CEO: We Won’t Accept Bitcoin Directly";
-    cell.descriptionNewsLabel.text = @"The post Visa CEO: We Won’t Accept Bitcoin Directly appeared first on CCN Visa will not directly accept bitcoin, according to company CEO Alfred Kelly in a recent CNBC interview during the National Retail Federation trade show in New York City. “We at Visa wo…";
-    cell.sourceNameNewsLabel.text = @"Crypto Coins News";
-    cell.authorNewsLabel.text = @"Lester Coleman";
+    [cell setupContentCell:self.modelArray[indexPath.row]];
     return cell;
 }
-
 
 @end
