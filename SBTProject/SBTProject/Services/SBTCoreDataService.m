@@ -48,14 +48,12 @@
     {
         return NO;
     }
-
     NSTimeInterval nowTime = [NSDate new].timeIntervalSince1970;
     NSString *nowTimeString = [NSDate sbt_formatterDateStringWithTimeInterval:nowTime];
     if (![nowTimeString isEqualToString:dateLastUpdate])
     {
         return NO;
     }
-
     return YES;
 }
 

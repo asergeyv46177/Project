@@ -40,6 +40,10 @@
 - (void)downloadDataWithURLKeyString:(NSString *)urlKey downloadDataType:(SBTDownloadDataType)dataType
             queue:(dispatch_queue_t)queue completeHandler:(void(^)(id))completeHandler
 {
+    if (0 == dataType)
+    {
+        return;
+    }
     dispatch_queue_t queue_t = dispatch_get_main_queue();
     if (queue)
     {
@@ -116,7 +120,7 @@
     return url;
 }
 
-- (id)parsingByType:(SBTDownloadDataType)dataType json:(NSDictionary *)json
+- (id)parsingByType:(SBTDownloadDataType)dataType json:(id)json
 {
     id dataModel;
     switch (dataType)

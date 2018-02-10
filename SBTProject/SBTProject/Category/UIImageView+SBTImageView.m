@@ -29,16 +29,17 @@ static NSUInteger const SBTNumberOfPictures = 50;
     view.image = [UIImage imageNamed:@"orbit"];
     
     NSArray *positionWithScale = @[@[@(0),@(360),@(1),@(1)], @[@(180),@(540),@(1),@(1)], @[@(270),@(630),@(4),@(0.25)]];
-    NSArray *matrixsTransform =@[@[@(1.1),@(0),@(1), @(1.6),@(-1.2),@(-2.1)], @[@(1.1),@(0),@(-1),@(1.6),@(-1.2),@(1.8)], @[@(2),@(0),@(0),@(0.9),@(0.2),@(-2)]];
+    NSArray *matrixsTransform =@[@[@(1.1),@(0),@(1), @(1.6),@(-1.2),@(-2.1)], @[@(1.1),@(0),@(-1),@(1.6),@(-1.2),@(1.8)],
+        @[@(2),@(0),@(0),@(0.9),@(0.2),@(-2)]];
     NSArray *names = @[@"bitcoin",@"litecoin",@"iota"];
     [UIImageView sbt_animation:view matrixTransformArray:matrixsTransform nameArray:names
-            positionWithScaleArray:positionWithScale];
+        positionWithScaleArray:positionWithScale];
     return view;
 }
 
 
 + (void)sbt_animation:(UIImageView *)view matrixTransformArray:(NSArray *)matrixTransformArray nameArray:(NSArray *)nameArray
-positionWithScaleArray:(NSArray *)positionWithScaleArray
+            positionWithScaleArray:(NSArray *)positionWithScaleArray
 {
     [UIImageView sbt_addEarthAnimating:view];
     

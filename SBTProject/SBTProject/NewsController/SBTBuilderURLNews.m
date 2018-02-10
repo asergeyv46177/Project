@@ -17,6 +17,10 @@ static NSString *const SBTSecondPartURL = @"&apiKey=11e5f62b048d4b819e388a7b5f1a
 
 + (NSURL *)urlWithPageSize:(NSString *)pageSize
 {
+    if (!pageSize)
+    {
+        return nil;
+    }
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@", SBTFirstPartURL, pageSize, SBTSecondPartURL];
     return [NSURL URLWithString:urlString];
 }

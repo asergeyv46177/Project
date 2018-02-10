@@ -24,7 +24,7 @@
         return nil;
     }
     NSArray *coinsArray = json[@"coinsArray"];
-    NSMutableArray <SBTDataDescriptionModel *> *modelArray = [NSMutableArray new];
+    NSMutableArray *modelArray = [NSMutableArray new];
     for (NSDictionary *modelDictionary in coinsArray)
     {
         SBTDataDescriptionModel *dataDescriptionModel = [SBTDataDescriptionModel new];

@@ -162,6 +162,7 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
     {
         return nil;
     }
+    
     NSMutableArray *propertyArray = [NSMutableArray new];
     [propertyArray addObject:descriptionModel.symbolString];
     [propertyArray addObject:descriptionModel.startDateString];
@@ -172,6 +173,7 @@ static NSString *const SBTCryptocurrencyDescriptionCellIdentifier = @"SBTCryptoc
     [propertyArray addObject:descriptionModel.totalCoinSupplyString];
     [propertyArray addObject:descriptionModel.affiliateUrlString];
     [propertyArray addObject:descriptionModel.twitterString];
+    
     return [propertyArray copy];
 }
 

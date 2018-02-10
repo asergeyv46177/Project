@@ -17,6 +17,10 @@ static NSString *const SBTSecondPartURL = @"/?convert=USD";
 
 + (NSURL *)urlWithNameCryptoString:(NSString *)nameString
 {
+    if (!nameString)
+    {
+        return nil;
+    }
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@",SBTFirstPartURL, nameString, SBTSecondPartURL];
     return [NSURL URLWithString:urlString];
 }

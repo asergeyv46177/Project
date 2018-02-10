@@ -15,8 +15,8 @@
 
 @interface SBTCoreDataDownloadFacade ()
 
-@property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 @property (nonatomic, strong) SBTCoreDataService *coreDataService;
+@property (nonatomic, strong) SBTDownloadDataService *downloadDataService;
 
 @end
 
@@ -29,8 +29,8 @@
     self = [super init];
     if (self)
     {
-        _downloadDataService = downloadDataService;
         _coreDataService = coreDataService;
+        _downloadDataService = downloadDataService;
     }
     return self;
 }
@@ -38,11 +38,8 @@
 - (void)obtainModelGraphWithPredicateString:(NSString *)predicate
             completeHandler:(void(^)(SBTDataGraphModel *dataModel))completeHandler
 {
-    NSArray <GraphModel *> *modelArray = [self.coreDataService obtainModelArrayWithEntityName:[GraphModel class]
-                                            predicateString:predicate];
-    
+    NSArray <GraphModel *> *modelArray = [self.coreDataService obtainModelArrayWithEntityName:[GraphModel class] predicateString:predicate];
     BOOL isRelevant = [self.coreDataService relevantGraphModel:[modelArray firstObject].dateLastUpdateString];
-    
     if (isRelevant)
     {
         SBTDataGraphModel *dataModel = [[SBTDataGraphModel alloc] initWithGraphModel:modelArray.firstObject];

@@ -34,7 +34,6 @@
     NSMutableArray *valueXYArray = [NSMutableArray new];
     for (NSDictionary <NSString *, NSString *> *valueDictionary in valuesArray)
     {
-        NSDictionary *updatedValueDictionary = [NSDictionary new];
         NSInteger xValue = valueDictionary[@"x"].integerValue;
         NSInteger yValue = valueDictionary[@"y"].integerValue;
         NSString *xValueString = [NSDate sbt_formatterDateStringWithTimeInterval:xValue];
@@ -44,7 +43,7 @@
             maxYValue = yValue;
         }
         
-        updatedValueDictionary = @{@"x":xValueString, @"y":[NSString stringWithFormat:@"%li", yValue]};
+        NSDictionary *updatedValueDictionary = @{@"x":xValueString, @"y":[NSString stringWithFormat:@"%li", yValue]};
         [valueXYArray addObject:updatedValueDictionary];
     }
     graphModel.valuesXYArray = [valueXYArray copy];

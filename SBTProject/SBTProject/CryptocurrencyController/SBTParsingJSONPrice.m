@@ -14,7 +14,7 @@
 
 + (SBTDataPriceModel *)jsonToModel:(NSArray *)jsonArray
 {
-    if (!jsonArray)
+    if ((!jsonArray) || (!jsonArray.count))
     {
         return nil;
     }

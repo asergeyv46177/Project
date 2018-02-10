@@ -43,7 +43,7 @@ static CGFloat const SBTOffset = 15.0;
     if (self)
     {
         _coreDataDownloadFacade = coreDataDownloadFacade;
-        _nameGraphString = nameGraphString;
+        _nameGraphString = [nameGraphString copy];
     }
     return self;
 }

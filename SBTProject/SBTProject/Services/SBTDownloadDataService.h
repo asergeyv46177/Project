@@ -18,7 +18,7 @@
  Enum для определения, как должен быть создан URL и как необходимо парсить полученные данные из сети
  */
 typedef NS_ENUM(NSUInteger, SBTDownloadDataType) {
-    SBTDownloadDataTypeGraph,
+    SBTDownloadDataTypeGraph = 1,
     SBTDownloadDataTypePrice,
     SBTDownloadDataTypeNews,
 };

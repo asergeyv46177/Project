@@ -117,8 +117,13 @@ static NSString *const SBTAuthor = @"AUTHOR: ";
 
 - (NSAttributedString *)attributedString:(NSString *)authorString
 {
+    NSString *author = @"";
+    if (authorString)
+    {
+        author = authorString;
+    }
     NSMutableAttributedString *attributedString  = [[NSMutableAttributedString alloc] initWithString:[NSString
-        stringWithFormat:@"%@%@",SBTAuthor, authorString]];
+        stringWithFormat:@"%@%@",SBTAuthor, author]];
     NSRange range = NSMakeRange(SBTAuthor.length, authorString.length);
     UIColor *textColor = [UIColor colorWithRed:142/255.f green:142/255.f blue:147/255.f alpha:1.0];
     [attributedString addAttribute:NSForegroundColorAttributeName value:textColor range:range];

@@ -17,6 +17,10 @@ static NSString *const SBTSecondPartURL = @"?timespan=180days&format=json";
 
 + (NSURL *)urlWithNameGraph:(NSString *)nameString
 {
+    if (!nameString)
+    {
+        return nil;
+    }
     NSDictionary *nameGraphDictionary = @{@"Market Price (USD)" : @"market-price", @"USD Exchange Trade Volume" : @"trade-volume",
         @"Market Capitalization" : @"market-cap", @"Miners Revenue" : @"miners-revenue", @"Total Transaction Fees" : @"transaction-fees"};
     

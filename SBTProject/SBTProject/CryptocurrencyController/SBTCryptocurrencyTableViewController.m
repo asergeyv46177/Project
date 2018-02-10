@@ -165,6 +165,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
             return NSOrderedSame;
         }
     }];
+    
     return newArray;
 }
 

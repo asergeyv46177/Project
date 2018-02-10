@@ -18,6 +18,7 @@ static CGFloat const SBTOffsetBottom = 40.0;
 static CGFloat const SBTWidthYLabel = 150.0;
 static CGFloat const SBTHeightYLabel = 14.0;
 static CGFloat const SBTHeightXLabel = 40.0;
+static CGFloat const SBTDiameterDetailedPoint = 8.0;
 
 static NSInteger const SBTStepChange = 5;
 static NSInteger const SBTNumberXLabel = 19;
@@ -30,7 +31,8 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 @property (nonatomic, strong) SBTDataGraphModel *dataGraphModel;
 @property (nonatomic, strong) UIView *yAxisValuesView;
 @property (nonatomic, strong) UILabel *detailedLabel;
-@property (nonatomic, assign) CGFloat stepX;
+@property (nonatomic, strong) UIImageView *detailedPointImageView;
+@property (nonatomic, assign) CGPoint stepXY;
 
 @end
 
@@ -64,7 +66,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     
     [self addLabelsYAxisWithGrid:rect];
     [self addLabelsXAxis:rect];
-    [self createDetaileLabel:rect];
+    [self createDetaileView:rect];
     
     CGFloat heightRect = rect.size.height;
     CGFloat widthRect = rect.size.width;
@@ -177,12 +179,16 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     }
 }
 
-- (void)createDetaileLabel:(CGRect)rect
+- (void)createDetaileView:(CGRect)rect
 {
     NSArray *valuesXYArray = self.dataGraphModel.valuesXYArray;
+    NSInteger maxYInteger = self.dataGraphModel.maxYInteger;
+    
     CGFloat widthRect = rect.size.width;
+    CGFloat heightRect = rect.size.height;
     CGFloat stepX =  widthRect / valuesXYArray.count;
-    self.stepX = stepX;
+    CGFloat stepY = (heightRect - SBTOffsetBottom - SBTOffsetTop) / maxYInteger;
+    self.stepXY = CGPointMake(stepX, stepY);
     
     CGRect bounds = self.yAxisValuesView.bounds;
     CGFloat width = CGRectGetWidth(bounds);
@@ -191,6 +197,13 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     self.detailedLabel = [[UILabel alloc] initWithFrame:frame];
     self.detailedLabel.textAlignment = NSTextAlignmentCenter;
     [self.yAxisValuesView addSubview:self.detailedLabel];
+    
+    CGRect pointFrame = CGRectMake(0, 0, SBTDiameterDetailedPoint, SBTDiameterDetailedPoint);
+    self.detailedPointImageView = [[UIImageView alloc] initWithFrame:pointFrame];
+    self.detailedPointImageView.backgroundColor = UIColor.blackColor;
+    self.detailedPointImageView.alpha = 0.0;
+    self.detailedPointImageView.layer.cornerRadius = SBTDiameterDetailedPoint / 2;
+    [self addSubview:self.detailedPointImageView];
 }
 
 - (NSArray <UILabel *> *)labelsYAxis:(CGFloat)stepOfGrid
@@ -204,12 +217,14 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     NSMutableArray *labelsYArray = [NSMutableArray new];
     for (NSUInteger lineNumber = 0; lineNumber < numberOfLines; lineNumber++)
     {
+        NSString *textLabel = [numberFormatter stringFromNumber:@(stepYLabel * (SBTNumberOfSegments - lineNumber))];
+        
         CGRect bounds = self.yAxisValuesView.bounds;
         CGFloat originX = SBTOffsetYLabel * 2 + SBTHeightYLabel;
-        CGFloat originY = CGRectGetMinY(bounds) + SBTOffsetYLabel + lineNumber*stepOfGrid;
+        CGFloat originY = CGRectGetMinY(bounds) + SBTOffsetYLabel + lineNumber * stepOfGrid;
         CGRect rect = CGRectMake(originX, originY, SBTWidthYLabel, SBTHeightYLabel);
+        
         UILabel *label = [[UILabel alloc] initWithFrame:rect];
-        NSString *textLabel = [numberFormatter stringFromNumber:@(stepYLabel * (SBTNumberOfSegments - lineNumber))];
         label.text = [textLabel stringByReplacingOccurrencesOfString:@"E" withString:@"e"];;
         label.font = [UIFont systemFontOfSize:12];
         [labelsYArray addObject:label];
@@ -222,7 +237,7 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     NSInteger countOfCharsInNumber = [NSString stringWithFormat:@"%li", number].length;
     NSInteger roundedToSecondHighestSymbol = round(number / (pow(10, countOfCharsInNumber - SBTNumberOfSignificantSymbol)));
     NSInteger additive = SBTStepChange - (roundedToSecondHighestSymbol % SBTStepChange == 0
-                            ? SBTStepChange : roundedToSecondHighestSymbol % SBTStepChange);
+        ? SBTStepChange : roundedToSecondHighestSymbol % SBTStepChange);
     roundedToSecondHighestSymbol += additive;
     number = roundedToSecondHighestSymbol * pow(10, countOfCharsInNumber - SBTNumberOfSignificantSymbol);
     return number;
@@ -234,26 +249,37 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     CGPoint touchPoint = [touches.anyObject locationInView:self];
-    NSInteger index = touchPoint.x / self.stepX;
+    NSInteger index = touchPoint.x / self.stepXY.x;
     NSDictionary *valueXY = self.dataGraphModel.valuesXYArray[index];
+    NSString *valueY = valueXY[@"y"];
     
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSString *valueY = valueXY[@"y"];
     NSString *formatValueY = [numberFormatter stringFromNumber:@(valueY.integerValue)];
-    self.detailedLabel.text = [NSString stringWithFormat:@"%@ %@, %@", formatValueY,
+    self.detailedLabel.text = [NSString stringWithFormat:@"%@ %@,  %@", formatValueY,
         self.dataGraphModel.unitString, valueXY[@"x"]];
     [UIView sbt_animationWithView:self.detailedLabel isAppear:YES completion:nil];
+    
+    CGRect bounds = self.bounds;
+    CGFloat heightBounds = CGRectGetHeight(bounds);
+    CGFloat height = heightBounds - SBTOffsetBottom - valueY.integerValue * self.stepXY.y;
+    CGFloat width = self.stepXY.x * index;
+    
+    CGPoint detailedPoint = CGPointMake(width, height);
+    self.detailedPointImageView.center = detailedPoint;
+    [UIView sbt_animationWithView:self.detailedPointImageView isAppear:YES completion:nil];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-   [UIView sbt_animationWithView:self.detailedLabel isAppear:NO completion:nil];
+    [UIView sbt_animationWithView:self.detailedLabel isAppear:NO completion:nil];
+    [UIView sbt_animationWithView:self.detailedPointImageView isAppear:NO completion:nil];
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-   [UIView sbt_animationWithView:self.detailedLabel isAppear:NO completion:nil];
+    [UIView sbt_animationWithView:self.detailedLabel isAppear:NO completion:nil];
+    [UIView sbt_animationWithView:self.detailedPointImageView isAppear:NO completion:nil];
 }
 
 @end

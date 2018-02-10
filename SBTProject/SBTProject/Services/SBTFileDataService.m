@@ -14,15 +14,18 @@
 
 + (NSArray *)obtainJSONWithPathForResource:(NSString *)pathForResource ofType:(NSString *)type
 {
+    if (!pathForResource || !type)
+    {
+        return nil;
+    }
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:pathForResource ofType:type];
     NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary* json;
     if (!data)
     {
         return nil;
     }
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     return [SBTParsingJSONDescription jsonToModel:json];
 }
 

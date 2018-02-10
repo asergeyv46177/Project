@@ -31,8 +31,6 @@
 		A57BA46920024A1600AA182D /* SBTProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57BA46720024A1600AA182D /* SBTProject.xcdatamodeld */; };
 		A57BA46B20024A1600AA182D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57BA46A20024A1600AA182D /* Assets.xcassets */; };
 		A57BA47120024A1600AA182D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA47020024A1600AA182D /* main.m */; };
-		A57BA47B20024A1600AA182D /* SBTProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA47A20024A1600AA182D /* SBTProjectTests.m */; };
-		A57BA48620024A1600AA182D /* SBTProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A57BA48520024A1600AA182D /* SBTProjectUITests.m */; };
 		A57C5EAE2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */; };
 		A57C5EB12007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB02007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.m */; };
 		A57C5EB42007FCEA00F2C230 /* SBTNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C5EB32007FCEA00F2C230 /* SBTNewsTableViewController.m */; };
@@ -53,17 +51,25 @@
 		A5971B3A201CD7E40010FD86 /* SBTDataDescriptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A5971B39201CD7E40010FD86 /* SBTDataDescriptionModel.m */; };
 		A5AAA8AA2017468D00AA3A84 /* SBTCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */; };
 		A5DCE71A200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DCE719200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m */; };
+		A5E9F20A2028D87C00D3806F /* SBTParsingJSONGraphsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F2092028D87C00D3806F /* SBTParsingJSONGraphsTests.m */; };
+		A5E9F20C2029C35F00D3806F /* SBTBuilderURLGraphsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F20B2029C35F00D3806F /* SBTBuilderURLGraphsTests.m */; };
+		A5E9F20E2029CA9200D3806F /* SBTBuildGraphViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F20D2029CA9200D3806F /* SBTBuildGraphViewTests.m */; };
+		A5E9F2112029E56400D3806F /* SBTParsingJSONPriceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F2102029E56400D3806F /* SBTParsingJSONPriceTests.m */; };
+		A5E9F2132029F4CB00D3806F /* SBTBuilderURLPriceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F2122029F4CB00D3806F /* SBTBuilderURLPriceTests.m */; };
+		A5E9F215202A1A2800D3806F /* SBTCryptocurrencyTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F214202A1A2800D3806F /* SBTCryptocurrencyTableViewCellTests.m */; };
+		A5E9F218202B0DF800D3806F /* SBTCoreDataDownloadFacadeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F217202B0DF800D3806F /* SBTCoreDataDownloadFacadeTests.m */; };
+		A5E9F21B202C21C500D3806F /* SBTParsingJSONNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F21A202C21C500D3806F /* SBTParsingJSONNewsTests.m */; };
+		A5E9F21D202C290100D3806F /* SBTBuilderURLNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F21C202C290100D3806F /* SBTBuilderURLNewsTests.m */; };
+		A5E9F21F202C2CB800D3806F /* SBTNewsTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F21E202C2CB800D3806F /* SBTNewsTableViewCellTests.m */; };
+		A5E9F222202C374400D3806F /* SBTParsingJSONDescriptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F221202C374400D3806F /* SBTParsingJSONDescriptionTests.m */; };
+		A5E9F226202C4D0000D3806F /* NSDate+SBTDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F225202C4D0000D3806F /* NSDate+SBTDateTests.m */; };
+		A5E9F228202CD76100D3806F /* SBTCoreDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F227202CD76100D3806F /* SBTCoreDataServiceTests.m */; };
+		A5E9F22A202CE48B00D3806F /* SBTFileDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F229202CE48B00D3806F /* SBTFileDataServiceTests.m */; };
+		A5E9F22C202EDAFC00D3806F /* SBTDownloadDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F22B202EDAFC00D3806F /* SBTDownloadDataServiceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A57BA47720024A1600AA182D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A57BA45320024A1600AA182D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A57BA45A20024A1600AA182D;
-			remoteInfo = SBTProject;
-		};
-		A57BA48220024A1600AA182D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A57BA45320024A1600AA182D /* Project object */;
 			proxyType = 1;
@@ -119,11 +125,7 @@
 		A57BA46F20024A1600AA182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57BA47020024A1600AA182D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57BA47620024A1600AA182D /* SBTProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBTProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57BA47A20024A1600AA182D /* SBTProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTProjectTests.m; sourceTree = "<group>"; };
 		A57BA47C20024A1600AA182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A57BA48120024A1600AA182D /* SBTProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBTProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57BA48520024A1600AA182D /* SBTProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTProjectUITests.m; sourceTree = "<group>"; };
-		A57BA48720024A1600AA182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57C5EAC2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyTableViewController.h; sourceTree = "<group>"; };
 		A57C5EAD2007FA6000F2C230 /* SBTCryptocurrencyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyTableViewController.m; sourceTree = "<group>"; };
 		A57C5EAF2007FB6600F2C230 /* SBTCryptocurrencyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyTableViewCell.h; sourceTree = "<group>"; };
@@ -165,6 +167,21 @@
 		A5AAA8A92017468D00AA3A84 /* SBTCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataService.m; sourceTree = "<group>"; };
 		A5DCE718200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTCryptocurrencyDescriptionTableViewCell.h; sourceTree = "<group>"; };
 		A5DCE719200E64A4009AF924 /* SBTCryptocurrencyDescriptionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		A5E9F2092028D87C00D3806F /* SBTParsingJSONGraphsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONGraphsTests.m; sourceTree = "<group>"; };
+		A5E9F20B2029C35F00D3806F /* SBTBuilderURLGraphsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLGraphsTests.m; sourceTree = "<group>"; };
+		A5E9F20D2029CA9200D3806F /* SBTBuildGraphViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuildGraphViewTests.m; sourceTree = "<group>"; };
+		A5E9F2102029E56400D3806F /* SBTParsingJSONPriceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONPriceTests.m; sourceTree = "<group>"; };
+		A5E9F2122029F4CB00D3806F /* SBTBuilderURLPriceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLPriceTests.m; sourceTree = "<group>"; };
+		A5E9F214202A1A2800D3806F /* SBTCryptocurrencyTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCryptocurrencyTableViewCellTests.m; sourceTree = "<group>"; };
+		A5E9F217202B0DF800D3806F /* SBTCoreDataDownloadFacadeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataDownloadFacadeTests.m; sourceTree = "<group>"; };
+		A5E9F21A202C21C500D3806F /* SBTParsingJSONNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONNewsTests.m; sourceTree = "<group>"; };
+		A5E9F21C202C290100D3806F /* SBTBuilderURLNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTBuilderURLNewsTests.m; sourceTree = "<group>"; };
+		A5E9F21E202C2CB800D3806F /* SBTNewsTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTNewsTableViewCellTests.m; sourceTree = "<group>"; };
+		A5E9F221202C374400D3806F /* SBTParsingJSONDescriptionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTParsingJSONDescriptionTests.m; sourceTree = "<group>"; };
+		A5E9F225202C4D0000D3806F /* NSDate+SBTDateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SBTDateTests.m"; sourceTree = "<group>"; };
+		A5E9F227202CD76100D3806F /* SBTCoreDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataServiceTests.m; sourceTree = "<group>"; };
+		A5E9F229202CE48B00D3806F /* SBTFileDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTFileDataServiceTests.m; sourceTree = "<group>"; };
+		A5E9F22B202EDAFC00D3806F /* SBTDownloadDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDownloadDataServiceTests.m; sourceTree = "<group>"; };
 		AE1C000817EF7A51D3CCA588 /* Pods-SBTProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C304476DA5D6CCE3A9B70FA8 /* libPods-SBTProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SBTProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB255D5795EF1A865B09CE20 /* Pods-SBTProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,13 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CC4395EAFAE3B732CD61D8 /* libPods-SBTProjectTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A57BA47E20024A1600AA182D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +297,6 @@
 			children = (
 				A57BA45D20024A1600AA182D /* SBTProject */,
 				A57BA47920024A1600AA182D /* SBTProjectTests */,
-				A57BA48420024A1600AA182D /* SBTProjectUITests */,
 				A57BA45C20024A1600AA182D /* Products */,
 				120606E9B945E734FF94D18F /* Pods */,
 				AE293F01747C6103AB060356 /* Frameworks */,
@@ -299,7 +308,6 @@
 			children = (
 				A57BA45B20024A1600AA182D /* SBTProject.app */,
 				A57BA47620024A1600AA182D /* SBTProjectTests.xctest */,
-				A57BA48120024A1600AA182D /* SBTProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,19 +341,15 @@
 		A57BA47920024A1600AA182D /* SBTProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				A57BA47A20024A1600AA182D /* SBTProjectTests.m */,
+				A5E9F223202C4C9600D3806F /* CategoryTests */,
+				A5E9F220202C371E00D3806F /* DataPreparerControllerTests */,
+				A5E9F219202C219000D3806F /* NewsControllerTests */,
+				A5E9F216202B0DCB00D3806F /* ServicesTests */,
+				A5E9F20F2029E4ED00D3806F /* CryptocurrencyControllerTests */,
+				A5E9F2082028D83000D3806F /* GraphControllerTests */,
 				A57BA47C20024A1600AA182D /* Info.plist */,
 			);
 			path = SBTProjectTests;
-			sourceTree = "<group>";
-		};
-		A57BA48420024A1600AA182D /* SBTProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A57BA48520024A1600AA182D /* SBTProjectUITests.m */,
-				A57BA48720024A1600AA182D /* Info.plist */,
-			);
-			path = SBTProjectUITests;
 			sourceTree = "<group>";
 		};
 		A595C898202479E600E65F68 /* Category */ = {
@@ -391,6 +395,63 @@
 				A5971B29201CC7AC0010FD86 /* SBTFileDataService.m */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A5E9F2082028D83000D3806F /* GraphControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9F2092028D87C00D3806F /* SBTParsingJSONGraphsTests.m */,
+				A5E9F20B2029C35F00D3806F /* SBTBuilderURLGraphsTests.m */,
+				A5E9F20D2029CA9200D3806F /* SBTBuildGraphViewTests.m */,
+			);
+			path = GraphControllerTests;
+			sourceTree = "<group>";
+		};
+		A5E9F20F2029E4ED00D3806F /* CryptocurrencyControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9F2102029E56400D3806F /* SBTParsingJSONPriceTests.m */,
+				A5E9F2122029F4CB00D3806F /* SBTBuilderURLPriceTests.m */,
+				A5E9F214202A1A2800D3806F /* SBTCryptocurrencyTableViewCellTests.m */,
+			);
+			path = CryptocurrencyControllerTests;
+			sourceTree = "<group>";
+		};
+		A5E9F216202B0DCB00D3806F /* ServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9F217202B0DF800D3806F /* SBTCoreDataDownloadFacadeTests.m */,
+				A5E9F227202CD76100D3806F /* SBTCoreDataServiceTests.m */,
+				A5E9F229202CE48B00D3806F /* SBTFileDataServiceTests.m */,
+				A5E9F22B202EDAFC00D3806F /* SBTDownloadDataServiceTests.m */,
+			);
+			path = ServicesTests;
+			sourceTree = "<group>";
+		};
+		A5E9F219202C219000D3806F /* NewsControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9F21A202C21C500D3806F /* SBTParsingJSONNewsTests.m */,
+				A5E9F21C202C290100D3806F /* SBTBuilderURLNewsTests.m */,
+				A5E9F21E202C2CB800D3806F /* SBTNewsTableViewCellTests.m */,
+			);
+			path = NewsControllerTests;
+			sourceTree = "<group>";
+		};
+		A5E9F220202C371E00D3806F /* DataPreparerControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9F221202C374400D3806F /* SBTParsingJSONDescriptionTests.m */,
+			);
+			path = DataPreparerControllerTests;
+			sourceTree = "<group>";
+		};
+		A5E9F223202C4C9600D3806F /* CategoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9F225202C4D0000D3806F /* NSDate+SBTDateTests.m */,
+			);
+			path = CategoryTests;
 			sourceTree = "<group>";
 		};
 		AE293F01747C6103AB060356 /* Frameworks */ = {
@@ -446,24 +507,6 @@
 			productReference = A57BA47620024A1600AA182D /* SBTProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A57BA48020024A1600AA182D /* SBTProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A57BA49020024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProjectUITests" */;
-			buildPhases = (
-				A57BA47D20024A1600AA182D /* Sources */,
-				A57BA47E20024A1600AA182D /* Frameworks */,
-				A57BA47F20024A1600AA182D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A57BA48320024A1600AA182D /* PBXTargetDependency */,
-			);
-			name = SBTProjectUITests;
-			productName = SBTProjectUITests;
-			productReference = A57BA48120024A1600AA182D /* SBTProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -478,11 +521,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					A57BA47520024A1600AA182D = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A57BA45A20024A1600AA182D;
-					};
-					A57BA48020024A1600AA182D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A57BA45A20024A1600AA182D;
@@ -504,7 +542,6 @@
 			targets = (
 				A57BA45A20024A1600AA182D /* SBTProject */,
 				A57BA47520024A1600AA182D /* SBTProjectTests */,
-				A57BA48020024A1600AA182D /* SBTProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -520,13 +557,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A57BA47420024A1600AA182D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A57BA47F20024A1600AA182D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -686,15 +716,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57BA47B20024A1600AA182D /* SBTProjectTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A57BA47D20024A1600AA182D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A57BA48620024A1600AA182D /* SBTProjectUITests.m in Sources */,
+				A5E9F226202C4D0000D3806F /* NSDate+SBTDateTests.m in Sources */,
+				A5E9F21F202C2CB800D3806F /* SBTNewsTableViewCellTests.m in Sources */,
+				A5E9F20E2029CA9200D3806F /* SBTBuildGraphViewTests.m in Sources */,
+				A5E9F218202B0DF800D3806F /* SBTCoreDataDownloadFacadeTests.m in Sources */,
+				A5E9F20C2029C35F00D3806F /* SBTBuilderURLGraphsTests.m in Sources */,
+				A5E9F22A202CE48B00D3806F /* SBTFileDataServiceTests.m in Sources */,
+				A5E9F21B202C21C500D3806F /* SBTParsingJSONNewsTests.m in Sources */,
+				A5E9F2132029F4CB00D3806F /* SBTBuilderURLPriceTests.m in Sources */,
+				A5E9F21D202C290100D3806F /* SBTBuilderURLNewsTests.m in Sources */,
+				A5E9F2112029E56400D3806F /* SBTParsingJSONPriceTests.m in Sources */,
+				A5E9F20A2028D87C00D3806F /* SBTParsingJSONGraphsTests.m in Sources */,
+				A5E9F222202C374400D3806F /* SBTParsingJSONDescriptionTests.m in Sources */,
+				A5E9F215202A1A2800D3806F /* SBTCryptocurrencyTableViewCellTests.m in Sources */,
+				A5E9F22C202EDAFC00D3806F /* SBTDownloadDataServiceTests.m in Sources */,
+				A5E9F228202CD76100D3806F /* SBTCoreDataServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,11 +741,6 @@
 			isa = PBXTargetDependency;
 			target = A57BA45A20024A1600AA182D /* SBTProject */;
 			targetProxy = A57BA47720024A1600AA182D /* PBXContainerItemProxy */;
-		};
-		A57BA48320024A1600AA182D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A57BA45A20024A1600AA182D /* SBTProject */;
-			targetProxy = A57BA48220024A1600AA182D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -876,32 +907,6 @@
 			};
 			name = Release;
 		};
-		A57BA49120024A1600AA182D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SBTProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SBTProject;
-			};
-			name = Debug;
-		};
-		A57BA49220024A1600AA182D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SBTProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sergey.SBTProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SBTProject;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -928,15 +933,6 @@
 			buildConfigurations = (
 				A57BA48E20024A1600AA182D /* Debug */,
 				A57BA48F20024A1600AA182D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A57BA49020024A1600AA182D /* Build configuration list for PBXNativeTarget "SBTProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A57BA49120024A1600AA182D /* Debug */,
-				A57BA49220024A1600AA182D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

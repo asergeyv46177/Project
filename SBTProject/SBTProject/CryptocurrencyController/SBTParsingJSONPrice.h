@@ -20,6 +20,6 @@
  @param json - JSON, который парсится в модель
  @return необходимая модель
  */
-+ (SBTDataPriceModel *)jsonToModel:(NSDictionary *)json;
++ (SBTDataPriceModel *)jsonToModel:(NSArray *)json;
 
 @end

@@ -13,9 +13,9 @@
 
 + (NSString *)sbt_formatterDateStringWithTimeInterval:(NSTimeInterval)timeInterval
 {
-    if (!timeInterval)
+    if (timeInterval < 0)
     {
-        return @"";
+        return nil;
     }
     NSDate *date =[NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
