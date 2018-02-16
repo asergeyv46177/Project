@@ -18,7 +18,8 @@ static CGFloat const SBTOffsetBottom = 40.0;
 static CGFloat const SBTWidthYLabel = 150.0;
 static CGFloat const SBTHeightYLabel = 14.0;
 static CGFloat const SBTHeightXLabel = 40.0;
-static CGFloat const SBTDiameterDetailedPoint = 8.0;
+static CGFloat const SBTWidthDetailedLine = 1.0;
+static CGFloat const SBTHightDetailedLine = 20.0;
 
 static NSInteger const SBTStepChange = 5;
 static NSInteger const SBTNumberXLabel = 19;
@@ -198,11 +199,25 @@ static NSInteger const SBTNumberOfSignificantSymbol = 2;
     self.detailedLabel.textAlignment = NSTextAlignmentCenter;
     [self.yAxisValuesView addSubview:self.detailedLabel];
     
-    CGRect pointFrame = CGRectMake(0, 0, SBTDiameterDetailedPoint, SBTDiameterDetailedPoint);
+    CGRect pointFrame = CGRectZero;
     self.detailedPointImageView = [[UIImageView alloc] initWithFrame:pointFrame];
-    self.detailedPointImageView.backgroundColor = UIColor.blackColor;
+    
+    CALayer *verticalLine = [CALayer new];
+    CGRect frameVerticalLine = CGRectMake(0, 0, SBTWidthDetailedLine, SBTHightDetailedLine);
+    verticalLine.frame = frameVerticalLine;
+    verticalLine.position = self.detailedPointImageView.center;
+    verticalLine.backgroundColor = UIColor.blackColor.CGColor;
+    [self.detailedPointImageView.layer addSublayer:verticalLine];
+    
+    CALayer *horizontalLine = [CALayer new];
+    CGRect frameHorizontalLine = CGRectMake(0, 0, SBTHightDetailedLine, SBTWidthDetailedLine);
+    horizontalLine.frame = frameHorizontalLine;
+    horizontalLine.position = self.detailedPointImageView.center;
+    horizontalLine.backgroundColor = UIColor.blackColor.CGColor;
+    [self.detailedPointImageView.layer addSublayer:horizontalLine];
+    
+    self.detailedPointImageView.backgroundColor = UIColor.clearColor;
     self.detailedPointImageView.alpha = 0.0;
-    self.detailedPointImageView.layer.cornerRadius = SBTDiameterDetailedPoint / 2;
     [self addSubview:self.detailedPointImageView];
 }
 

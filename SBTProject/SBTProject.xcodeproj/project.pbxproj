@@ -66,6 +66,7 @@
 		A5E9F228202CD76100D3806F /* SBTCoreDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F227202CD76100D3806F /* SBTCoreDataServiceTests.m */; };
 		A5E9F22A202CE48B00D3806F /* SBTFileDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F229202CE48B00D3806F /* SBTFileDataServiceTests.m */; };
 		A5E9F22C202EDAFC00D3806F /* SBTDownloadDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F22B202EDAFC00D3806F /* SBTDownloadDataServiceTests.m */; };
+		A5E9F22E20344C2900D3806F /* UIImageView+SBTImageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E9F22D20344C2900D3806F /* UIImageView+SBTImageViewTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		A5E9F227202CD76100D3806F /* SBTCoreDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTCoreDataServiceTests.m; sourceTree = "<group>"; };
 		A5E9F229202CE48B00D3806F /* SBTFileDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTFileDataServiceTests.m; sourceTree = "<group>"; };
 		A5E9F22B202EDAFC00D3806F /* SBTDownloadDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTDownloadDataServiceTests.m; sourceTree = "<group>"; };
+		A5E9F22D20344C2900D3806F /* UIImageView+SBTImageViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SBTImageViewTests.m"; sourceTree = "<group>"; };
 		AE1C000817EF7A51D3CCA588 /* Pods-SBTProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C304476DA5D6CCE3A9B70FA8 /* libPods-SBTProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SBTProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB255D5795EF1A865B09CE20 /* Pods-SBTProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBTProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBTProjectTests/Pods-SBTProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E9F225202C4D0000D3806F /* NSDate+SBTDateTests.m */,
+				A5E9F22D20344C2900D3806F /* UIImageView+SBTImageViewTests.m */,
 			);
 			path = CategoryTests;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				A5E9F21D202C290100D3806F /* SBTBuilderURLNewsTests.m in Sources */,
 				A5E9F2112029E56400D3806F /* SBTParsingJSONPriceTests.m in Sources */,
 				A5E9F20A2028D87C00D3806F /* SBTParsingJSONGraphsTests.m in Sources */,
+				A5E9F22E20344C2900D3806F /* UIImageView+SBTImageViewTests.m in Sources */,
 				A5E9F222202C374400D3806F /* SBTParsingJSONDescriptionTests.m in Sources */,
 				A5E9F215202A1A2800D3806F /* SBTCryptocurrencyTableViewCellTests.m in Sources */,
 				A5E9F22C202EDAFC00D3806F /* SBTDownloadDataServiceTests.m in Sources */,

@@ -20,7 +20,14 @@ static NSUInteger const SBTNumberOfPictures = 50;
 
 + (UIImageView *)sbt_animationOnView:(UIView *)superview
 {
-    
+    if (!superview)
+    {
+        return nil;
+    }
+    if (![superview isMemberOfClass:[UIView class]])
+    {
+        return nil;
+    }
     CGRect bounds = superview.bounds;
     CGFloat sideSquare = CGRectGetWidth(bounds) - SBTOffset;
     CGRect frame = CGRectMake(0, 0, sideSquare, sideSquare);
@@ -115,6 +122,10 @@ static NSUInteger const SBTNumberOfPictures = 50;
 + (CGAffineTransform)sbt_createAffineTransformWithArray:(NSArray <NSNumber *> *)matrixTransform offsetT:(CGFloat)radius
 {
     CGAffineTransform affineTransform = CGAffineTransformIdentity;
+    if (!matrixTransform || radius < 0)
+    {
+        return affineTransform;
+    }
     affineTransform.a = matrixTransform[0].floatValue;
     affineTransform.b = matrixTransform[1].floatValue;
     affineTransform.c = matrixTransform[2].floatValue;
