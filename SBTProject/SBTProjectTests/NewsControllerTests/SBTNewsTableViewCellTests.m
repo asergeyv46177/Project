@@ -51,6 +51,14 @@ static NSString *const SBTAuthor = @"AUTHOR: ";
     expect(attributedString.string).to.equal(SBTAuthor);
 }
 
+- (void)testAttributedStringNSNullAuthorString
+{
+    NSAttributedString *attributedString = [self.testNewsTableViewCell attributedString:(NSString *)[NSNull null]];
+    
+    expect(attributedString).notTo.beNil();
+    expect(attributedString.string).to.equal(SBTAuthor);
+}
+
 - (void)testAttributedString
 {
     NSString *authorString = @"Tim Cook";

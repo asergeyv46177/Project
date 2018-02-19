@@ -88,7 +88,7 @@ static CGFloat const SBTOffsetToCenterTabBar = 9;
 {
     SBTGraphTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SBTIdentifierCell forIndexPath:indexPath];
     cell.nameGraphLabel.text = self.nameGraphArray[indexPath.row];
-    cell.viewGraphImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.nameGraphArray[indexPath.row]]];
+    cell.viewGraphImageView.image = [UIImage imageNamed:self.nameGraphArray[indexPath.row]];
     return cell;
 }
 

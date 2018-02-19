@@ -67,6 +67,10 @@ static NSString *const SBTAffiliateURL = @"Affiliate URL";
 
 - (void)setupContentCellWithIndexRow:(NSInteger)row content:(NSArray *)content
 {
+    if (content.count <= row || self.nameArray.count <= row)
+    {
+        return;
+    }
     self.nameDescriptionLabel.text = self.nameArray[row];
     self.contentDescriptionLabel.text = content[row];
     if ([self.nameArray[row] isEqualToString:SBTAffiliateURL])
